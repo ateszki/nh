@@ -14,7 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Inspire::class,
-    ];
+        \App\Console\Commands\ItemsImport::class,
+        \App\Console\Commands\ItemImagenes::class,
+        ];
 
     /**
      * Define the application's command schedule.

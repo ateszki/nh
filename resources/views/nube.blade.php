@@ -31,6 +31,7 @@
 		
         <!-- stylesheet -->
 		<link rel="stylesheet" type="text/css" media="all" href="{{URL::to('plugins/flexslider/flexslider.css')}}">
+		<link rel="stylesheet" type="text/css" media="all" href="{{URL::to('plugins/jackbox/css/jackbox.min.css')}}">
 		<link rel="stylesheet" type="text/css" media="all" href="{{URL::to('css/animate.css')}}">
 		<link rel="stylesheet" type="text/css" media="all" href="{{URL::to('css/bootstrap.min.css')}}">
 		<link rel="stylesheet" type="text/css" media="all" href="{{URL::to('css/style.css')}}">

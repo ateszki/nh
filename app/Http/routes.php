@@ -23,9 +23,9 @@ Route::get('/home', function () {
     return redirect()->to('/');
 });
 
-Route::get('/hilados', function () {
-    return view('hilados');
-});
+Route::get('/hilados', 'HiladosController@index');
+Route::get('/hilados/{codigo}', 'HiladosController@show');
+Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
 
 Route::get('/acerca-de-nube', function () {
     return view('acerca-de-nube');
@@ -51,3 +51,15 @@ Route::get('/politica-de-privacidad', function () {
 Route::get('/terminos-y-condiciones', function () {
     return view('terminos-y-condiciones');
 });
+/*
+revista nube
+*/
+Route::get('/revista-nube','RevistaController@revistas');
+Route::get('/revista-nube/{numero}/pdf','RevistaController@getPdf');
+Route::get('/revista-nube/{numero}/tapa','RevistaController@getTapa');
+Route::get('/revista-nube/{numero}/sumario','RevistaController@getSumario');
+/*fichas de tejido*/
+Route::get('fichas-de-tejido/{id}/imagen','FichaController@getImagen');
+Route::get('fichas-de-tejido/{id}/pdf','FichaController@getPdf');
+Route::resource('fichas-de-tejido', 'FichaController',
+                ['only' => ['index', 'show']]);

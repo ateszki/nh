@@ -8,10 +8,10 @@
                                 <!-- top nav -->
 								<nav class="d_xs_inline_b m_bottom_20 m_left_20">
 									<ul class="hr_list second_font si_list fs_small">
-										<li><a class="sc_hover tr_delay" href="{{URL::to('acerca-de-nube')}}">Acerca de Nube</a></li>                                        
-                                        <li><a class="sc_hover tr_delay" href="{{URL::to('locales')}}">Locales</a></li>
-                                        <li><a class="sc_hover tr_delay" href="{{URL::to('representantes')}}">Representantes</a></li>                                        
-										<li><a class="sc_hover tr_delay" href="{{URL::to('contacto')}}">Contacto</a></li>
+										<li @if(Request::is('acerca-de-nube')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('acerca-de-nube')}}">Acerca de Nube</a></li>                                        
+                                        <li @if(Request::is('locales')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('locales')}}">Locales</a></li>
+                                        <li @if(Request::is('representantes')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('representantes')}}">Representantes</a></li>                                        
+										<li @if(Request::is('contacto')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('contacto')}}">Contacto</a></li>
 									</ul>
 								</nav>
 							</div>                            
@@ -70,7 +70,7 @@
 							<div class="col-lg-2 col-md-2 d_sm_block w_sm_full d_table_cell d_xs_block f_none v_align_m m_xs_bottom_15">
 								<!-- logo -->
 								<a href="/" class="d_inline_b m_sm_top_5 m_sm_bottom_5 m_xs_bottom_0">
-									<img src="images/nube-hilados-logo.png" alt="Nube Hilados - Tejer con imaginación">
+									<img src="{{URL::to('images/nube-hilados-logo.png')}}" alt="Nube Hilados - Tejer con imaginación">
 								</a>
 							</div>
 							<div class="col-lg-8 col-md-8 d_sm_block w_sm_full d_table_cell d_xs_block f_none v_align_m m_sm_top_5">
@@ -79,11 +79,11 @@
                                 <!-- main menu -->
 								<nav role="navigation" class="m_left_35 d_xs_none d_sm_inline_b">
 									<ul class="main_menu relative type_2 hr_list second_font fs_medium">
-										<li><a href="{{URL::to('hilados')}}" class="tt_uppercase tr_delay">Hilados </i></a></li>
-                                        <li><a href="{{URL::to('trajes-de-banio')}}" class="tt_uppercase tr_delay">Trajes de Baño </a></li>
-										<li><a href="{{URL::to('accesorios')}}" class="tt_uppercase tr_delay">Accesorios </a></li>                                        
-										<li><a href="{{URL::to('fichas-de-tejidos')}}" class="tt_uppercase tr_delay">Fichas de Tejidos </a></li>
-										<li><a href="{{URL::to('revista-nube')}}" class="tt_uppercase tr_delay">Revista Nube </a></li>
+										<li @if(Request::is('hilados')) class='current' @endif><a href="{{URL::to('hilados')}}" class="tt_uppercase tr_delay">Hilados </i></a></li>
+                                        <li @if(Request::is('trajes-de-banio')) class='current' @endif><a href="{{URL::to('trajes-de-banio')}}" class="tt_uppercase tr_delay">Trajes de Baño </a></li>
+										<li @if(Request::is('accesorios')) class='current' @endif><a href="{{URL::to('accesorios')}}" class="tt_uppercase tr_delay">Accesorios </a></li>                                        
+										<li @if(Request::is('fichas-de-tejido')) class='current' @endif><a href="{{URL::to('fichas-de-tejido')}}" class="tt_uppercase tr_delay">Fichas de Tejido </a></li>
+										<li @if(Request::is('revista-nube')) class='current' @endif><a href="{{URL::to('revista-nube')}}" class="tt_uppercase tr_delay">Revista Nube </a></li>
 									</ul>
 								</nav>
 							</div>
@@ -111,45 +111,25 @@
 											<div class="sc_header fs_small fw_light">Productos agregados</div>
 											<hr class="divider_white">
 											<ul class="shopping_cart_list m_bottom_4">
+												@foreach(Cart::content() as $row)
 												<li class="relative">
 													<div class="clearfix lh_small">
 														<span class="f_left m_right_10 d_block"><img src="images/prod-01.jpg" width="60px" height="60px" alt=""></span>
-														<span class="fs_medium second_font color_dark d_block m_bottom_4">Cursus eleifend elit</span>
-														<p class="fs_medium">1 x <b class="color_dark">$499.00</b></p>
+														<span class="fs_medium second_font color_dark d_block m_bottom_4">{{$row->name}}</span>
+														<p class="fs_medium">1 x <b class="color_dark">${{$row->price}}</b></p>
+                                                        @if($row->options->has(color))
                                                         <ul class="fw_light fs_small lh_small">
-															<li>Color: <span class="color_dark">178</span></li>											
+															<li>Color: <span class="color_dark">{{$row->options->color}}</span></li>											
 														</ul>
+														@endif
 													</div>
 													<hr class="divider_white m_top_15 m_bottom_0">
-													<span class="close fs_small color_light tr_all color_dark_hover fw_light">x</span>
+													<span class="close fs_small color_light tr_all color_dark_hover fw_light cart_remove" data-itemid="{{$row->id}}">x</span>
 												</li>
-												<li class="relative">
-													<div class="clearfix lh_small">
-														<span class="f_left m_right_10 d_block"><img src="images/prod-02.jpg" width="60px" height="60px" alt=""></span>
-														<span class="fs_medium second_font color_dark d_block m_bottom_4">Auctor wisi et urna</span>
-														<p class="m_bottom_4 fs_medium">1 x <b class="color_dark">$1,599.00</b></p>
-														<ul class="fw_light fs_small lh_small">
-															<li>Color: <span class="color_dark">178</span></li>												
-														</ul>
-													</div>
-													<hr class="divider_white m_top_15 m_bottom_0">
-													<span class="close fs_small color_light tr_all color_dark_hover fw_light">x</span>
-												</li>
-												<li class="relative">
-													<div class="clearfix lh_small">
-														<span class="f_left m_right_10 d_block"><img src="images/prod-03.jpg" width="60px" height="60px" alt=""></span>
-														<span class="fs_medium second_font color_dark d_block m_bottom_4">Aliquam erat volut</span>
-														<p class="fs_medium">2 x <b class="color_dark">$99.00</b></p>
-                                                        <ul class="fw_light fs_small lh_small">
-															<li>Color: <span class="color_dark">178</span></li>												
-														</ul>
-													</div>
-													<hr class="divider_white m_top_15 m_bottom_0">
-													<span class="close fs_small color_light tr_all color_dark_hover fw_light">x</span>
-												</li>
+												@endforeach
 											</ul>
 											<ul class="fs_medium second_font color_dark m_bottom_15">
-												<li><b><span class="d_inline_b total_title">Total:</span>$999.00</b></li>
+												<li><b><span class="d_inline_b total_title">Total:</span>${{Cart::total()}}</b></li>
 											</ul>
 											<a href="#" role="button" class="button_type_2 tt_uppercase fs_medium second_font d_block t_align_c black state_2 m_bottom_5">Revisar Pedido</a>
 											<a href="#" role="button" class="t_align_c tt_uppercase w_full second_font d_block fs_medium button_type_2 lbrown tr_all">Confirmar Pedido</a>

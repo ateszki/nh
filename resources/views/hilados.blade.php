@@ -142,23 +142,15 @@
 									<div class="styled_select relative d_inline_m m_right_2">
 										<div class="select_title type_3 fs_medium fw_light color_light relative d_none tr_all">Ordenar por</div>
 										<select>
-											<option value="Nombre">Nombre</option>
-											<option value="Nuevos">Nuevos</option>
-											<option value="Más Vendidos">Más Vendidos</option>
+											<option @if($orderby=='descripcion') selected="selected" @endif value="descripcion">Nombre</option>
+											<option @if($orderby=='visitas') selected="selected" @endif value="visitas">Mas Visitados</option>
+											<option @if($orderby=='ventas') selected="selected" @endif value="ventas">Más Vendidos</option>
 										</select>
 										<ul class="options_list d_none tr_all hidden bg_grey_light_2"></ul>
 									</div>
                                     
                                     <!-- pagination up -->
-									<nav class="d_inline_b f_right">
-										<ul class="hr_list">
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c fs_ex_small"><i class="fa fa-angle-left d_inline_m"></i></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c border_black"><span class="d_inline_m fs_small">1</span></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c"><span class="d_inline_m fs_small">2</span></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c"><span class="d_inline_m fs_small">3</span></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c fs_ex_small"><i class="fa fa-angle-right d_inline_m"></i></a></li>
-										</ul>
-									</nav>
+									@include('paginador', ['paginator' => $hilados])
                                     
                                     
 								</div>
@@ -171,294 +163,32 @@
 								"itemSelector": ".category_isotope_item",
 					  			"layoutMode": "fitRows"
 							     }'>
-								
+								@foreach($hilados as $hilado)
                                 <!-- producto single -->
 								<div class="category_isotope_item">
 									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block">
-												<img src="images/prod-01.jpg" alt="" class="c_image_1 tr_all">
+												<img src="{{URL::to('color/'.$hilado->imagen.'/imagen/G')}}" alt="" class="c_image_1 tr_all">
 											</div>
 											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>	
 										</div>
 										<figcaption class="bg_white relative p_bottom_15">
 											<div class="row">
 												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
+													<span class="second_font d_xs_block">{{$hilado->descripcion}}</span>													
 												</div>
 												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
+													<span class="scheme_color d_block">${{number_format($hilado->precio,2)}}</span>
 												</div>
 											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
+											<a href="{{URL::to('hilados/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
 										</figcaption>
 									</figure>
 								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-02.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-03.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-01.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-02.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-03.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_scheme_color t_align_c vc_child tt_uppercase"><i class="d_inline_m">Nuevo!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-01.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-02.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_scheme_color t_align_c vc_child tt_uppercase"><i class="d_inline_m">Nuevo!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-								<!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-01.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_scheme_color t_align_c vc_child tt_uppercase"><i class="d_inline_m">Nuevo!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-                                <!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-02.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_scheme_color t_align_c vc_child tt_uppercase"><i class="d_inline_m">Nuevo!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-                                <!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-02.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_scheme_color t_align_c vc_child tt_uppercase"><i class="d_inline_m">Nuevo!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
-                                
-                                <!-- producto single -->
-								<div class="category_isotope_item">
-									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container">
-										<!-- producto content -->
-										<div class="relative">
-											<div class="d_block">
-												<img src="images/prod-01.jpg" alt="" class="c_image_1 tr_all">
-											</div>
-											<div class="product_label fs_ex_small circle color_white bg_scheme_color t_align_c vc_child tt_uppercase"><i class="d_inline_m">Nuevo!</i></div>
-										</div>
-										<figcaption class="bg_white relative p_bottom_15">
-											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
-													<span class="second_font d_xs_block">Sed in lacus ut enim</span>													
-												</div>
-												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
-													<span class="scheme_color d_block">$180</span>
-												</div>
-											</div>
-											<a href="#" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
-										</figcaption>
-									</figure>
-								</div>
+                                @endforeach
+								
                                 
                                 
 							</div>
@@ -469,15 +199,7 @@
 								<div class="col-lg-6 col-md-6 col-sm-6 d_xs_block v_align_m d_table_cell f_none t_align_r t_xs_align_l p_xs_left_0">
 									
                                     <!-- pagination bottom -->
-									<nav class="d_inline_b">
-										<ul class="hr_list">
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c fs_ex_small"><i class="fa fa-angle-left d_inline_m"></i></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c border_black"><span class="d_inline_m fs_small">1</span></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c"><span class="d_inline_m fs_small">2</span></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c"><span class="d_inline_m fs_small">3</span></a></li>
-											<li class="m_right_3"><a href="#" class="button_type_4 tr_delay grey state_2 d_block vc_child t_align_c fs_ex_small"><i class="fa fa-angle-right d_inline_m"></i></a></li>
-										</ul>
-									</nav>
+									@include('paginador', ['paginator' => $hilados])
 								</div>
 							</div>
 						</main>

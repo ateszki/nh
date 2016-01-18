@@ -325,6 +325,8 @@
 						var val = $(this).text();
 						options.parent().val(val);
 						title.text(val);
+						
+						window.location.href='?orderby='+val;
 					});
 
 			});
