@@ -170,7 +170,7 @@
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block">
-												<img src="{{URL::to('color/'.$hilado->imagen.'/imagen/C')}}" alt="" class="c_image_1 tr_all">
+												<img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" alt="" class="c_image_1 tr_all">
 											</div>
 											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>	
 										</div>
