@@ -165,7 +165,7 @@
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block">
-												<img src="{{URL::to('color/'.$color["codigo"].'/imagen/G')}}" alt="" class="c_image_1 tr_all">
+												<img src="{{URL::to('prodimag/'.$color["codigo"].'-G.jpg')}}" alt="" class="c_image_1 tr_all">
 											</div>											
 										</div>
 										<figcaption class="bg_white relative p_bottom_15">
