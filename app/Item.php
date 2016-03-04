@@ -16,7 +16,7 @@ class Item extends Model
 
     	$precio = \DB::select("select  format(precio,2) as precio from item_precios where lista = ? and codigo = ?",[$lista,$this->codigo]);
     	//dd($lista);
-    	return (count($precio) ==0)?0:$precio[0]->precio;
+    	return (count($precio) ==0)?'-':$precio[0]->precio;
     }
 
     

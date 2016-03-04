@@ -42,7 +42,7 @@
 				<div class="clearfix lh_small">
 					<a href="{{URL::to('hilados/'.$mv->codigo)}}" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="{{URL::to('prodimag/'.$mv->imagen.'-D.jpg')}}" width="80px" height="80px" alt=""></a>
 					<a href="{{URL::to('hilados/'.$mv->codigo)}}" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">{{$mv->descripcion}}</a>
-					<b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">${{number_format($mv->precio,2)}}</b>
+					<b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">${{$mv->precio}}</b>
 				</div>
 			</li>
 			@endforeach                                   
@@ -60,7 +60,7 @@
 				<div class="clearfix lh_small">
 					<a href="{{URL::to('hilados/'.$mv->item()->codigo)}}" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="{{URL::to('prodimag/'.$mv->item()->imagen.'-D.jpg')}}" width="80px" height="80px" alt=""></a>
 					<a href="{{URL::to('hilados/'.$mv->item()->codigo)}}" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">{{$mv->item()->descripcion}}</a>
-					<b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">${{number_format($mv->item()->precio,2)}}</b>
+					<b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">${{$mv->item()->precio}}</b>
 				</div>
 			</li>
 			@endforeach                                
