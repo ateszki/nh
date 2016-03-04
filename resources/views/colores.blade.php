@@ -2,9 +2,11 @@
 @section('contenido')
 <!-- breadcrumbs -->
 			<div class="breadcrumbs bg_grey_light_2 fs_medium fw_light">
+				<div class="breadcrumbs bg_grey_light_2 fs_medium fw_light">
 				<div class="container">
-					<a href="/" class="sc_hover">Home</a> / <span class="color_light"><a href="#" class="sc_hover"> Hilados</a></span> / <span class="color_light"><a href="#" class="sc_hover">Otoño-Invierno </a></span> / <span class="color_light"><a href="#" class="sc_hover">Clásica </a></span>
+					<a href="{{URL::to('/')}}" class="sc_hover">Home</a> / <a href="{{URL::to('/hilados')}}?temporada={{$temporada}}&tipo={{$tipo}}" class="sc_hover">Hilados / {{ trim($temporada)}} @if($tipo!='') / {{ trim($tipo)}} @endif</a> / <span class="color_ligth">{{$hilado->descripcion}}</span>
 				</div>
+			</div>
 			</div>
             
 			<!-- main content -->
@@ -12,128 +14,7 @@
 				<div class="container">
 					<div class="row">
                     
-                    <aside class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30">                            
-                               
-                    <!-- buscador widget -->
-                    <section class="m_bottom_30 animated hidden" data-animation="fadeInDown">
-                    <h5 class="color_dark tt_uppercase fw_default second_font m_bottom_15">Filtro de Búsqueda</h5>
-                    <hr class="divider_bg m_bottom_23">
-                    <ul class="categories_list second_font w_break">
-                            <li class="clearfix m_bottom_14">											
-                                <div class="styled_select relative">
-                                    <div class="select_title fs_medium fw_light color_light relative d_none tr_all">Seleccionar Temporada</div>
-                                    <select>
-                                        <option value="Otoño/Invierno">Otoño/Invierno</option>
-                                        <option value="Primavera/Verano">Primavera/Verano</option>
-                                    </select>
-                                    <ul class="options_list d_none tr_all hidden bg_grey_light"></ul>
-                                </div>
-                            </li>
-                            
-                            <li class="clearfix m_bottom_14">											
-                                <div class="styled_select relative">
-                                    <div class="select_title fs_medium fw_light color_light relative d_none tr_all">Seleccionar Tipo</div>
-                                    <select>
-                                        <option value="Clásica">Clásicos</option>
-                                        <option value="Fantasía">Fantasías</option>
-                                    </select>
-                                    <ul class="options_list d_none tr_all hidden bg_grey_light"></ul>
-                                </div>
-                            </li>
-                                
-                            <li class="m_bottom_10">
-                            <button class="button_type_2 d_block w_full t_align_c grey state_2 tr_all second_font fs_medium tt_uppercase"><i class="fa fa-search d_inline_m m_right_9 fs_"></i>Ver Resultados</button>
-                            </li>
-                    </ul>
-                </section>	
-                
-                <!-- productos mas vendidos widget -->
-                <section class="m_bottom_40 m_xs_bottom_30">
-                    <h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">Más Vendidos</h5>
-                    <hr class="divider_bg m_bottom_25">
-                    <ul>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>                                    
-                    </ul>
-                </section>
-                
-                
-                <!-- productos mas vistos widget -->
-                <section class="m_bottom_40 m_xs_bottom_30">
-                    <h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">Vistos Recientemente </h5>
-                    <hr class="divider_bg m_bottom_25">
-                    <ul>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>
-                        <li class="relative t_sm_align_c t_xs_align_l m_bottom_10">
-                            <div class="clearfix lh_small">
-                                <a href="#" class="f_left m_right_15 d_block d_sm_inline_b f_sm_none m_sm_right_0 m_xs_right_15 f_xs_left d_xs_block m_sm_bottom_10 m_xs_bottom_0"><img src="images/prod-01.jpg" width="80px" height="80px" alt=""></a>
-                                <a href="#" class="fs_medium second_font color_dark sc_hover d_block m_bottom_4 d_sm_inline_b d_xs_block p_top_4">Nombre del Producto</a>
-                                <b class="second_font scheme_color fs_medium d_sm_block d_xs_inline_b">$990.00</b>
-                            </div>
-                        </li>                                    
-                    </ul>
-                </section>  
-            </aside>
+                    @include('hilados-col-izq')
                         
 						<main class="col-lg-9 col-md-9 col-sm-9 m_bottom_30 m_xs_bottom_10">
 							<h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">Producto: {{$hilado->descripcion}}</h4>  
@@ -177,8 +58,8 @@
 													<span class="scheme_color d_block">${{$color["precio"]}}</span>
 												</div>
 											</div>
-											<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" class="button_type_2 m_bottom_5 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Opciones</button>
-											<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" class="button_type_1 m_bottom_5 d_block w_full t_align_c black state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar</button>
+											<!--<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" class="button_type_2 m_bottom_5 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Opciones</button>-->
+											<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" data-color='{"codigo":"{{substr($color["codigo"],0,4)}}","color":"{{substr($color["codigo"],5,4)}}","precio":"{{$color["precio"]}}","descripcion":"{{$color["descripcion"]}}","img":"{{URL::to('prodimag/'.$color["codigo"].'-G.jpg')}}"}' class="button_type_1 m_bottom_5 d_block w_full t_align_c black state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar</button>
                                         </figcaption>
 									</figure>
 								</div>

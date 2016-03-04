@@ -754,7 +754,110 @@
 			// page loaded
 			$('[data-popup="#subscribe_popup"]').trigger('click');
 		});
+		$('[data-popup="#quick_view"]').click(function(event){
+			event.preventDefault();
+			var d = $(this).data('color');
+			console.log(d);
+			$("#qv_precio").empty().html('$'+d.precio);
+			$("#qv_color").empty().html(d.color);
+			$("#qv_codigo").empty().html(d.codigo);
+			$("#qv_nombre").empty().html(d.descripcion);
+			$("#qv_image > img#zoom").attr('src',d.img);
+			$("#qv_image > img#zoom").attr('alt',d.descripcion);
+			return true;
+		});
+
+		// functiones de carrito
+
+		$("#qv_agregar").click(function(event){
+			event.preventDefault();
+			$.get( $(this).data('url'), { precio:$("#qv_precio").text().replace("$",""), descripcion: $("#qv_nombre").text(), cantidad: $("#qv_cant").val(), codigo: $("#qv_codigo").text()+'-'+$("#qv_color").text() } )
+			  .done(function( data ) {
+			    $("#quick_view").popup( "close" );
+			    actualizarCarritoEnHeader(data);
+			  });
+		});
+
+		$(document).on('click',"span.header_cart_remove",function(event){
+			event.preventDefault();
+			var rowId = $(this).data('itemid');
+			$.get( $(this).data('url'))
+			  .done(function( data ) {
+			    actualizarCarritoEnHeaderTotales(data);
+			  });
+		});
+		$(document).on('click',"button.shoping-cart-remove",function(event){
+			event.preventDefault();
+			var rowId = $(this).data('itemid');
+			var self = $(this);
+			$.get( $(this).data('url'))
+			  .done(function( data ) {
+			  	if (data.count == 0){
+			  		$("a.shoping-cart-confirmar-button").remove();
+			  	}
+			  	self.closest('tr').remove();
+			    actualizarCarritoEnHeaderTotales(data);
+			    actualizarCarritoTotales(data);
+			  });
+		});
+		$(document).on('click',"button.shoping-cart-update",function(event){
+			event.preventDefault();
+			var self = $(this);
+			var qty = self.closest('tr').find('input.item-qty').val();
+			if(qty == 0){
+				self.closest('tr').find('button.shoping-cart-remove').click();
+				return false;
+			}
+			$.get( $(this).data('url')+'/'+qty)
+			  .done(function( data ) {
+			  	self.closest('tr').find('b.item-subtotal').text('$'+data.item_subtotal);
+			  	actualizarCarritoTotales(data);
+			  	$.get( self.data('urlheader'))
+			  		.done(function( data ) {
+			  			actualizarCarritoEnHeader(data);
+			  		});
+			  });
+		});
+		$(document).on('click',"a.confirmar-pedido-button",function(event){
+			event.preventDefault();
+			
+			if(confirm('Esto enviará su pedido, está seguro?')){
+				window.location.href=$(this).attr('href');
+			}
+		});
+		$(document).on('click',"button.filtro_hilados_button",function(event){
+			event.preventDefault();
+			var temp = $(".temporada_valor").text();
+			if(temp.substr(0,4)=="Sele"){
+				temp = '';
+			}
+			var tipo = $(".tipo_valor").text();
+			if(tipo.substr(0,4)=="Sele"){
+				tipo = '';
+			}
+			var url = $(this).data("url");
+			window.location.href=url+"?temporada="+temp+"&tipo="+tipo
+			
+		});
+		
 	});
+
+	//actualizar carrito en header
+
+	var actualizarCarritoEnHeader = function(cart){
+		 $("li#header-cart").remove();
+		 $('ul.shop_list').append(cart);
+
+	};
+
+	var actualizarCarritoEnHeaderTotales = function(cart){
+		 $('.header-cart-total').empty().append('$'+cart.total);
+		 $('.header-cart-count').empty().append(cart.count);
+
+	};
+	var actualizarCarritoTotales = function(cart){
+		 $('.shoping-cart-total').empty().append('$'+cart.total);
+	};
 
 })(jQuery);
 

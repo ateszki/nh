@@ -14,7 +14,7 @@ class ItemColor extends Model
     		$lista = config('lista_precio_publico');
     	}
 
-    	$precio = \DB::select("select  precio from item_precios where lista = ? and codigo = ?",[$lista,str_replace("-0", "-", $this->codigo)]);
+    	$precio = \DB::select("select  format(precio,2) as precio from item_precios where lista = ? and codigo = ?",[$lista,substr($this->codigo,0,4)]);
     	//dd($lista);
     	return (count($precio) ==0)?'-':$precio[0]->precio;
     }

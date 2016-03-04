@@ -92,7 +92,7 @@
 								<ul class="hr_list si_list list_with_focused_form shop_list f_right f_sm_none d_sm_inline_b t_sm_align_l t_xs_align_c">
                                 
                                    <!-- searchform -->
-                                   <li class="m_xs_bottom_5">										
+                                   <li id="header-searchform" class="m_xs_bottom_5">										
 										<div class="search_form_container d_inline_b relative">
 											<form role="search" class="relative f_right f_xs_none db_xs_centered button_in_input clearfix">
 												<input type="text" name="" tabindex="1" placeholder="Buscar Producto" class="fs_medium color_light fw_light w_full tr_all f_right hidden">
@@ -100,41 +100,7 @@
 											</form>
 										</div>
 									</li>
-                                    
-									<!-- shopping cart -->
-									<li class="relative open_mini_shopping_cart d_xs_inline_b t_xs_align_l">
-										<button class="color_dark active_lbrown tr_all" data-open-dropdown="#shopping_cart">
-											<i class="fa fa-shopping-cart fs_large"></i><sup>{{Cart::count()}}</sup>
-											<b class="second_font fs_small d_inline_b m_left_10">${{Cart::total()}}</b>
-										</button>
-										<div id="shopping_cart" data-show="fadeInUp" data-hide="fadeOutDown" class="bg_grey_light dropdown animated">
-											<div class="sc_header fs_small fw_light">Productos agregados</div>
-											<hr class="divider_white">
-											<ul class="shopping_cart_list m_bottom_4">
-												@foreach(Cart::content() as $row)
-												<li class="relative">
-													<div class="clearfix lh_small">
-														<span class="f_left m_right_10 d_block"><img src="images/prod-01.jpg" width="60px" height="60px" alt=""></span>
-														<span class="fs_medium second_font color_dark d_block m_bottom_4">{{$row->name}}</span>
-														<p class="fs_medium">1 x <b class="color_dark">${{$row->price}}</b></p>
-                                                        @if($row->options->has(color))
-                                                        <ul class="fw_light fs_small lh_small">
-															<li>Color: <span class="color_dark">{{$row->options->color}}</span></li>											
-														</ul>
-														@endif
-													</div>
-													<hr class="divider_white m_top_15 m_bottom_0">
-													<span class="close fs_small color_light tr_all color_dark_hover fw_light cart_remove" data-itemid="{{$row->id}}">x</span>
-												</li>
-												@endforeach
-											</ul>
-											<ul class="fs_medium second_font color_dark m_bottom_15">
-												<li><b><span class="d_inline_b total_title">Total:</span>${{Cart::total()}}</b></li>
-											</ul>
-											<a href="#" role="button" class="button_type_2 tt_uppercase fs_medium second_font d_block t_align_c black state_2 m_bottom_5">Revisar Pedido</a>
-											<a href="#" role="button" class="t_align_c tt_uppercase w_full second_font d_block fs_medium button_type_2 lbrown tr_all">Confirmar Pedido</a>
-										</div>
-									</li>
+                                    @include('header-cart')
 								</ul>                                
 							</div>
                             <!-- end shopping cart -->

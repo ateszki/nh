@@ -24,12 +24,17 @@ class HiladosController extends Controller
     public function index(Request $request)
     {
         //DB::enableQueryLog();
+        $qs = \Input::all();
+
+        $temp = (isset($qs["temporada"]) && $qs["temporada"] != '')?$qs["temporada"]:config('app.temporada');
+        $tipo = (isset($qs["tipo"]) && $qs["tipo"] != '')?$qs["tipo"]:'';
         
         $hilados_query = DB::table('items')
         ->select('items.codigo','items.descripcion','items.imagen','items.imagenes','stats.ventas','stats.visitas','precios.precio')
-        ->where('items.temporada','=',config('app.temporada'))
+        ->where('items.temporada','=',$temp)
         ->where('precios.lista','=',config('app.lista_precio_publico'))
         ->where('items.tipo','like','HILADOS%')
+        ->where('items.subtipo','like','%'.$tipo.'%')
         ->where('items.imagenes','=',true)
         ->where(function($query){
             $query->where('items.stockcero','=',true)->orWhere(function($query1){
@@ -52,13 +57,23 @@ class HiladosController extends Controller
         $hilados = $hilados_query->paginate('25');
         //print_r(DB::getQueryLog());
         //die();
-        return view('hilados', ['hilados' => $hilados,'orderby'=>$orderBy]);
+
+        $mas_visitados = ItemStats::orderBy('visitas','desc')->take(5)->get();
+
+        $mas_vendidos = [];
+        $query = DB::table('pedido_lineas')->select(DB::raw("left(codigo,4) as codigo,sum(cantidad) as ventas"))->groupBy(DB::raw('left(codigo,4)'))->orderBy(DB::raw("count(*) "),'desc')->take(5)->get();
+        foreach ($query as $pl) {
+            $mas_vendidos[] = Item::where("codigo","=",$pl->codigo)->first();
+        }
+        
+        return view('hilados', ['hilados' => $hilados,'orderby'=>$orderBy,'temporada'=>$temp,'tipo'=>$tipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
 
     
     public function show($codigo)
     {
         $hilado = Item::where('codigo','=',$codigo)->firstOrFail();
+
 
         $itemStats = ItemStats::firstOrCreate(['codigo' => trim($hilado->codigo)]);
         $itemStats->codigo = trim($hilado->codigo);
@@ -73,7 +88,16 @@ class HiladosController extends Controller
             return in_array("prodimag/".$color["codigo"]."-C.jpg", $imagenes);
         };
         $colores = array_filter(ItemColor::where('codigo','like',$codigo."-%")->get()->toArray(),$hay_imagen);
-        return view('colores', ['hilado' => $hilado,'colores' => $colores]);
+        
+       $mas_visitados = ItemStats::orderBy('visitas','desc')->take(5)->get();
+
+        $mas_vendidos = [];
+        $query = DB::table('pedido_lineas')->select(DB::raw("left(codigo,4) as codigo,sum(cantidad) as ventas"))->groupBy(DB::raw('left(codigo,4)'))->orderBy(DB::raw("count(*) "),'desc')->take(5)->get();
+        foreach ($query as $pl) {
+            $mas_vendidos[] = Item::where("codigo","=",$pl->codigo)->first();
+        }
+ 
+        return view('colores', ['hilado' => $hilado,'colores' => $colores,"temporada"=>$hilado->temporada, "tipo"=>$hilado->subtipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
 
     public function imagen($codigo,$tamanio){

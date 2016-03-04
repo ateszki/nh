@@ -29,14 +29,14 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password','razsoc','lista'];
+    protected $fillable = ['name', 'email', 'password','razsoc','lista','remember_token'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['remember_token'];
+    //protected $hidden = ['remember_token'];
 
     public function cliente(){
         return $this->hasOne('App\Cliente');
@@ -46,4 +46,8 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
         return $this->name.", ".$this->razsoc;
     }
 
+    public static function getList()
+    {
+        return static::lists('name', 'id')->toArray();
+    }
 }

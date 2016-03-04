@@ -20,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         User::saving(function ($user) {
-            if ( $user->password != '') {
+            
+            if ( $user->password != '' && $user->remember_token == '') {
                 $user->password = bcrypt($user->password);
             }
             //return $user;

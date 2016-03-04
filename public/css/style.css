@@ -2761,7 +2761,7 @@ input[type="checkbox"] + label::after,
 
 .quantity input[type="text"]{
 
-	width:38px;
+	width:25px;
 
 	text-align: center;
 

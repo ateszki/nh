@@ -17,4 +17,5 @@ Admin::model(App\User::class)->title('Usuarios')->with()->filters(function ()
 	FormItem::password('password', 'Password (dejar vacía para no modificar)');
 	FormItem::text('razsoc', 'Razsoc');
 	FormItem::text('lista', 'Lista');
+	FormItem::CustomRememberToken();
 });

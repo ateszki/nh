@@ -18,4 +18,9 @@ class ItemStats extends Model
     	$this->save();
     }
 
+    public function item(){
+    	return Item::where('codigo','=',$this->codigo)->first();
+    }
+
+
 }

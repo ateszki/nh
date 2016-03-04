@@ -291,6 +291,7 @@
 					list = $this.children('.options_list').removeClass('d_none'),
 					title = $this.children('.select_title').removeClass('d_none'),
 					options = $this.children('select').children('option'),
+					orderBy = $this.children('select').data('orderby'),
 					// for isotope
 					filter = options.data("filter"),
 					len = options.length,
@@ -325,8 +326,10 @@
 						var val = $(this).text();
 						options.parent().val(val);
 						title.text(val);
+						if(orderBy == 1){
+							window.location.href='?orderby='+val;
+						}
 						
-						window.location.href='?orderby='+val;
 					});
 
 			});
