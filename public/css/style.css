@@ -4,7 +4,9 @@
 @import "theme_config.css";
 @import "styleswitcher.css";
 
-
+.nombre_hilado {
+	min-height:43px;
+}
 
 /* 1. Header */
 
@@ -2173,7 +2175,7 @@ table td{
 
 #add_to_cart_popup > .popup{
 
-	width:840px;
+	width:420px;
 
 	background:#fff;
 
@@ -3015,7 +3017,7 @@ input[type="checkbox"] + label::after,
 
 .product_preview{
 
-	width:42.45%;
+	width:90%;
 
 	margin-right:3.53%;
 
@@ -3023,7 +3025,7 @@ input[type="checkbox"] + label::after,
 
 .product_description{
 
-	width:54.02%;
+	width:90%;
 
 }
 

@@ -295,6 +295,7 @@
 						else{
 							input.val(++val);
 						}
+						input.trigger('change');
 					});
 				});
 
@@ -773,7 +774,6 @@
 			event.preventDefault();
 			$.get( $(this).data('url'), { precio:$("#qv_precio").text().replace("$",""), descripcion: $("#qv_nombre").text(), cantidad: $("#qv_cant").val(), codigo: $("#qv_codigo").text()+'-'+$("#qv_color").text() } )
 			  .done(function( data ) {
-			    $("#quick_view").popup( "close" );
 			    actualizarCarritoEnHeader(data);
 			  });
 		});
@@ -818,6 +818,17 @@
 			  		});
 			  });
 		});
+		$("input.item-qty-carrito").on('change',function(event){
+			var self = $(this);
+			var qty = self.closest('tr').find('input.item-qty').val();
+			var rowid = self.data('rowid');
+			if(qty == 0){
+				return false;
+			}
+			self.closest('tr').find('button.shoping-cart-update').click();
+		});
+
+
 		$(document).on('click',"a.confirmar-pedido-button",function(event){
 			event.preventDefault();
 			

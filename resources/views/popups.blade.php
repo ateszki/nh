@@ -45,7 +45,7 @@
 										<button class="f_left d_block black_hover tr_all bg_white">+</button>
 									</div>
 									<br class="d_md_block d_none">
-									<button  data-url='{{ URL::to("/carrito/add") }}' class="button_type_2 d_block f_sm_none m_sm_bottom_3 t_align_c lbrown state_2 tr_all second_font fs_medium tt_uppercase f_left m_right_3 product_button " id="qv_agregar"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>AGREGAR AL PEDIDO</button>
+									<button  data-url='{{ URL::to("/carrito/add") }}' class="add_to_cart button_type_2 d_block f_sm_none m_sm_bottom_3 t_align_c lbrown state_2 tr_all second_font fs_medium tt_uppercase f_left m_right_3 product_button " id="qv_agregar"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>AGREGAR AL PEDIDO</button>
 									<br class="d_sm_block d_none">
 								</div>
 							</footer>

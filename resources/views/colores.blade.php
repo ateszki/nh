@@ -51,7 +51,7 @@
 										</div>
 										<figcaption class="bg_white relative p_bottom_15">
 											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
+												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c nombre_hilado">
 													<span class="second_font d_xs_block">{{$color["descripcion"]}}</span>													
 												</div>
 												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">

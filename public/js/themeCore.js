@@ -647,6 +647,9 @@
 						$(pP).find('.close_popup').on('click',function(){
 							mainObj.closePopup();
 						});
+						$(pP).find('.add_to_cart').on('click',function(){
+							mainObj.closePopup();
+						});
 					},
 
 					openPopup : function(event){

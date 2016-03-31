@@ -8,7 +8,7 @@
 	<td data-cell-title="Quantity">
 		<div class="quantity clearfix t_align_c">
 			<button class="f_left d_block minus black_hover tr_all">&#45;</button>
-			<input type="text" class="f_left color_light item-qty" readonly name="" value="{{$row->qty}}">
+			<input type="text" class="f_left color_light item-qty item-qty-carrito" data-rowid='{{$row->id}}' readonly name="" value="{{$row->qty}}">
 			<button class="f_left d_block black_hover tr_all">&#43;</button>
 		</div>
 	</td>

@@ -49,13 +49,13 @@
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block">
-												<img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" alt="" class="c_image_1 tr_all">
+												<img src="{{URL::to('prodimag/'.$hilado->imagen.'-D.jpg')}}" alt="" class="c_image_1 tr_all">
 											</div>
-											<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>	
+											<!--oferta <div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>	-->
 										</div>
 										<figcaption class="bg_white relative p_bottom_15">
 											<div class="row">
-												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c">
+												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c nombre_hilado">
 													<span class="second_font d_xs_block">{{$hilado->descripcion}}</span>													
 												</div>
 												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
