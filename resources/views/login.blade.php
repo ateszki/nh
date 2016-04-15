@@ -34,7 +34,7 @@
 								{!! csrf_field() !!}
 									<ul>
 										<li class="m_bottom_15">
-											<label for="reg_email" class="clickable d_inline_b m_bottom_5 second_font">Usuario</label><br>
+											<label for="reg_email" class="clickable d_inline_b m_bottom_5 second_font">e-mail</label><br>
 											<input name="email" id="email" class="tr_all w_full fs_medium color_light">
 										</li>
 										<li class="m_bottom_10">

@@ -16,7 +16,7 @@ class ItemColor extends Model
 
     	$precio = \DB::select("select  format(precio,2) as precio from item_precios where lista = ? and codigo = ?",[$lista,substr($this->codigo,0,4)]);
     	//dd($lista);
-    	return (count($precio) ==0)?'-':$precio[0]->precio;
+    	return (count($precio) ==0)?'-':round($precio[0]->precio);
     }
 
     protected $appends = ['precio'];

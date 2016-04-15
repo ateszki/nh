@@ -2175,7 +2175,7 @@ table td{
 
 #add_to_cart_popup > .popup{
 
-	width:420px;
+	width:650px;
 
 	background:#fff;
 
@@ -3017,7 +3017,7 @@ input[type="checkbox"] + label::after,
 
 .product_preview{
 
-	width:90%;
+	width:45%;
 
 	margin-right:3.53%;
 
@@ -3025,7 +3025,7 @@ input[type="checkbox"] + label::after,
 
 .product_description{
 
-	width:90%;
+	width:45%;
 
 }
 
