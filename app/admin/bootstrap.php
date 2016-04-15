@@ -14,7 +14,10 @@ FormItem::register('CustomRememberToken', function (\Eloquent $model)
   		{
   			return '<input type="hidden" name="remember_token">';
   		});
-
+FormItem::register('CustomLista', function (\Eloquent $model)
+      {
+        return '<div class="form-group"><label for="lista">Lista</label><input class="form-control" type="number" name="lista"></div>';
+      });
 
 class EstadoColumn extends BaseColumn
 {

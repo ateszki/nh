@@ -79,13 +79,10 @@ class HiladosController extends Controller
         $itemStats->codigo = trim($hilado->codigo);
         $itemStats->visitado();
         
-        $codigo_imagenes = function($img) use ($codigo){
-            return strpos($img, $codigo)!==false;
-        };
-        $imagenes = array_filter(Storage::files('prodimag'),$codigo_imagenes);
+        $imagenes = glob(storage_path().'/app/prodimag/'.$codigo."-*");
         
-        $hay_imagen = function($color) use($imagenes){
-            return in_array("prodimag/".$color["codigo"]."-C.jpg", $imagenes);
+        $hay_imagen = function($color) {
+            return file_exists(storage_path()."/app/prodimag/".$color["codigo"]."-C.jpg");
         };
         $colores = array_filter(ItemColor::where('codigo','like',$codigo."-%")->get()->toArray(),$hay_imagen);
         

@@ -629,11 +629,11 @@
 
 					initChildWindow : function(){
 						var elem = $(this.childElem);
-
 						elem.css({
 							'marginLeft' : elem.outerWidth() / -2,
 							'marginTop' : elem.outerHeight() / -2
 						});
+
 					},
 
 					addEvent : function(){

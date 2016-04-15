@@ -759,7 +759,7 @@
 			event.preventDefault();
 			var d = $(this).data('color');
 			console.log(d);
-			$("#qv_precio").empty().html('$'+d.precio);
+			$("#qv_precio").empty().html('$'+d.precio+' x paq.');
 			$("#qv_color").empty().html(d.color);
 			$("#qv_codigo").empty().html(d.codigo);
 			$("#qv_nombre").empty().html(d.descripcion);

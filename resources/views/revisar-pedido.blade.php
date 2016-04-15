@@ -21,7 +21,7 @@
 								<th><b>Nombre del Producto</b></th>
 								<th><b>Código</b></th>
 								<th><b>Precio</b></th>
-								<th><b>Cantidad</b></th>
+								<th><b>Paqs.</b></th>
 								<th><b>Importe</b></th>
 								<th></th>
 							</tr>
@@ -41,6 +41,10 @@
 										<td><b>Total del Pedido:</b></td>
 										<td><b class="fs_large shoping-cart-total">${{Cart::total()}}</b></td>
 									</tr>
+									<tr class="scheme_color">
+										<td colspan="2"><b>El total es aproximado y varía con el peso. Los precios no incluyen IVA y están sujetos a cmabios sin previo aviso.</b></td>
+									</tr>
+									
 								</tbody>
 								<tfoot>
 									<tr class="bg_grey_light_2 t_align_c">
