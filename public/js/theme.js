@@ -772,7 +772,7 @@
 
 		$("#qv_agregar").click(function(event){
 			event.preventDefault();
-			$.get( $(this).data('url'), { precio:$("#qv_precio").text().replace("$",""), descripcion: $("#qv_nombre").text(), cantidad: $("#qv_cant").val(), codigo: $("#qv_codigo").text()+'-'+$("#qv_color").text() } )
+			$.get( $(this).data('url'), { precio:$("#qv_precio").text().replace("$","").replace(" x paq.",""), descripcion: $("#qv_nombre").text(), cantidad: $("#qv_cant").val(), codigo: $("#qv_codigo").text()+'-'+$("#qv_color").text() } )
 			  .done(function( data ) {
 			    actualizarCarritoEnHeader(data);
 			  });
