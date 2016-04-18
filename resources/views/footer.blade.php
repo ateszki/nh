@@ -96,7 +96,7 @@
                     
 					<div class="d_table w_full d_xs_block t_xs_align_c">
 						<div class="col-lg-7 col-md-7 col-sm-7 color_light fw_default f_none d_table_cell v_align_m d_xs_block m_xs_bottom_0">
-							 <a href="https://servicios1.afip.gov.ar/clavefiscal/qr/response.aspx?qr=Csn9QZZqsMeV3j8JmXgtmw,," target="_blank"><img src="images/DATAWEB.jpg" width="35" height="47" alt="" class="m_right_5"></a> Nube Hilados - Contamos con la mayor variedad de lana para tejido artesanal e industrial.
+							 <a href="https://servicios1.afip.gov.ar/clavefiscal/qr/mobilePublicInfo.aspx?req=e1ttZXRob2Q9Z2V0UHVibGljSW5mb11bcGVyc29uYT0zMDY0MjAxMDYzNF1bdGlwb2RvbWljaWxpbz0wXVtzZWN1ZW5jaWE9MF1bdXJsPWh0dHA6Ly93d3cubnViZWhpbGFkb3MuY29tL119" target="_blank"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" width="35" height="47" alt="" class="m_right_5"></a> Nube Hilados - Contamos con la mayor variedad de lana para tejido artesanal e industrial.
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 t_align_r t_xs_align_c f_none d_table_cell v_align_t d_xs_block">
 							<ul class="hr_list d_inline_b">

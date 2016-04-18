@@ -3,7 +3,7 @@
 			<div class="popup init">
 				<div class="clearfix m_bottom_15">
 					<span class="f_left d_block m_right_20">
-						<img src="images/prod-01.jpg" width="80px" height="80px" alt="">
+						<img src="" width="80px" height="80px" alt="">
 					</span>
 					<p class="second_font fs_large color_dark">1 x Producto de Ejemplo<br> agregado a tu Pedido</p>
 				</div>
@@ -21,7 +21,7 @@
 				<div class="clearfix">
 					<div class="product_preview f_left f_xs_none wrapper m_xs_bottom_15">
 						<div class="d_block relative r_image_container" id="qv_image">
-							<img id="zoom" src="images/prod-03.jpg" alt="">
+							<img id="zoom" src="" alt="">
 							<!--<div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>-->
 						</div>
 					</div>
