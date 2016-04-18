@@ -42,7 +42,7 @@
 										<td><b class="fs_large shoping-cart-total">${{Cart::total()}}</b></td>
 									</tr>
 									<tr class="scheme_color">
-										<td colspan="2"><b>El total es aproximado y varía con el peso. Los precios no incluyen IVA y están sujetos a cmabios sin previo aviso.</b></td>
+										<td colspan="2"><b>El total es aproximado y varía de acuerdo al peso. Los precios no incluyen IVA y están sujetos a cambios sin previo aviso.</b></td>
 									</tr>
 									
 								</tbody>
