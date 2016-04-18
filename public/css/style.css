@@ -2,7 +2,6 @@
 @import "reset.css";
 @import "font-awesome.min.css";
 @import "theme_config.css";
-@import "styleswitcher.css";
 
 .nombre_hilado {
 	min-height:43px;
