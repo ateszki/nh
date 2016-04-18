@@ -759,7 +759,7 @@
 			event.preventDefault();
 			var d = $(this).data('color');
 			console.log(d);
-			$("#qv_precio").empty().html('$'+d.precio*3+' x Kg.');
+			$("#qv_precio").empty().html('$'+d.precio+' x Kg.');
 			$("#qv_color").empty().html(d.color);
 			$("#qv_codigo").empty().html(d.codigo);
 			$("#qv_nombre").empty().html(d.descripcion);
@@ -772,7 +772,7 @@
 
 		$("#qv_agregar").click(function(event){
 			event.preventDefault();
-			$.get( $(this).data('url'), { precio:$("#qv_precio").text().replace("$","").replace(" x Kg.",""), descripcion: $("#qv_nombre").text(), cantidad: $("#qv_cant").val(), codigo: $("#qv_codigo").text()+'-'+$("#qv_color").text() } )
+			$.get( $(this).data('url'), { precio:$("#qv_precio").text().replace("$","").replace(" x Kg.","")*3, descripcion: $("#qv_nombre").text(), cantidad: $("#qv_cant").val(), codigo: $("#qv_codigo").text()+'-'+$("#qv_color").text() } )
 			  .done(function( data ) {
 			    actualizarCarritoEnHeader(data);
 			  });
