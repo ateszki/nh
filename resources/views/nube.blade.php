@@ -119,7 +119,7 @@
 </head>
 <body @if(Request::is('locales'))onload="initialize()"@endif class="sticky_menu">
 
-	@if(Request::is('home'))
+	@if(Request::is('/') || Request::is('hilados') || Request::is('hilados/*'))
 	<div id="preloader"></div>   
     @endif
 		<!-- layout -->
