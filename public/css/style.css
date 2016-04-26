@@ -3,6 +3,10 @@
 @import "font-awesome.min.css";
 @import "theme_config.css";
 
+.product_description em {
+	display: block;
+	font-size: 0.5em;
+}
 .nombre_hilado {
 	min-height:43px;
 }
