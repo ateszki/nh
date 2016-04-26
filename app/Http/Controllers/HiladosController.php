@@ -55,6 +55,7 @@ class HiladosController extends Controller
         }
 
         $hilados = $hilados_query->paginate('25');
+        $hilados->setPath(url("hilados"));
         //print_r(DB::getQueryLog());
         //die();
 

@@ -59,7 +59,9 @@
 													<span class="second_font d_xs_block">{{$hilado->descripcion}}</span>													
 												</div>
 												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
+													@if(Auth::check())
 													<span class="scheme_color d_block">${{number_format($hilado->precio,0)}} x Kg.</span>
+													@endif
 												</div>
 											</div>
 											<a href="{{URL::to('hilados/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>

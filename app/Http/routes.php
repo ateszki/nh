@@ -26,11 +26,12 @@ Route::get('/home', function () {
     return redirect()->to('/');
 });
 
-Route::group(['middleware' => 'auth'], function () {
     //para acceder a los hilados hay que estar logeado
     Route::get('/hilados', 'HiladosController@index');
     Route::get('/hilados/{codigo}', 'HiladosController@show');
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
+
+Route::group(['middleware' => 'auth'], function () {
     //carrito
     Route::get('carrito/add','CarritoController@add');
     Route::get('carrito/remove/{id}','CarritoController@remove');
