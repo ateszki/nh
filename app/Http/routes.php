@@ -17,6 +17,9 @@ Route::get('auth/login', function(){
 });
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/login-as-guest', 'InvitadoController@loginAsGuest');
+Route::get('auth/logout-as-guest','InvitadoController@logoutAsGuest');
+    
 
 
 Route::get('/', function () {
@@ -26,14 +29,17 @@ Route::get('/home', function () {
     return redirect()->to('/');
 });
 
-    //para acceder a los hilados hay que estar logeado
+Route::group(['middleware' => 'invitado'], function () {    
+//para acceder a los hilados hay que estar logeado o invitado
     Route::get('/hilados', 'HiladosController@index');
     Route::get('/hilados/{codigo}', 'HiladosController@show');
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
+});
 
 Route::group(['middleware' => 'auth'], function () {
     //carrito
     Route::get('carrito/add','CarritoController@add');
+    Route::get('carrito/add/all/{codigo}','CarritoController@addAll');
     Route::get('carrito/remove/{id}','CarritoController@remove');
     Route::get('carrito/update/{rowId}/{cant}','CarritoController@update');
     Route::get('carrito/header-cart','CarritoController@HeaderCart');

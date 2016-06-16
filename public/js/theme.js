@@ -758,7 +758,15 @@
 		$('[data-popup="#quick_view"]').click(function(event){
 			event.preventDefault();
 			var d = $(this).data('color');
-			console.log(d);
+					    
+			if($(window).width() < 768){
+				$.get( $(this).data('url'), { precio:d.precio*3, descripcion: d.descripcion, cantidad: 1, codigo: d.codigo+'-'+d.codigo } )
+					  .done(function( data ) {
+					  	actualizarCarritoEnHeader(data);
+					  });
+				  return true;
+			}
+			
 			$("#qv_precio").empty().html('$'+d.precio+' x Kg.');
 			$("#qv_color").empty().html(d.color);
 			$("#qv_codigo").empty().html(d.codigo);
@@ -766,6 +774,19 @@
 			$("#qv_image > img#zoom").attr('src',d.img);
 			$("#qv_image > img#zoom").attr('alt',d.descripcion);
 			return true;
+		});
+
+		//zoom
+
+		$("img.imagezoom").elevateZoom();
+
+		//agregar un paq de cada uno
+		$("a[data-cargar-todos]").click(function(event){
+			event.preventDefault();
+			$.get( $(this).data('cargar-todos') )
+			  .done(function( data ) {
+			    actualizarCarritoEnHeader(data);
+			  });
 		});
 
 		// functiones de carrito

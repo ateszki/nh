@@ -32,32 +32,46 @@
 										
 									</div>
 									@else
-									<!-- user login -->
-									<div class="f_right relative transform3d">
-										<button class="tr_all second_font color_dark type_2 m_sm_top_10 m_xs_top_0" data-open-dropdown="#login"><i class="fa fa-user d_inline_m m_right_5"></i> <span class="fs_small">Ingreso Clientes</span></button>
-										<div id="login" data-show="fadeInUp" data-hide="fadeOutDown" class="dropdown bg_white login_dropdown animated">
-											<form class="m_bottom_15" method="POST" action="{{URL::to('auth/login')}}">
-											{!! csrf_field() !!}
-												<ul>
-													<li class="m_bottom_15">
-														<label for="email" class="second_font m_bottom_4 d_inline_b fs_medium">Usuario</label>
-														<input type="text" name="email" id="email" class="w_full tr_all">
-													</li>
-													<li class="m_bottom_20">
-														<label for="password" class="second_font m_bottom_4 d_inline_b fs_medium">Contraseña</label>
-														<input type="password" name="password" id="password" class="w_full tr_all">
-													</li>
-													<li>
-														<button type="submit" class="t_align_c tt_uppercase w_full second_font d_block fs_medium button_type_2 lbrown tr_all">INGRESAR</button>
-													</li>
-												</ul>
-											</form>
-											<div class="m_bottom_14 t_align_c">
-												<a href="{{URL::to('contacto')}}" class="second_font sc_hover fs_small">Solicitar su Usuario y Contraseña</a><br>
-											</div>
-											<hr class="divider_white m_bottom_25">
+										@if(Session::get('invitado',false))
+										<!-- user logged in as guest-->
+										<div class="f_right relative transform3d">
+	                                    <nav class="d_xs_inline_b m_top_7 m_left_20">
+	                                      <ul class="hr_list second_font si_list fs_small">
+	                                          <li><i class="fa fa-user d_inline_m m_right_5"></i> <span>Bienvenido: Invitado</span></li> 
+	                                          <li><a class="sc_hover tr_delay" href="{{URL::to('auth/logout-as-guest')}}"><i class="fa fa-lock d_inline_m m_right_5"></i>Cerrar Sesión Invitado</a></li>
+	                                      </ul>
+	                                    </nav>
+	                                    
+											
 										</div>
-									</div>
+										@else
+										<!-- user login -->
+										<div class="f_right relative transform3d">
+											<button class="tr_all second_font color_dark type_2 m_sm_top_10 m_xs_top_0" data-open-dropdown="#login"><i class="fa fa-user d_inline_m m_right_5"></i> <span class="fs_small">Ingreso Clientes</span></button>
+											<div id="login" data-show="fadeInUp" data-hide="fadeOutDown" class="dropdown bg_white login_dropdown animated">
+												<form class="m_bottom_15" method="POST" action="{{URL::to('auth/login')}}">
+												{!! csrf_field() !!}
+													<ul>
+														<li class="m_bottom_15">
+															<label for="email" class="second_font m_bottom_4 d_inline_b fs_medium">Usuario</label>
+															<input type="text" name="email" id="email" class="w_full tr_all">
+														</li>
+														<li class="m_bottom_20">
+															<label for="password" class="second_font m_bottom_4 d_inline_b fs_medium">Contraseña</label>
+															<input type="password" name="password" id="password" class="w_full tr_all">
+														</li>
+														<li>
+															<button type="submit" class="t_align_c tt_uppercase w_full second_font d_block fs_medium button_type_2 lbrown tr_all">INGRESAR</button>
+														</li>
+													</ul>
+												</form>
+												<div class="m_bottom_14 t_align_c">
+													<a href="{{URL::to('contacto')}}" class="second_font sc_hover fs_small">Solicitar su Usuario y Contraseña</a><br>
+												</div>
+												<hr class="divider_white m_bottom_25">
+											</div>
+										</div>
+										@endif
 									@endif
 								</div>
 							</div>
