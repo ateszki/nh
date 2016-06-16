@@ -20,5 +20,7 @@ Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\Sleep
  		Admin::menu(App\User::class)->icon('fa-user');
 		Admin::menu(App\Pedido::class)->icon('fa-shopping-cart');
 		Admin::menu(App\Ficha::class)->icon('fa-file-pdf-o');
+		Admin::menu(App\ColorOrden::class)->icon('fa-sort-numeric-asc');
+		Admin::menu(App\Accesorio::class)->icon('fa-cut');
 		
  		

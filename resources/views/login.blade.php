@@ -25,11 +25,13 @@
 									<li><i class="fa fa-check scheme_color"></i>Compra mínima cinco (5) paquetes </li>
 									<li><i class="fa fa-check scheme_color"></i>Enviar CUIT para Facturación </li>
                                     <li><i class="fa fa-check scheme_color"></i>Constancia de Ingresos Brutos </li>                                  
-								</ul>								
+								</ul>
+								
+														
 							</div>
                             
 							<div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_right_40">								
-                                <div class="m_bottom_20">Ya tiene sus credenciales de Cliente?<br/> Ingrese su Usuario y Contraseña</div>	
+                                <div class="m_bottom_20">Ya tiene sus credenciales de Cliente Mayorista?<br/> Ingrese su Usuario y Contraseña</div>	
 								<form method="POST" action="{{URL::to('auth/login')}}">
 								{!! csrf_field() !!}
 									<ul>
@@ -54,9 +56,15 @@
 						
                         
                              <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 second_font f_right">
+								<mark class="fs_large bg_transparent scheme_color d_block m_bottom_20">Acceso INVITADO</mark>	
+								<ul class="vr_list_type_2 m_bottom_15">
+									<li><i class="fa fa-check scheme_color"></i>Podrá ver el catálogo de productos </li>
+									<li><i class="fa fa-check scheme_color"></i>No podrá ver precios </li>
+                                    <li><i class="fa fa-check scheme_color"></i>No podrá cargar pedidos </li>                                  
+								</ul>	
+								<button type="button" onclick="window.location.href='{{ URL::to('auth/login-as-guest') }}';" class="button_type_2 tt_uppercase fs_medium f_left t_align_c black state_2 m_bottom_30 tr_all"><span class="d_inline_b m_left_10 m_right_10">INGRESAR COMO INVITADO</span></button>
 								<mark class="fs_large bg_transparent scheme_color d_block m_bottom_20">Acceso MINORISTA</mark>
-								<p class="m_bottom_15">Próximamente</p>
-														
+								<p class="m_bottom_15">Próximamente</p>						
 							</div>
                             
                        </div> 

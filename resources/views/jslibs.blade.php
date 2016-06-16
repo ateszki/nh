@@ -7,6 +7,7 @@
 		<script src="{{URL::to('plugins/isotope.pkgd.min.js')}}"></script>
         <script src="{{URL::to('plugins/afterresize.min.js')}}"></script>
 		<script src="{{URL::to('js/retina.min.js')}}"></script>
+		<script src="{{URL::to('js/jquery.elevateZoom-3.0.8.min.js')}}"></script>
 
 		<!--theme initializer-->
 		<script src="{{URL::to('js/themeCore.js')}}"></script>

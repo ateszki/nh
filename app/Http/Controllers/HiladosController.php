@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Item;
 use App\ItemColor;
 use App\ItemStats;
+use App\ColorOrden;
 use Storage;
 use DB;
 
@@ -85,7 +86,29 @@ class HiladosController extends Controller
         $hay_imagen = function($color) {
             return file_exists(storage_path()."/app/prodimag/".$color["codigo"]."-C.jpg");
         };
-        $colores = array_filter(ItemColor::where('codigo','like',$codigo."-%")->get()->toArray(),$hay_imagen);
+        $colores_desordenado = array_filter(ItemColor::where('codigo','like',$codigo."-%")->get()->toArray(),$hay_imagen);
+        
+        $oc = ColorOrden::where('codigo','=',$codigo)->first();
+        if($oc != false){
+        $lista = $oc->ordenes;
+        $ayLista = explode("\r\n",$lista);
+        $colores = [];
+
+        foreach($ayLista as $key){
+            foreach ($colores_desordenado as $k => $color) {
+                if(substr($color["codigo"],-4)==$key){
+                    array_push($colores,$color);
+                    unset($colores_desordenado[$k]);
+                    break;
+                }
+            }
+        }
+
+        $colores = array_merge($colores,$colores_desordenado);
+        
+        } else {
+            $colores = $colores_desordenado;
+        }
         
        $mas_visitados = ItemStats::orderBy('visitas','desc')->take(5)->get();
 

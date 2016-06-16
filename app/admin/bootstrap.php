@@ -1,7 +1,6 @@
 <?php
 use SleepingOwl\Admin\Columns\Column\BaseColumn;
 
-
 FormItem::register('CustomArchivoFicha', function (\Eloquent $model)
   		{
   			return '<div class="form-group"><label for="archivo">Archivo</label><input class="form-control"  accept=".pdf" type="file" name="archivo"></div>';
@@ -16,7 +15,30 @@ FormItem::register('CustomRememberToken', function (\Eloquent $model)
   		});
 FormItem::register('CustomLista', function (\Eloquent $model)
       {
-        return '<div class="form-group"><label for="lista">Lista</label><input class="form-control" type="number" name="lista"></div>';
+        $options="";
+        $listas = \DB::select("select distinct lista as lista from item_precios order by lista");
+        foreach($listas as $lista){
+          $options .="<option value='".$lista->lista."'>".$lista->lista."</option>";
+        }
+        return '<div class="form-group"><label for="lista">Lista</label><select class="form-control"  name="lista">'.$options.'</select></div>';
+      });
+FormItem::register('CustomAccesorioCategoria', function (\Eloquent $model)
+      {
+        
+        return '<div class="form-group"><label for="categoria">Categoría</label><select class="form-control"  name="categoria">
+            <option value=""></option>
+            <option value="Agujas">Agujas</option>
+            <option value="Otros">Otros</option>
+        </select></div>';
+      });
+FormItem::register('CustomAccesorioTipo', function (\Eloquent $model)
+      {
+        
+        return '<div class="form-group"><label for="tipo">Tipo</label><select class="form-control"  name="tipo">
+            <option value=""></option>
+            <option value="Crochet">Crochet</option>
+            <option value="Otros">Otros</option>
+        </select></div>';
       });
 
 class EstadoColumn extends BaseColumn

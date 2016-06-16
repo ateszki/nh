@@ -8,6 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Pedido;
 use App\PedidoLinea;
+use App\Item;
+use App\ItemColor;
+use App\ItemStats;
+
 
 class CarritoController extends Controller
 {
@@ -29,7 +33,22 @@ class CarritoController extends Controller
 
         return view('header-cart');
     }
-
+    public function addAll($codigo){
+        
+        $imagenes = glob(storage_path().'/app/prodimag/'.$codigo."-*");
+        
+        $hay_imagen = function($color) {
+            return file_exists(storage_path()."/app/prodimag/".$color["codigo"]."-C.jpg");
+        };
+        $colores = array_filter(ItemColor::where('codigo','like',$codigo."-%")->get()->toArray(),$hay_imagen);
+        
+        foreach($colores as $color){
+            \Cart::add($color["codigo"], $color["descripcion"], 1, $color["precio"]*3);
+        }
+        
+        
+        return view('header-cart');
+    }
     public function remove($id){
         \Cart::remove($id);
         return response()->json(['total'=>\Cart::total(),'count'=>\Cart::count()]);

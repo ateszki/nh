@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
             //return $user;
         });
 
-        Ficha::saving(function($ficha){
+        Ficha::saved(function($ficha){
             if (Request::hasFile('archivo')) {
                 $arch = Request::file('archivo');
                 Storage::put('fichas/'.$ficha->id.'.pdf',File::get($arch));
