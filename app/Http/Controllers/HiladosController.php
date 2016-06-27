@@ -10,6 +10,7 @@ use App\Item;
 use App\ItemColor;
 use App\ItemStats;
 use App\ColorOrden;
+use App\Accesorio;
 use Storage;
 use DB;
 
@@ -140,5 +141,28 @@ class HiladosController extends Controller
         }
     }
 
+    public function accesorios(Request $request)
+    {
+        //DB::enableQueryLog();
+        $qs = \Input::all();
+
+        $cat = (isset($qs["cat"]) && $qs["cat"] != '')?$qs["cat"]:config('app.accesorioscat');
+        $tipo = (isset($qs["tipo"]) && $qs["tipo"] != '')?$qs["tipo"]:'';
+        
+        $accesorios = Accesorio::where('categoria','like','%'.$cat.'%')->where('tipo','like','%'.$tipo.'%')->paginate('25');
+
+        //print_r(DB::getQueryLog());
+        //die();
+
+        $mas_visitados = ItemStats::orderBy('visitas','desc')->take(5)->get();
+
+        $mas_vendidos = [];
+        $query = DB::table('pedido_lineas')->select(DB::raw("left(codigo,4) as codigo,sum(cantidad) as ventas"))->groupBy(DB::raw('left(codigo,4)'))->orderBy(DB::raw("count(*) "),'desc')->take(5)->get();
+        foreach ($query as $pl) {
+            $mas_vendidos[] = Item::where("codigo","=",$pl->codigo)->first();
+        }
+        
+        return view('accesorios', ['accesorios' => $accesorios,'cat'=>$cat,'tipo'=>$tipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+    }
     
 }

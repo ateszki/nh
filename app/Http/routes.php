@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Request;
+//use Validator;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -34,6 +35,7 @@ Route::group(['middleware' => 'invitado'], function () {
     Route::get('/hilados', 'HiladosController@index');
     Route::get('/hilados/{codigo}', 'HiladosController@show');
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
+    Route::get('/accesorios', 'HiladosController@accesorios');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -62,9 +64,35 @@ Route::get('/locales', function () {
 Route::get('/representantes', function () {
     return view('representantes');
 });
-Route::get('/contacto', function () {
+Route::match(['get', 'post'],'/contacto', function () {
+    if(Request::isMethod('post')){
+        $validator = Validator::make(Request::all(), [
+        'nombre' => 'required|string',
+        'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('contacto')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        $envio = Mail::send('email-contacto', ['request' => Request::all()], function ($m) {
+            $m->from(Request::get('email'), Request::get('nombre'));
+
+            $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Contacto web nube');
+        });
+
+        if($envio){
+            Request::session()->flash('alert-success', 'Su mensaje fue enviado. ¡Muchas gracias!');
+        } else {
+            Request::session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
+        }
+
+    }
+    
     return view('contacto');
 });
+
 Route::get('/como-comprar', function () {
     return view('como-comprar');
 });

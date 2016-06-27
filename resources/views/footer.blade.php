@@ -61,11 +61,14 @@
 								<div class="col-lg-6 col-md-6 col-sm-6 m_bottom_13 m_sm_bottom_30">
 									<h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">INFORMACIÓN ÚTIL</h5>
 									<hr class="divider_bg m_bottom_25">
-									<ul class="second_font vr_list_type_1 with_links">                                    
+									<ul class="second_font vr_list_type_1 with_links">    
+									<li class="m_bottom_14"><a href="{{URL::to('preguntas-frecuentes')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Preguntas Frecuentes</a></li>
+									<!--                                
                                     	<li class="m_bottom_14"><a href="{{URL::to('como-comprar')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Cómo Comprar?</a></li>
-                                        <li class="m_bottom_14"><a href="{{URL::to('preguntas-frecuentes')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Preguntas Frecuentes</a></li>
+                                        
 										<li class="m_bottom_14"><a href="{{URL::to('politica-de-privacidad')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Política de Privacidad</a></li>
-										<li class="m_bottom_14"><a href="{{URL::to('terminos-y-condiciones')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Términos y Condiciones</a></li>										
+										<li class="m_bottom_14"><a href="{{URL::to('terminos-y-condiciones')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Términos y Condiciones</a></li>	
+										-->									
 									</ul>
 								</div>
 							</div>

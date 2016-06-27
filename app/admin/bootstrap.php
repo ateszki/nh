@@ -37,6 +37,7 @@ FormItem::register('CustomAccesorioTipo', function (\Eloquent $model)
         return '<div class="form-group"><label for="tipo">Tipo</label><select class="form-control"  name="tipo">
             <option value=""></option>
             <option value="Crochet">Crochet</option>
+            <option value="Tricot">Tricot</option>
             <option value="Otros">Otros</option>
         </select></div>';
       });
