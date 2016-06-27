@@ -46,28 +46,45 @@
 								<section class="col-lg-12 col-md-12 col-sm-12">
 									<h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">Envíenos su Consulta</h5>
 									<hr class="divider_bg m_bottom_25">
-									<form id="contactform" class="b_default_layout">
+									@if (count($errors) > 0)
+									    <div class="alert_box error relative m_bottom_10 fw_light">
+									        <ul>
+									            @foreach ($errors->all() as $error)
+									                <li>{{ $error }}</li>
+									            @endforeach
+									        </ul>
+									    </div>
+									@endif
+								    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+								      @if(Session::has('alert-' . $msg))
+								      <div class="alert_box r_corners color_green {{ $msg }}">
+								      <p>{{ Session::get('alert-' . $msg) }} </p>
+								      </div>
+								      @endif
+								    @endforeach
+								  	<form id="contactform" method="post" class="b_default_layout">
+									{{ csrf_field() }}
 										<ul>
 											<li class="row">
 												<div class="col-lg-6 col-md-6 col-sm-6 m_bottom_15">
 													<label class="second_font required d_inline_b m_bottom_5 clickable" for="cf_name">Su Nombre </label><br>
-													<input type="text" name="cf_name" id="cf_name" class="tr_all w_full fw_light">
+													<input type="text" name="nombre" id="cf_name" class="tr_all w_full fw_light">
 												</div>
 												<div class="col-lg-6 col-md-6 col-sm-6 m_bottom_15">
 													<label class="second_font required d_inline_b m_bottom_5 clickable" for="cf_email">Su E-Mail </label><br>
-													<input type="email" name="cf_email" id="cf_email" class="tr_all w_full fw_light">
+													<input type="email" name="email" id="cf_email" class="tr_all w_full fw_light">
 												</div>
 											</li>
 											<li class="m_bottom_15">
 												<label class="second_font d_inline_b m_bottom_5 clickable" for="cf_telephone">Tel. de Contacto</label><br>
-												<input type="text" name="cf_telephone" id="cf_telephone" class="tr_all w_full fw_light">
+												<input type="text" name="telefono" id="cf_telephone" class="tr_all w_full fw_light">
 											</li>
 											<li class="m_bottom_5">
 												<label class="second_font d_inline_b m_bottom_5 clickable" for="cf_message">Consulta</label><br>
-												<textarea id="cf_message" name="cf_message" rows="6" class="tr_all w_full fw_light"></textarea>
+												<textarea id="cf_message" name="mensaje" rows="6" class="tr_all w_full fw_light"></textarea>
 											</li>
 											<li>
-												<button class="button_type_2 black state_2 tr_all second_font fs_medium tt_uppercase d_inline_b"><span class="m_left_10 m_right_10 d_inline_b">Enviar Consulta</span></button>
+												<button type="submit" class="button_type_2 black state_2 tr_all second_font fs_medium tt_uppercase d_inline_b"><span class="m_left_10 m_right_10 d_inline_b">Enviar Consulta</span></button>
 											</li>
 										</ul>
 									</form>

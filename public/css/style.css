@@ -2176,6 +2176,8 @@ table td{
 
 #quick_view > .popup,
 
+#quick_view_acc > .popup,
+
 #add_to_cart_popup > .popup{
 
 	width:650px;
@@ -2195,6 +2197,8 @@ table td{
 }
 
 #quick_view .close_popup,
+
+#quick_view_acc > .close_popup,
 
 #add_to_cart_popup .close_popup{
 
@@ -4116,7 +4120,12 @@ input[type="radio"] + label::after{
 
 	}
 
-	#quick_view > .popup{
+	#quick_view > .popup, #quick_view_acc > .popup{
+
+		width:750px;
+
+	}
+{
 
 		width:750px;
 
@@ -4132,7 +4141,7 @@ input[type="radio"] + label::after{
 
 	}
 
-	#quick_view{
+	#quick_view, #quick_view_acc{
 
 		display: none !important;
 

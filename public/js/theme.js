@@ -152,7 +152,7 @@
 			},
 
 			contactForm : function(){
-
+				return true;
 				var cf = $('#contactform');
 				cf.append('<div class="message_container d_none m_top_20"></div>');
 				var message = cf.children('.message_container');
@@ -775,6 +775,26 @@
 			$("#qv_image > img#zoom").attr('alt',d.descripcion);
 			return true;
 		});
+		$('[data-popup="#quick_view_acc"]').click(function(event){
+			event.preventDefault();
+			var d = $(this).data('color');
+					    
+			if($(window).width() < 768){
+				$.get( $(this).data('url'), { precio:d.precio, descripcion: d.descripcion, cantidad: 1, codigo: d.codigo+'-'+d.codigo } )
+					  .done(function( data ) {
+					  	actualizarCarritoEnHeader(data);
+					  });
+				  return true;
+			}
+			
+			$("#qv_precio").empty().html('$'+d.precio);
+			$("#qv_color").empty().html(d.color);
+			$("#qv_codigo").empty().html(d.codigo);
+			$("#qv_nombre").empty().html(d.descripcion);
+			$("#qv_image > img#zoom").attr('src',d.img);
+			$("#qv_image > img#zoom").attr('alt',d.descripcion);
+			return true;
+		});
 
 		//zoom
 
@@ -880,7 +900,11 @@
 				tipo = '';
 			}
 			var url = $(this).data("url");
-			window.location.href=url+"?temporada="+temp+"&tipo="+tipo
+			var cat = $(".categoria_valor").text();
+			if(cat.substr(0,4)=="Sele"){
+				cat = '';
+			}
+			window.location.href=url+"?temporada="+temp+"&tipo="+tipo+'&cat='+cat;
 			
 		});
 		

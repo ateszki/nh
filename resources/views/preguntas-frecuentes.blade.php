@@ -18,23 +18,13 @@
                      
                     	 <section class="col-lg-12 col-md-12 col-sm-12 m_bottom_30 m_xs_bottom_30">
 							<dl class="accordion toggle">
-								<dt class="primary_font color_dark clickable tr_all m_bottom_3 relative">Pregunta 1</dt>
-								<dd class="fw_light">Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </dd>
+								<dt class="primary_font color_dark clickable tr_all m_bottom_3 relative">¿Puedo hacer una compra minorista?</dt>
+								<dd class="fw_light">De momento no. Próximamente estará disponible una tienda minorista online. </dd>
 								
-                                <dt class="primary_font clickable tr_all m_bottom_3 relative border_light_3 color_light">Pregunta 2</dt>
-								<dd style="display: none;" class="fw_light">Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna.</dd>
+                                <dt class="primary_font clickable tr_all m_bottom_3 relative border_light_3 color_light">¿Que necesito para hacer un pedido mayorista?</dt>
+								<dd style="display: none;" class="fw_light">Primero solicitar una cuenta de acceso al sistema de pedidos online mediante el <a href="{{URL::to('contacto')}}">formulario de contacto.</a> Luego al ingresar a ver <a href="{{URL::to('hilados')}}">hilados</a>, <a href="{{URL::to('accesorios')}}">accesorios</a> o <a href="{{URL::to('trajes-de-banio')}}">trajes de baño</a> ingresar con el usuairo y contraseña rev¡cibidos y realizar el pedido.</dd>
 								
-                                <dt class="primary_font clickable tr_all m_bottom_3 relative border_light_3 color_light">Pregunta 3</dt>
-								<dd style="display: none;" class="fw_light">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</dd>
-							    
-                                <dt class="primary_font clickable tr_all m_bottom_3 relative border_light_3 color_light">Pregunta 4</dt>
-								<dd style="display: none;" class="fw_light">Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna.</dd>
                                 
-                                <dt class="primary_font clickable tr_all m_bottom_3 relative border_light_3 color_light">Pregunta 5</dt>
-								<dd style="display: none;" class="fw_light">Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna.</dd>
-                                
-                                <dt class="primary_font clickable tr_all m_bottom_3 relative border_light_3 color_light">Pregunta 6</dt>
-								<dd style="display: none;" class="fw_light">Sed in lacus ut enim adipiscing aliquet. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna.</dd>
                             </dl>
 						</section>
                         

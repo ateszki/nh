@@ -106,14 +106,14 @@
 								<ul class="hr_list si_list list_with_focused_form shop_list f_right f_sm_none d_sm_inline_b t_sm_align_l t_xs_align_c">
                                 
                                    <!-- searchform -->
-                                   <li id="header-searchform" class="m_xs_bottom_5">										
+                                   <!--<li id="header-searchform" class="m_xs_bottom_5">										
 										<div class="search_form_container d_inline_b relative">
 											<form role="search" class="relative f_right f_xs_none db_xs_centered button_in_input clearfix">
 												<input type="text" name="" tabindex="1" placeholder="Buscar Producto" class="fs_medium color_light fw_light w_full tr_all f_right hidden">
 												<button class="color_dark color_lbrown_hover tr_all"><i class="fa fa-search d_inline_m"></i></button>
 											</form>
 										</div>
-									</li>
+									</li>-->
                                     @include('header-cart')
 								</ul>                                
 							</div>
