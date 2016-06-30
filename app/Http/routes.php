@@ -36,6 +36,10 @@ Route::group(['middleware' => 'invitado'], function () {
     Route::get('/hilados/{codigo}', 'HiladosController@show');
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
     Route::get('/accesorios', 'HiladosController@accesorios');
+    Route::get('/trajes-de-banio',function(){
+        return view('trajes-de-banio');
+    });
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -64,6 +68,27 @@ Route::get('/locales', function () {
 Route::get('/representantes', function () {
     return view('representantes');
 });
+
+Route::post('/lista-email',function(){
+    $validator = Validator::make(Request::all(), [
+        'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        $e = App\Listaemail::create(['email'=>Request::get('email')]);
+        if($e===false){
+            Request::session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
+        } else {
+            Request::session()->flash('alert-success', 'Su dirección de correo electrónico fue agregada. ¡Muchas gracias!');
+        }
+        return back();
+});
+
+
 Route::match(['get', 'post'],'/contacto', function () {
     if(Request::isMethod('post')){
         $validator = Validator::make(Request::all(), [
