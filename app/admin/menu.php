@@ -15,8 +15,12 @@
  * 		});
  */
 
-Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DummyController@getIndex');
+//Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DummyController@getIndex');
  		//Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\AdminController@getIndex');
+AdminRouter::get('/', function ()
+{
+    return redirect('admin/pedidos');
+});
  		Admin::menu(App\User::class)->icon('fa-user');
 		Admin::menu(App\Pedido::class)->icon('fa-shopping-cart');
 		Admin::menu(App\Ficha::class)->icon('fa-file-pdf-o');
