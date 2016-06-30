@@ -18,7 +18,7 @@ class FichaController extends Controller
      */
     public function index()
     {
-        $fichas = Ficha::paginate(12);
+        $fichas = Ficha::orderBy('numero','desc')->paginate(12);
         return view('fichas', ['fichas' => $fichas]);
     }
 
