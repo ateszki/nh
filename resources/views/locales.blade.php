@@ -77,6 +77,7 @@
 	<div class="marker" id="40" link="" otros="si" nombre="WILDE - ESTILO PROPIO" direccion="Crisologo Larralde 6118" lat="-34.711563" lng="-58.328184"></div>
 	<div class="marker" id="41" link="" otros="si" nombre="TANDIL - TEJIENDO AMOR" direccion="Belgrano 731" lat="-37.328252" lng="-59.133443"></div>
 	<div class="marker" id="42" link="" otros="si" nombre="TAFI VIEJO - MERCERIA COLORES" direccion="25 de Mayo nro 26" lat="-26.730806" lng="-65.256459"></div>
+	<div class="marker" id="43" link="" otros="si" nombre="BERAZATEGUI - LANTEX" direccion="AV. 14 Nº 4818" lat="-34.761632" lng="-58.209072"></div>
 
 </div>      
    

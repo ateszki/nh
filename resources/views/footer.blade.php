@@ -18,10 +18,27 @@
 							<section>
 								<h5 class="color_white tt_uppercase second_font m_bottom_13">Lista de E-Mail</h5>
 								<hr class="divider_bg m_bottom_25">
+								@if (count($errors) > 0)
+									    <div class="alert_box error relative m_bottom_10 fw_light">
+									        <ul>
+									            @foreach ($errors->all() as $error)
+									                <li>{{ $error }}</li>
+									            @endforeach
+									        </ul>
+									    </div>
+									@endif
+								    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+								      @if(Session::has('alert-' . $msg))
+								      <div class="alert_box r_corners color_green {{ $msg }}">
+								      <p>{{ Session::get('alert-' . $msg) }} </p>
+								      </div>
+								      @endif
+								    @endforeach
 								<p class="second_font m_bottom_15">Reciba todas las novedades Nube en su E-Mail!</p>
-								<form class="newsletter">
-									<input placeholder="Ingrese su E-Mail" name="newsletter-email" class="tr_all fw_light w_full fs_medium m_bottom_10" type="email">
-									<button class="second_font w_full tt_uppercase fs_medium button_type_2 black state_2 d_block tr_all">Suscribirse</button>
+								<form method='post' action="{{URL::to('lista-email')}}">
+								{{ csrf_field() }}
+									<input placeholder="Ingrese su E-Mail" name="email" class="tr_all fw_light w_full fs_medium m_bottom_10" type="email">
+									<button class="second_font w_full tt_uppercase fs_medium button_type_2 black state_2 d_block tr_all" type="submit">Suscribirse</button>
 								<div class="message_container_subscribe d_none m_top_20"></div></form>
 							</section>
                              </div>
