@@ -35,7 +35,11 @@
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block">
+												@if(file_exists(public_path()."/prodimag/".$acc->codigo."-G.jpg"))
 												<img src="{{URL::to('prodimag/'.$acc->codigo.'-G.jpg')}}" alt="" class="c_image_1 tr_all imagezoom" data-zoom-image="{{URL::to('prodimag/'.$acc->codigo.'-G.jpg')}}">
+												@else
+												<img src="{{URL::to('images/nodisp-G.png')}}" alt="" class="c_image_1 tr_all " >
+												@endif
 											</div>											
 										</div>
 										<figcaption class="bg_white relative p_bottom_15">

@@ -22,7 +22,7 @@
 								<dd class="fw_light">De momento no. Próximamente estará disponible una tienda minorista online. </dd>
 								
                                 <dt class="primary_font clickable tr_all m_bottom_3 relative border_light_3 color_light">¿Que necesito para hacer un pedido mayorista?</dt>
-								<dd style="display: none;" class="fw_light">Primero solicitar una cuenta de acceso al sistema de pedidos online mediante el <a href="{{URL::to('contacto')}}">formulario de contacto.</a> Luego al ingresar a ver <a href="{{URL::to('hilados')}}">hilados</a>, <a href="{{URL::to('accesorios')}}">accesorios</a> o <a href="{{URL::to('trajes-de-banio')}}">trajes de baño</a> ingresar con el usuairo y contraseña rev¡cibidos y realizar el pedido.</dd>
+								<dd style="display: none;" class="fw_light">Primero solicitar una cuenta de acceso al sistema de pedidos online mediante el <a href="{{URL::to('contacto')}}">formulario de contacto.</a> Luego al ingresar a ver <a href="{{URL::to('hilados')}}">hilados</a>, <a href="{{URL::to('accesorios')}}">accesorios</a> o <a href="{{URL::to('trajes-de-banio')}}">trajes de baño</a> ingresar con el usuario y contraseña recibidos y realizar el pedido.</dd>
 								
                                 
                             </dl>

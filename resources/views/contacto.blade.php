@@ -33,7 +33,7 @@
 										</div>
 										<div class="caption_inner">
 											<h3 class="color_white fs_medium fw_light m_bottom_2 w_break">Conozca nuestros puntos de Venta en todo el País</h3>
-											<p class="color_light fw_light color_light_2"><a href="locales.php" class="color_lbrown color_white_hover">Ver todos nuestros Locales</a></p>
+											<p class="color_light fw_light color_light_2"><a href="{{URL::to('locales')}}" class="color_lbrown color_white_hover">Ver todos nuestros Locales</a></p>
 										</div>
 								 </figcaption>
 							</figure>
