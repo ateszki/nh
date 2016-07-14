@@ -9,7 +9,7 @@
                             <!-- home slider -->
 							<div class="flexslider">
 								<ul class="slides">
-									<li><a href="novedades.php"><img src="images/slider-01.jpg" alt=""></a></li>
+									<li><a href="{{URL::to('hilados/5012')}}"><img src="images/slider-01.jpg" alt=""></a></li>
 									<li><img src="images/slider-02.jpg" alt=""></li>
 									<li><img src="images/slider-03.jpg" alt=""></li>
 								</ul>
