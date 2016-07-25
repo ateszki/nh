@@ -26,7 +26,9 @@
                                   <div class="row">
                                       <div class="col-lg-8 col-md-8 col-sm-8">
                                           <!--<p class="primary_font tt_uppercase fw_light m_bottom_5 m_top_5 fs_small">Seleccione los colores que desee</p>-->
+                                          @if(Auth::check())
                                           <a href="#" data-cargar-todos='{{URL::to("/carrito/add/all/".$hilado->codigo)}}' class="cursor f_left button_type_1 m_bottom_5 d_block t_align_r lbrown state_2 tr_all second_font fs_small tt_uppercase"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar 1 paq de cada color</a>
+                                          @endif
                                       </div>
                                   </div>
                               </div>
