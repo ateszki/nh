@@ -162,7 +162,10 @@ class HiladosController extends Controller
         $mas_vendidos = [];
         $query = DB::table('pedido_lineas')->select(DB::raw("left(codigo,4) as codigo,sum(cantidad) as ventas"))->groupBy(DB::raw('left(codigo,4)'))->orderBy(DB::raw("count(*) "),'desc')->take(5)->get();
         foreach ($query as $pl) {
-            $mas_vendidos[] = Item::where("codigo","=",$pl->codigo)->first();
+            $it = Item::where("codigo","=",$pl->codigo)->first();
+            if(!empty($it)){
+                $mas_vendidos[] = $it;    
+            }
         }
         
         return view('accesorios', ['accesorios' => $accesorios,'cat'=>$cat,'tipo'=>$tipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
