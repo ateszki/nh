@@ -38,8 +38,8 @@ class ItemsImport extends Command
      */
     public function handle()
     {
-        if(!in_array($this->option('tipo'),['items', 'stock', 'precios', 'todo'])){
-            $this->error("Las opciones de tipo deben ser: items, stock, precios o todo");
+        if(!in_array($this->option('tipo'),['items', 'stock', 'precios', 'mallas', 'todo'])){
+            $this->error("Las opciones de tipo deben ser: items, stock, precios, mallas o todo");
             return false;
         }
         $opt = $this->option('tipo');
@@ -158,6 +158,29 @@ class ItemsImport extends Command
                 $q = "insert into items (codigo,descripcion,crochet,tricot,presentacion,temporada,tipo,subtipo,stockcero) values (?,?,?,?,?,?,?,?,?)";
                 $item[8] = trim($item[8])=='NO'?false:true;
                 \DB::statement($q,$item);
+            }    
+        }
+        $opt = $this->option('tipo');
+        if($opt == 'mallas' || $opt == 'todo'){
+            //mallas
+            \DB::table('mallas')->truncate();
+
+            $maplineas = function ($linea){
+                $p = explode("\t",$linea);
+                if(count($p)<3){
+                    return NULL;
+                }
+                $p[1] = trim($p[1]);
+                return $p;
+            };
+
+            
+            $mallas = \Storage::get('items/mallas.txt');
+            $mallas = explode("\n",$mallas);
+            $mallas1 = array_map($maplineas, $mallas);
+            foreach ($mallas1 as $mallas){
+                $q = "insert into mallas (coditm,coditmcompleto,coditm,codcolor,nombre,color) values (?,?,?,?,?,?)";
+                \DB::statement($q,$mallas);
             }    
         }
     }
