@@ -179,7 +179,7 @@ class ItemsImport extends Command
             $mallas = explode("\n",$mallas);
             $mallas1 = array_map($maplineas, $mallas);
             foreach ($mallas1 as $mallas){
-                $q = "insert into mallas (coditm,coditmcompleto,coditm,codcolor,nombre,color) values (?,?,?,?,?,?)";
+                $q = "insert into mallas (coditm,coditmcompleto,codtalle,codcolor,nombre,color) values (?,?,?,?,?,?)";
                 \DB::statement($q,$mallas);
             }    
         }
