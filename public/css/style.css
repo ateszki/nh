@@ -2178,6 +2178,8 @@ table td{
 
 #quick_view_acc > .popup,
 
+#quick_view_tb > .popup,
+
 #add_to_cart_popup > .popup{
 
 	width:650px;
@@ -2199,6 +2201,8 @@ table td{
 #quick_view .close_popup,
 
 #quick_view_acc > .close_popup,
+
+#quick_view_tb > .close_popup,
 
 #add_to_cart_popup .close_popup{
 
@@ -4120,7 +4124,7 @@ input[type="radio"] + label::after{
 
 	}
 
-	#quick_view > .popup, #quick_view_acc > .popup{
+	#quick_view > .popup, #quick_view_acc > .popup, #quick_view_tb > .popup{
 
 		width:750px;
 

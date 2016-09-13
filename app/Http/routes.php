@@ -36,9 +36,8 @@ Route::group(['middleware' => 'invitado'], function () {
     Route::get('/hilados/{codigo}', 'HiladosController@show');
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
     Route::get('/accesorios', 'HiladosController@accesorios');
-    Route::get('/trajes-de-banio',function(){
-        return view('trajes-de-banio');
-    });
+    //Route::get('/trajes-de-banio','MallasController@index');
+    Route::get('/trajes-de-banio','MallasController@catalogo');
 
 });
 
