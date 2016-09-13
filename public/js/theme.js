@@ -775,6 +775,30 @@
 			$("#qv_image > img#zoom").attr('alt',d.descripcion);
 			return true;
 		});
+		$('[data-popup="#quick_view_tb"]').click(function(event){
+			event.preventDefault();
+			var d = $(this).data('color');
+			$("#qvtb_precio").empty().html('$'+d.precio);
+			$("#qvtb_colores").empty()
+			var colores = '';
+			for(var i=0; i < d.colores.length; i++){
+				colores += '<option value="'+d.colores[i].codcolor+'">'+d.colores[i].color+'</option>';
+			}
+			
+			$("#qvtb_colores").html(colores);
+			$("#qvtb_talles").empty();
+			var talles = '';
+			for(var i=0; i < d.talles.length; i++){
+				talles += '<option value="'+d.talles[i].codtalle+'">'+d.talles[i].talle+'</option>';
+			}
+			
+			$("#qvtb_talles").html(talles);
+			$("#qvtb_codigo").empty().html(d.codigo);
+			$("#qvtb_nombre").empty().html(d.descripcion);
+			$("#qvtb_image > img#zoom").attr('src',d.img);
+			$("#qvtb_image > img#zoom").attr('alt',d.descripcion);
+			return true;
+		});
 		$('[data-popup="#quick_view_acc"]').click(function(event){
 			event.preventDefault();
 			var d = $(this).data('color');
@@ -814,6 +838,13 @@
 		$("#qv_agregar").click(function(event){
 			event.preventDefault();
 			$.get( $(this).data('url'), { precio:$("#qv_precio").text().replace("$","").replace(" x Kg.","")*3, descripcion: $("#qv_nombre").text(), cantidad: $("#qv_cant").val(), codigo: $("#qv_codigo").text()+'-'+$("#qv_color").text() } )
+			  .done(function( data ) {
+			    actualizarCarritoEnHeader(data);
+			  });
+		});
+		$("#qv_agregar_tb").click(function(event){
+			event.preventDefault();
+			$.get( $(this).data('url'), { precio:$("#qvtb_precio").text().replace("$",""), descripcion: $.trim($("#qvtb_nombre").text())+' '+$.trim($('#qvtb_colores').find('option:selected').text())+ ' talle '+ $('#qvtb_talles').val(), cantidad: $("#qv_cant").val(), codigo: $.trim($("#qvtb_codigo").text())+'-'+$.trim($("#qvtb_colores").val())} )
 			  .done(function( data ) {
 			    actualizarCarritoEnHeader(data);
 			  });
