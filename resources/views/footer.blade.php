@@ -16,7 +16,7 @@
                             
                             <!-- subscribe widget -->
 							<section>
-								<h5 class="color_white tt_uppercase second_font m_bottom_13">Lista de E-Mail</h5>
+								<h5 class="color_white tt_uppercase second_font m_bottom_13">Novedades</h5>
 								<hr class="divider_bg m_bottom_25">
 								@if (count($errors) > 0)
 									    <div class="alert_box error relative m_bottom_10 fw_light">
@@ -120,7 +120,7 @@
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 t_align_r t_xs_align_c f_none d_table_cell v_align_t d_xs_block">
 							<ul class="hr_list d_inline_b">
-							 <a href="http://www.ivancandle.com.ar/" target="_blank">IVANCANDLE</a>
+							 <!--<a href="http://www.ivancandle.com.ar/" target="_blank">IVANCANDLE</a>-->
 							</ul>
 						</div>
 					</div>

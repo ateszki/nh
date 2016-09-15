@@ -90,8 +90,8 @@
 					}
 			    	var marker = new google.maps.Marker({position: latLng, map: map, title: $(markerxml).attr('nombre'), icon:markerImage});
 
-			    	var contentString = '<div style="width:150px; height:60px;font-family:arial,verdana;font-size:10px;">' +
-			        '<p style="width:130px; padding-bottom:10px;">'+ $(markerxml).attr('nombre')+'<br>'+
+			    	var contentString = '<div style="width:180px; height:100px;font-family:arial,verdana;font-size:10px;">' +
+			        '<p style="width:160px; padding-bottom:10px;">'+ $(markerxml).attr('nombre')+'<br>'+
 			        ' '+ $(markerxml).attr('direccion')+'</p></div>';
 			        
 			    	contentStrings.push(contentString);
