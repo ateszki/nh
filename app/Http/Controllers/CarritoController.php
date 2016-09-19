@@ -76,6 +76,13 @@ class CarritoController extends Controller
             foreach ($rows as $row){
                 PedidoLinea::create(['pedido_id'=>$pedido->id,'codigo'=>$row->id,'descripcion'=>$row->name,'precio'=>$row->price,'cantidad'=>$row->qty,'subtotal'=>$row->subtotal]);
             }
+
+            Mail::send('email-pedido', ['pedido' => $pedido], function ($m) {
+                $m->from('info@nubehilados.com');
+
+                $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Nuevo pedido desde la web');
+            });
+
             \Cart::destroy();
             return view('confirmar-pedido',['pedido'=>$pedido]);
         } catch(\Exception $e){

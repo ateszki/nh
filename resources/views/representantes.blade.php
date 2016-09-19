@@ -20,7 +20,6 @@
 						</div>
                         
 						<div class="col-lg-6 col-md-6 col-sm-6 m_top_15 m_bottom_20">
-							<p class="fw_light second_font tt_uppercase color_dark m_bottom_13">Imagen de Locales Exclusivos</p>
 							<p class="fw_light">Con diseño moderno y dinámico, nuestros locales permiten identificarnos exitosamente. Los factores de iluminación y ambiente musical han sido cuidadosamente adaptados para crear un clima confortable. El conjunto de elementos utilizados logra destacar el posicionamiento del negocio del tejido como una actividad tradicional y artesanal, destacando su aspecto moderno.</p>
 						</div>
                         

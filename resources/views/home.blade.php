@@ -24,15 +24,15 @@
                                    <div class="d_inline_m m_sm_bottom_15 m_xs_bottom_0 m_right_6 color_lbrown icon_wrap_1 t_align_c vc_child"><i class="fa fa-lock d_inline_m"></i></div>
                                    <div class="description d_inline_m lh_medium">
                                       <p class="color_dark tt_uppercase second_font m_bottom_4 fs_ex_large"><b>Compra Segura</b></p>
-                                      <small class="fw_default">Realice su Pedido de forma segura y rápida</small>
+                                      <small class="fw_default">Realice su pedido de forma segura y rápida</small>
                                   </div>
                               </div>
                               
                                 <div class="item_represent same_height type_2 m_xs_bottom_30 h_inherit t_sm_align_c tr_delay f_left animated hidden" data-animation="fadeInLeft" data-animation-delay="100">
                                     <div class="d_inline_m m_sm_bottom_15 m_xs_bottom_0 m_right_6 color_lbrown icon_wrap_1 t_align_c vc_child"><i class="fa fa-truck d_inline_m"></i></div>
                                     <div class="description d_inline_m lh_medium">
-                                        <p class="color_dark tt_uppercase second_font m_bottom_4 fs_ex_large"><b>Envio de Pedidos</b></p>
-                                        <small class="fw_default">Realizamos envios a cualquier punto del País </small>
+                                        <p class="color_dark tt_uppercase second_font m_bottom_4 fs_ex_large"><b>Envío de Pedidos</b></p>
+                                        <small class="fw_default">Realizamos envíos a cualquier punto del País </small>
                                     </div>
                                 </div>
                                 
