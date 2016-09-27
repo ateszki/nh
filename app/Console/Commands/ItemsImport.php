@@ -42,6 +42,9 @@ class ItemsImport extends Command
             $this->error("Las opciones de tipo deben ser: items, stock, precios, mallas o todo");
             return false;
         }
+        //finalizo el proceso para que no corra hasta arreglar db
+        
+        return true;
         $opt = $this->option('tipo');
         if($opt == 'precios' || $opt == 'todo'){
             //items precios
