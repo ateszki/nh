@@ -3,6 +3,7 @@
 Homestead.yaml
 Homestead.json
 .env
+/public/manual
 /public/manual/*
 /public/manual/conf
 /public/manual/data

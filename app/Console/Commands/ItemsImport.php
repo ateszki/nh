@@ -43,8 +43,7 @@ class ItemsImport extends Command
             return false;
         }
         //finalizo el proceso para que no corra hasta arreglar db
-        
-        return true;
+        //return true;
         $opt = $this->option('tipo');
         if($opt == 'precios' || $opt == 'todo'){
             //items precios
@@ -96,10 +95,11 @@ class ItemsImport extends Command
             $stock1 = array_map($maplineasstock, $stock);
             $stock2 = array_filter($stock1,$filtrolineasstock);
 
-            foreach ($stock2 as $stk){
+            die(storage_path().'items/items_stock.txt');
+            /*foreach ($stock2 as $stk){
                 $q = "insert into item_stocks (codigo,stock) values (?,?)";
                 \DB::statement($q,$stk);
-            }    
+            } */   
         }
         if($opt == 'items' || $opt == 'todo'){
             \DB::table('item_colors')->truncate();
