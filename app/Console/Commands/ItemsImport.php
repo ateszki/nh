@@ -168,7 +168,16 @@ class ItemsImport extends Command
                 if(strpos($p[1],'D. ')){
                     $p[1] = substr($p[1],0,strpos($p[1],'D. '));
                 }
-                $p[6]=(substr($p[6],0,3)=='OTO')?"OTOÑO / INVIERNO":$p[6];
+                switch(substr($p[6],0,3)){
+                    case 'OTO':
+                        $p[6]='OI';
+                        break;
+                    case 'PRI':
+                        $p[6]='PV';
+                        break;
+                    default:
+                        $p[6]='--';
+                }
                 unset($p[4]);
 
 
@@ -191,7 +200,7 @@ class ItemsImport extends Command
             foreach ($items2 as $item){
                 $item[8] = trim($item[8])=='NO'?false:true;
                 $item = array_map("utf8_encode",$item);
-		fputcsv($fp, $item);
+		          fputcsv($fp, $item);
                 //$q = "insert into items (codigo,descripcion,crochet,tricot,presentacion,temporada,tipo,subtipo,stockcero) values (?,?,?,?,?,?,?,?,?)";
                 //\DB::statement($q,$item);
             }    
