@@ -187,6 +187,7 @@ class ItemsImport extends Command
             //dd($items2);
             
             $fp = fopen(storage_path('app').'/items/items_atrib.csv', 'w');
+            fprintf($fp, chr(0xEF).chr(0xBB).chr(0xBF));
             foreach ($items2 as $item){
                 fputcsv($fp, $item);
                 $item[8] = trim($item[8])=='NO'?false:true;
