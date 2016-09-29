@@ -28,7 +28,17 @@ class HiladosController extends Controller
         //DB::enableQueryLog();
         $qs = \Input::all();
 
-        $temp = (isset($qs["temporada"]) && $qs["temporada"] != '')?$qs["temporada"]:config('app.temporada');
+        $temporada = (isset($qs["temporada"]) && $qs["temporada"] != '')?$qs["temporada"]:config('app.temporada');
+        switch(substr($temporada,0,3)){
+                    case 'OTO':
+                        $temp='OI';
+                        break;
+                    case 'PRI':
+                        $temp='PV';
+                        break;
+                    default:
+                        $temp='OI';
+                }
         $tipo = (isset($qs["tipo"]) && $qs["tipo"] != '')?$qs["tipo"]:'';
         
         $hilados_query = DB::table('items')
@@ -72,7 +82,7 @@ class HiladosController extends Controller
             }
         }
         
-        return view('hilados', ['hilados' => $hilados,'orderby'=>$orderBy,'temporada'=>$temp,'tipo'=>$tipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+        return view('hilados', ['hilados' => $hilados,'orderby'=>$orderBy,'temporada'=>$temporada,'tipo'=>$tipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
 
     
@@ -125,8 +135,18 @@ class HiladosController extends Controller
             }   
             
         }
- 
-        return view('colores', ['hilado' => $hilado,'colores' => $colores,"temporada"=>$hilado->temporada, "tipo"=>$hilado->subtipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+        switch($hilado->temporada){
+                    case 'OI':
+                        $temporada='OTOÑO / INVIERNO';
+                        break;
+                    case 'PRI':
+                        $temporada='PRIMAVERA / VERANO';
+                        break;
+                    default:
+                        $temporada='OTOÑO / INVIERNO';
+                }
+
+        return view('colores', ['hilado' => $hilado,'colores' => $colores,"temporada"=>$temporada, "tipo"=>$hilado->subtipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
 
     public function imagen($codigo,$tamanio){
