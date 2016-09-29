@@ -184,18 +184,21 @@ class ItemsImport extends Command
             $items = explode("\n",$items);
             $items1 = array_map($maplineasitem, $items);
             $items2 = array_filter($items1,$filtrolineasitem);
+
             //dd($items2);
             
             $fp = fopen(storage_path('app').'/items/items_atrib.csv', 'w');
             foreach ($items2 as $item){
-                fputcsv($fp, $item);
                 $item[8] = trim($item[8])=='NO'?false:true;
+                $item = array_map("utf8_encode",$item);
+		fputcsv($fp, $item);
                 //$q = "insert into items (codigo,descripcion,crochet,tricot,presentacion,temporada,tipo,subtipo,stockcero) values (?,?,?,?,?,?,?,?,?)";
                 //\DB::statement($q,$item);
             }    
 	    fclose($fp);
-	    $q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/items_atrib.csv'."' INTO TABLE items
-        CHARACTER SET 'latin1' 
+	    
+		$q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/items_atrib.csv'."' INTO TABLE items
+		CHARACTER SET UTF8
 		FIELDS TERMINATED BY ',' 
 		ENCLOSED BY '\"' 
 		LINES TERMINATED BY '\\n'
