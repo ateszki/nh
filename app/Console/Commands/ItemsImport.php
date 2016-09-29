@@ -45,6 +45,7 @@ class ItemsImport extends Command
         //finalizo el proceso para que no corra hasta arreglar db
         //return true;
         $opt = $this->option('tipo');
+	$pdo = \DB::connection()->getPdo();
         if($opt == 'precios' || $opt == 'todo'){
             //items precios
             \DB::table('item_precios')->truncate();
@@ -70,10 +71,19 @@ class ItemsImport extends Command
             $precios = explode("\n",$precios);
             $precios1 = array_map($maplineas, $precios);
             $precios2 = array_filter($precios1,$filtrolineas);
+            $fp = fopen(storage_path('app').'/items/items_prec.csv', 'w');
             foreach ($precios2 as $precio){
-                $q = "insert into item_precios (lista,codigo,precio) values (?,?,?)";
-                \DB::statement($q,$precio);
+                fputcsv($fp, $precio);
+                //$q = "insert into item_precios (lista,codigo,precio) values (?,?,?)";
+                //\DB::statement($q,$precio);
             }    
+	    fclose($fp);
+	    $q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/items_prec.csv'."' INTO TABLE item_precios
+		FIELDS TERMINATED BY ',' 
+		ENCLOSED BY '\"' 
+		LINES TERMINATED BY '\\n'
+		(lista,codigo,precio)";
+	    $pdo->exec($q);
         }
         if($opt == 'stock' || $opt == 'todo'){
             \DB::table('item_stocks')->truncate();
@@ -95,11 +105,21 @@ class ItemsImport extends Command
             $stock1 = array_map($maplineasstock, $stock);
             $stock2 = array_filter($stock1,$filtrolineasstock);
 
-            die(storage_path().'items/items_stock.txt');
-            /*foreach ($stock2 as $stk){
-                $q = "insert into item_stocks (codigo,stock) values (?,?)";
-                \DB::statement($q,$stk);
-            } */   
+            $fp = fopen(storage_path('app').'/items/items_stock.csv', 'w');
+            foreach ($stock2 as $stk){
+                fputcsv($fp, $stk);
+		//$q = "insert into item_stocks (codigo,stock) values (?,?)";
+               // \DB::statement($q,$stk);
+            }    
+	    fclose($fp);
+            $q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/items_stock.csv'."' INTO TABLE item_stocks
+		FIELDS TERMINATED BY ',' 
+		ENCLOSED BY '\"' 
+		LINES TERMINATED BY '\\n'
+		(codigo,stock)";
+	     $pdo->exec($q);
+
+
         }
         if($opt == 'items' || $opt == 'todo'){
             \DB::table('item_colors')->truncate();
@@ -124,10 +144,19 @@ class ItemsImport extends Command
             $color1 = array_map($maplineascolor, $color);
             $color2 = array_filter($color1,$filtrolineascolor);
 
+            $fp = fopen(storage_path('app').'/items/items_color.csv', 'w');
             foreach ($color2 as $color){
-                $q = "insert into item_colors (codigo,descripcion) values (?,?)";
-                \DB::statement($q,$color);
+                fputcsv($fp, $color);
+                //$q = "insert into item_colors (codigo,descripcion) values (?,?)";
+                //\DB::statement($q,$color);
             }    
+	    fclose($fp);
+	    $q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/items_color.csv'."' INTO TABLE item_colors
+		FIELDS TERMINATED BY ',' 
+		ENCLOSED BY '\"' 
+		LINES TERMINATED BY '\\n'
+		(codigo,descripcion)";
+	    $pdo->exec($q);
 
             \DB::table('items')->truncate();
 
@@ -157,11 +186,20 @@ class ItemsImport extends Command
             $items2 = array_filter($items1,$filtrolineasitem);
             //dd($items2);
             
+            $fp = fopen(storage_path('app').'/items/items_atrib.csv', 'w');
             foreach ($items2 as $item){
-                $q = "insert into items (codigo,descripcion,crochet,tricot,presentacion,temporada,tipo,subtipo,stockcero) values (?,?,?,?,?,?,?,?,?)";
+                fputcsv($fp, $item);
                 $item[8] = trim($item[8])=='NO'?false:true;
-                \DB::statement($q,$item);
+                //$q = "insert into items (codigo,descripcion,crochet,tricot,presentacion,temporada,tipo,subtipo,stockcero) values (?,?,?,?,?,?,?,?,?)";
+                //\DB::statement($q,$item);
             }    
+	    fclose($fp);
+	    $q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/items_atrib.csv'."' INTO TABLE items
+		FIELDS TERMINATED BY ',' 
+		ENCLOSED BY '\"' 
+		LINES TERMINATED BY '\\n'
+		(codigo,descripcion,crochet,tricot,presentacion,temporada,tipo,subtipo,stockcero)";
+	    $pdo->exec($q);
         }
         $opt = $this->option('tipo');
         if($opt == 'mallas' || $opt == 'todo'){
@@ -181,10 +219,19 @@ class ItemsImport extends Command
             $mallas = \Storage::get('items/mallas.txt');
             $mallas = explode("\n",$mallas);
             $mallas1 = array_map($maplineas, $mallas);
+            $fp = fopen(storage_path('app').'/items/mallas.csv', 'w');
             foreach ($mallas1 as $mallas){
-                $q = "insert into mallas (coditm,coditmcompleto,codtalle,codcolor,nombre,color) values (?,?,?,?,?,?)";
-                \DB::statement($q,$mallas);
+                fputcsv($fp, (empty($mallas))?[]:$mallas);
+                //$q = "insert into mallas (coditm,coditmcompleto,codtalle,codcolor,nombre,color) values (?,?,?,?,?,?)";
+                //\DB::statement($q,$mallas);
             }    
+	    fclose($fp);
+	    $q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/mallas.csv'."' INTO TABLE mallas
+		FIELDS TERMINATED BY ',' 
+		ENCLOSED BY '\"' 
+		LINES TERMINATED BY '\\n'
+		(coditm,coditmcompleto,codtalle,codcolor,nombre,color)";
+	    $pdo->exec($q);
         }
     }
 }
