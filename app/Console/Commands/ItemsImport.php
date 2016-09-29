@@ -168,7 +168,7 @@ class ItemsImport extends Command
                 if(strpos($p[1],'D. ')){
                     $p[1] = substr($p[1],0,strpos($p[1],'D. '));
                 }
-                $p[6]=(substr($p[6],0,3)=='OTO')?"OTOÑO / INVIERNO":$p[6];
+                $p[6]=(substr($p[6],0,3)=='OTO')?utf8_decode("OTOÑO / INVIERNO"):$p[6];
                 unset($p[4]);
 
 
