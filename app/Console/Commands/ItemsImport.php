@@ -195,6 +195,7 @@ class ItemsImport extends Command
             }    
 	    fclose($fp);
 	    $q = "LOAD DATA LOCAL INFILE '".storage_path('app').'/items/items_atrib.csv'."' INTO TABLE items
+        CHARACTER SET 'ISO-8859-1' 
 		FIELDS TERMINATED BY ',' 
 		ENCLOSED BY '\"' 
 		LINES TERMINATED BY '\\n'
