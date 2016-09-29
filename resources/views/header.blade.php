@@ -84,7 +84,7 @@
 							<div class="col-lg-2 col-md-2 d_sm_block w_sm_full d_table_cell d_xs_block f_none v_align_m m_xs_bottom_15">
 								<!-- logo -->
 								<a href="/" class="d_inline_b m_sm_top_5 m_sm_bottom_5 m_xs_bottom_0">
-									<img src="{{URL::to('images/nube-hilados-logo.png')}}" alt="Nube Hilados - Tejer con imaginación">
+									<img src="{{URL::to('images/nube-hilados-logo.1.png')}}" alt="Nube Hilados - Tejer con imaginación">
 								</a>
 							</div>
 							<div class="col-lg-8 col-md-8 d_sm_block w_sm_full d_table_cell d_xs_block f_none v_align_m m_sm_top_5">
