@@ -80,9 +80,9 @@ Route::post('/lista-email',function(){
         }
         $e = App\Listaemail::create(['email'=>Request::get('email')]);
         if($e===false){
-            Request::session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
+            Request::session()->flash('alert-newsletter-danger', 'Ocurrió un error. Por favor intente nuevamente.');
         } else {
-            Request::session()->flash('alert-success', 'Su dirección de correo electrónico fue agregada. ¡Muchas gracias!');
+            Request::session()->flash('alert-newsletter-success', 'Su dirección de correo electrónico fue agregada. ¡Muchas gracias!');
         }
         return back();
 });

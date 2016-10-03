@@ -28,7 +28,7 @@
 									    </div>
 									@endif
 								    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-								      @if(Session::has('alert-' . $msg))
+								      @if(Session::has('alert-newsletter-' . $msg))
 								      <div class="alert_box r_corners color_green {{ $msg }}">
 								      <p>{{ Session::get('alert-' . $msg) }} </p>
 								      </div>
