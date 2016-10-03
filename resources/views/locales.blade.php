@@ -79,6 +79,7 @@
 	<div class="marker" id="42" link="" otros="si" nombre="TAFI VIEJO - MERCERIA COLORES" direccion="25 de Mayo nro 26" lat="-26.730806" lng="-65.256459"></div>
 	<div class="marker" id="43" link="" otros="si" nombre="BERAZATEGUI - LANTEX" direccion="AV. 14 Nº 4818" lat="-34.761632" lng="-58.209072"></div>
 	<div class="marker" id="44" link="" otros="si" nombre="PUERTO MADRYN - LA CASA DE LAS LANAS" direccion="BELGRANO 126" lat="-42.767205" lng="-65.034714"></div>
+	<div class="marker" id="45" link="" otros="si"  nombre="EL CALAFATE - MANOS DEL SUR" direccion="Paseo de los Pájaros, local 9" lat="-50.337969" lng="-72.264798"></div>
 
 </div>      
    
