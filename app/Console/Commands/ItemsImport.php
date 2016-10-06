@@ -12,7 +12,7 @@ class ItemsImport extends Command
      *
      * @var string
      */
-    protected $signature = 'items:import {--tipo= :items, stock, precios, todo}';
+    protected $signature = 'items:import {--tipo= :items, stock, precios, mallas, todo}';
 
     /**
      * The console command description.
