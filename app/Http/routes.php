@@ -103,6 +103,7 @@ Route::match(['get', 'post'],'/contacto', function () {
         $envio = Mail::send('email-contacto', ['request' => Request::all()], function ($m) {
            // $m->from(Request::get('email'), Request::get('nombre'));
              $m->from('medesconecto@gmail.com', 'Nube');
+             $m->replyTo(Request::get('email'), Request::get('nombre'));
 
             $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Contacto web nube');
         });
