@@ -1,14 +1,21 @@
 <html>
+<head>
+	<style>
+		td,th {
+			border:solid 1px black;
+		}
+	</style>
+</head>
 <body>
 <h1>Nuevo pedido desde web nube</h1>
 
 @foreach($request as $k => $r)
 @if($k != "_token")
-<div><b>{{$k}}</b> {{$r}}</div>
+<p><b>{{ucfirst($k)}}:</b><br>{{$r}}</p>
 @endif
 @endforeach
 
-<table border=1 cellpadding="2" cellspacing="0">
+<table cellpadding="2" cellspacing="0" width="100%">
 <thead>
 <tr>
 <th>Imagen</th>

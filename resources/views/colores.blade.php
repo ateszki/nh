@@ -52,7 +52,7 @@
 										<figcaption class="bg_white relative p_bottom_15">
 											<div class="row">
 												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c nombre_hilado">
-													<span class="second_font d_xs_block">{{substr($color["descripcion"],strpos($color["descripcion"],"-")+2)}}<br>({{substr($color["codigo"],5)}})</span>													
+													<span class="second_font d_xs_block">{{substr($color["descripcion"],strpos($color["descripcion"],"-")+2)}}<br>({{substr($color["codigo"],-3)}})</span>													
 												</div>
 												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
 													@if(Auth::check())
