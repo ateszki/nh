@@ -17,6 +17,7 @@
 						</div>
 					</div>
                              
+                    <!--
                     <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 m_bottom_0 m_xs_bottom_0 t_sm_align_c t_align_c">
                            <div class="represent_wrap sh_container m_bottom_30 clearfix">
@@ -47,6 +48,7 @@
                          </div>
                          </div>
                     </div>
+                    -->
                              
                              
 				</div>

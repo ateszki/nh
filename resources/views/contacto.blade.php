@@ -76,6 +76,14 @@
 												</div>
 											</li>
 											<li class="m_bottom_15">
+												<label class="second_font required d_inline_b m_bottom_5 clickable" for="localidad">Localidad</label><br>
+												<input type="text" name="localidad" id="cf_localidad" class="tr_all w_full fw_light">
+											</li>
+											<li class="m_bottom_15">
+												<label class="second_font required d_inline_b m_bottom_5 clickable" for="provincia">Provincia</label><br>
+												<input type="text" name="provincia" id="cf_provincia" class="tr_all w_full fw_light">
+											</li>
+											<li class="m_bottom_15">
 												<label class="second_font d_inline_b m_bottom_5 clickable" for="cf_telephone">Tel. de Contacto</label><br>
 												<input type="text" name="telefono" id="cf_telephone" class="tr_all w_full fw_light">
 											</li>

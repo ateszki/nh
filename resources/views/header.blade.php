@@ -16,10 +16,10 @@
 								</nav>
 							</div>                            
 
+							<!--
 							<div class="col-lg-7 col-md-7 col-sm-7 t_align_r t_xs_align_c">
 								<div class="clearfix d_inline_b t_align_l">									                                   
                        		       @if(Auth::check())
-									<!-- user logged in -->
 									<div class="f_right relative transform3d">
                                     <nav class="d_xs_inline_b m_top_7 m_left_20">
                                       <ul class="hr_list second_font si_list fs_small">
@@ -33,7 +33,6 @@
 									</div>
 									@else
 										@if(Session::get('invitado',false))
-										<!-- user logged in as guest-->
 										<div class="f_right relative transform3d">
 	                                    <nav class="d_xs_inline_b m_top_7 m_left_20">
 	                                      <ul class="hr_list second_font si_list fs_small">
@@ -45,7 +44,6 @@
 											
 										</div>
 										@else
-										<!-- user login -->
 										<div class="f_right relative transform3d">
 											<button class="tr_all second_font color_dark type_2 m_sm_top_10 m_xs_top_0" data-open-dropdown="#login"><i class="fa fa-user d_inline_m m_right_5"></i> <span class="fs_small">Ingreso Clientes</span></button>
 											<div id="login" data-show="fadeInUp" data-hide="fadeOutDown" class="dropdown bg_white login_dropdown animated">
@@ -75,6 +73,7 @@
 									@endif
 								</div>
 							</div>
+							-->
 						</div>
 					</div>
 				</div>                

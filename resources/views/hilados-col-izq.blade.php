@@ -32,7 +32,7 @@
         </ul>
 	</section>	
     
-    <!-- productos mas vendidos widget -->
+    <!-- 
 	<section class="m_bottom_40 m_xs_bottom_30">
 		<h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">Más Vendidos</h5>
 		<hr class="divider_bg m_bottom_25">
@@ -51,9 +51,7 @@
 		</ul>
 	</section>
     
-    
-    <!-- productos mas vistos widget -->
-	<section class="m_bottom_40 m_xs_bottom_30">
+    <section class="m_bottom_40 m_xs_bottom_30">
 		<h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">Vistos Recientemente </h5>
 		<hr class="divider_bg m_bottom_25">
 		<ul>
@@ -69,5 +67,7 @@
 			</li>
 			@endforeach                                
 		</ul>
-	</section>  
+	</section> 
+	 -->
+	 
 </aside>

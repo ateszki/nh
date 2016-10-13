@@ -30,18 +30,19 @@ Route::get('/home', function () {
     return redirect()->to('/');
 });
 
-Route::group(['middleware' => 'invitado'], function () {    
-//para acceder a los hilados hay que estar logeado o invitado
+//habiltar esto para compra con usuarios invitados
+//Route::group(['middleware' => 'invitado'], function () {    
+    //para acceder a los hilados hay que estar logeado o invitado
     Route::get('/hilados', 'HiladosController@index');
     Route::get('/hilados/{codigo}', 'HiladosController@show');
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
     Route::get('/accesorios', 'HiladosController@accesorios');
-    //Route::get('/trajes-de-banio','MallasController@index');
     Route::get('/trajes-de-banio','MallasController@catalogo');
+//});
+//cierra el comment de compra con usuarios invitados
 
-});
-
-Route::group(['middleware' => 'auth'], function () {
+//habiltar esto para compra con usuarios
+//Route::group(['middleware' => 'auth'], function () {
     //carrito
     Route::get('carrito/add','CarritoController@add');
     Route::get('carrito/add/all/{codigo}','CarritoController@addAll');
@@ -53,10 +54,9 @@ Route::group(['middleware' => 'auth'], function () {
         $viewname = (\Cart::count() == 0)?'revisar-pedido-vacio':'revisar-pedido';
         return view($viewname);
     });
-
-    Route::get('confirmar-pedido', 'CarritoController@ConfirmarPedido');
-    
-});
+    Route::post('confirmar-pedido', 'CarritoController@ConfirmarPedido');
+//});
+//cierra el comment de compra con usuarios
 
 Route::get('/acerca-de-nube', function () {
     return view('acerca-de-nube');
@@ -93,6 +93,8 @@ Route::match(['get', 'post'],'/contacto', function () {
         $validator = Validator::make(Request::all(), [
         'nombre' => 'required|string',
         'email' => 'required|email',
+        'provincia' => 'required|string',
+        'localidad' => 'required|string',
         ]);
 
         if ($validator->fails()) {
@@ -102,7 +104,8 @@ Route::match(['get', 'post'],'/contacto', function () {
         }
         $envio = Mail::send('email-contacto', ['request' => Request::all()], function ($m) {
            // $m->from(Request::get('email'), Request::get('nombre'));
-             $m->from('medesconecto@gmail.com', 'Nube');
+             //$m->from('medesconecto@gmail.com', 'Nube');
+             $m->from('info@nubehilados.com', 'Nube');
              $m->replyTo(Request::get('email'), Request::get('nombre'));
 
             $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Contacto web nube');

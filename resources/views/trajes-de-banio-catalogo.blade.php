@@ -14,16 +14,21 @@
 				<div class="container">
 					<div class="row">
                     
-                    @include('mallas-col-izq')
-                        
-						<main class="col-lg-9 col-md-9 col-sm-9 m_bottom_30 m_xs_bottom_10">
+                       
+						<main class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2  m_bottom_30 m_xs_bottom_10">
 							
                             <h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">Trajes de baño</h4>  
+							<h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">Primavera verano 2016 - 2017 </h4>
 							<p>&nbsp;</p>
-							<p>Pronto podrá hacer su pedido de trajes de baño desde aquí. </p>
-							<p>Mientras tanto lo invitamos a descargar el catálogo en formato PDF</p>
+							<h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">Línea Joven</h4>
+							@foreach($joven as $j)
+							<div><img src="{{URL::to('images/trajes-de-banio/joven/'.basename($j))}}"/></div>
+							@endforeach
 							<p>&nbsp;</p>
-							<p><a class="cursor f_left button_type_1 m_bottom_5 d_block t_align_r lbrown state_2 tr_all second_font fs_small tt_uppercase" href="{{URL::to('/catalogos/catalogo-trajes-de-banio.pdf')}}">Descargar Catálogo (3.7 Mb aprox.)</a></p>
+							<h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">Línea Señora</h4>
+							@foreach($seniora as $s)
+							<div><img src="{{URL::to('images/trajes-de-banio/seniora/'.basename($s))}}"/></div>
+							@endforeach
 							
 						</main>
 					</div>

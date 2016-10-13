@@ -26,7 +26,7 @@
                                   <div class="row">
                                       <div class="col-lg-8 col-md-8 col-sm-8">
                                           <!--<p class="primary_font tt_uppercase fw_light m_bottom_5 m_top_5 fs_small">Seleccione los colores que desee</p>-->
-                                          @if(Auth::check())
+                                          @if(!Auth::check())
                                           <a href="#" data-cargar-todos='{{URL::to("/carrito/add/all/".$hilado->codigo)}}' class="cursor f_left button_type_1 m_bottom_5 d_block t_align_r lbrown state_2 tr_all second_font fs_small tt_uppercase"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar 1 paq de cada color</a>
                                           @endif
                                       </div>
@@ -52,7 +52,7 @@
 										<figcaption class="bg_white relative p_bottom_15">
 											<div class="row">
 												<div class="col-lg-12 col-md-12 m_bottom_12 t_align_c nombre_hilado">
-													<span class="second_font d_xs_block">{{$color["descripcion"]}}</span>													
+													<span class="second_font d_xs_block">{{substr($color["descripcion"],strpos($color["descripcion"],"-")+2)}}<br>({{substr($color["codigo"],5)}})</span>													
 												</div>
 												<div class="col-lg-12 col-md-12 color_light fs_large second_font t_align_r t_sm_align_c m_bottom_9">
 													@if(Auth::check())
@@ -60,7 +60,7 @@
 													@ENDIF
 												</div>
 											</div>
-											@if(Auth::check())
+											@if(!Auth::check())
 											<!--<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" class="button_type_2 m_bottom_5 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Opciones</button>-->
 											<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" data-url='{{ URL::to("/carrito/add") }}' data-color='{"codigo":"{{substr($color["codigo"],0,4)}}","color":"{{substr($color["codigo"],5,4)}}","precio":"{{$color["precio"]}}","descripcion":"{{$color["descripcion"]}}","img":"{{URL::to('prodimag/'.$color["codigo"].'-G.jpg')}}"}' class="button_type_1 m_bottom_5 d_block w_full t_align_c black state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar</button>
 											@endif

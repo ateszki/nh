@@ -88,7 +88,10 @@ class MallasController extends Controller
 
     public function catalogo(){
        
-        return view('trajes-de-banio-catalogo',["mas_visitados"=>$this->mas_visitados,'mas_vendidos'=>$this->mas_vendidos]);
+        $joven = glob(public_path().'/images/trajes-de-banio/joven/*.jpg');
+        $seniora = glob(public_path().'/images/trajes-de-banio/seniora/*.jpg');
+        
+        return view('trajes-de-banio-catalogo',["mas_visitados"=>$this->mas_visitados,'mas_vendidos'=>$this->mas_vendidos,"joven"=>$joven,"seniora"=>$seniora]);
     }
    
     

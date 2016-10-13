@@ -11,6 +11,7 @@ use App\PedidoLinea;
 use App\Item;
 use App\ItemColor;
 use App\ItemStats;
+use Mail;
 
 
 class CarritoController extends Controller
@@ -29,6 +30,9 @@ class CarritoController extends Controller
         if(!isset($data["descripcion"])){
             abort(404);
         }
+
+        //hasta que podamos vender nuevamente
+        $data["precio"] = 0;
         \Cart::add($data["codigo"], $data["descripcion"], $data["cantidad"], $data["precio"]);
 
         return view('header-cart');
@@ -43,6 +47,8 @@ class CarritoController extends Controller
         $colores = array_filter(ItemColor::where('codigo','like',$codigo."-%")->get()->toArray(),$hay_imagen);
         
         foreach($colores as $color){
+            //hasta que podamos vender nuevamente
+            $color["precio"] = 0;
             \Cart::add($color["codigo"], $color["descripcion"], 1, $color["precio"]*3);
         }
         
@@ -64,29 +70,39 @@ class CarritoController extends Controller
         return view('header-cart');
     }
 
-    public function confirmarPedido(){
+    public function confirmarPedido(Request $request){
         try {
             if(\Cart::count() == 0){
                 return view('revisar-pedido-vacio');
             }
             
-            $user = \Auth::user();
-            $pedido = Pedido::create(['user_id'=>$user->id,'total'=>\Cart::total()]);
+            //$user = \Auth::user();
+            //$pedido = Pedido::create(['user_id'=>$user->id,'total'=>\Cart::total()]);
             $rows = \Cart::content();
-            foreach ($rows as $row){
+            /*foreach ($rows as $row){
                 PedidoLinea::create(['pedido_id'=>$pedido->id,'codigo'=>$row->id,'descripcion'=>$row->name,'precio'=>$row->price,'cantidad'=>$row->qty,'subtotal'=>$row->subtotal]);
-            }
+            }*/
 
-            Mail::send('email-pedido', ['pedido' => $pedido], function ($m) {
+            $envio = Mail::send('email-pedido', ['rows' => $rows,'request' => $request->all()], function ($m) {
                 $m->from('info@nubehilados.com');
 
-                $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Nuevo pedido desde la web');
+                //$m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Nuevo pedido desde la web');
+                $m->to('ateszki@gmail.com')->subject('Nuevo pedido desde la web');
             });
 
-            \Cart::destroy();
-            return view('confirmar-pedido',['pedido'=>$pedido]);
+            if($envio){
+                $request->session()->flash('alert-success', 'Su mensaje fue enviado. ¡Muchas gracias!');
+                \Cart::destroy();
+                return view('confirmar-pedido');
+            } else {
+                $request->session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
+                return view('revisar-pedido');
+            }
+
+            
+            
         } catch(\Exception $e){
-            return $e->message;
+            return $e->getMessage();
         }
     }
 

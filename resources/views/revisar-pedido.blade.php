@@ -20,9 +20,9 @@
 								<th><b>Imagen</b></th>
 								<th><b>Nombre del Producto</b></th>
 								<th><b>Código</b></th>
-								<th><b>Precio</b></th>
+								<!--<th><b>Precio</b></th>-->
 								<th><b>Paqs.</b></th>
-								<th><b>Importe</b></th>
+								<!--<th><b>Importe</b></th>-->
 								<th></th>
 							</tr>
 						</thead>
@@ -34,7 +34,7 @@
 								<td colspan="7">
 									<a href="{{URL::to('/hilados')}}" class="button_type_2 d_block tt_uppercase fs_medium second_font f_left tr_all f_xs_none t_align_c m_xs_bottom_5 lbrown state_2"><span class="d_inline_b m_left_10 m_right_10">Continuar Comprando</span></a>
 								
-                            <section class="col-lg-4 col-md-4 col-sm-4 m_bottom_10 m_xs_bottom_10 f_right">
+                            <!--<section class="col-lg-4 col-md-4 col-sm-4 m_bottom_10 m_xs_bottom_10 f_right">
 							<table class="w_full total_sc_table second_font type_2 t_xs_align_c">
 								<tbody>
 									<tr class="scheme_color">
@@ -54,14 +54,69 @@
 									</tr>
 								</tfoot>
 							</table>
-						</section>
+						</section>-->
                                 
                                 
                                 </td>
 							</tr>
 						</tfoot>
 					</table>                   
-					
+					<h2 class="fw_light second_font color_dark m_bottom_12 tt_uppercase">Enviar Pedido</h2>
+                    <hr class="divider_bg m_bottom_25">
+                    <div class="row">
+								<section class="col-lg-12 col-md-12 col-sm-12">
+									@if (count($errors) > 0)
+									    <div class="alert_box error relative m_bottom_10 fw_light">
+									        <ul>
+									            @foreach ($errors->all() as $error)
+									                <li>{{ $error }}</li>
+									            @endforeach
+									        </ul>
+									    </div>
+									@endif
+								    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+								      @if(Session::has('alert-' . $msg))
+								      <div class="alert_box r_corners color_green {{ $msg }}">
+								      <p>{{ Session::get('alert-' . $msg) }} </p>
+								      </div>
+								      @endif
+								    @endforeach
+								  	<form id="pedidoform" method="post" action="{{URL::to('confirmar-pedido')}}" class="b_default_layout">
+									{{ csrf_field() }}
+										<ul>
+											<li class="row">
+												<div class="col-lg-6 col-md-6 col-sm-6 m_bottom_15">
+													<label class="second_font required d_inline_b m_bottom_5 clickable" for="cf_name">Su Nombre </label><br>
+													<input type="text" name="nombre" id="cf_name" class="tr_all w_full fw_light">
+												</div>
+												<div class="col-lg-6 col-md-6 col-sm-6 m_bottom_15">
+													<label class="second_font required d_inline_b m_bottom_5 clickable" for="cf_email">Su E-Mail </label><br>
+													<input type="email" name="email" id="cf_email" class="tr_all w_full fw_light">
+												</div>
+											</li>
+											<li class="m_bottom_15">
+												<label class="second_font required d_inline_b m_bottom_5 clickable" for="localidad">Localidad</label><br>
+												<input type="text" name="localidad" id="cf_localidad" class="tr_all w_full fw_light">
+											</li>
+											<li class="m_bottom_15">
+												<label class="second_font required d_inline_b m_bottom_5 clickable" for="provincia">Provincia</label><br>
+												<input type="text" name="provincia" id="cf_provincia" class="tr_all w_full fw_light">
+											</li>
+											<li class="m_bottom_15">
+												<label class="second_font d_inline_b m_bottom_5 clickable" for="cf_telephone">Tel. de Contacto</label><br>
+												<input type="text" name="telefono" id="cf_telephone" class="tr_all w_full fw_light">
+											</li>
+											<li class="m_bottom_5">
+												<label class="second_font d_inline_b m_bottom_5 clickable" for="cf_message">Consulta</label><br>
+												<textarea id="cf_message" name="mensaje" rows="6" class="tr_all w_full fw_light"></textarea>
+											</li>
+											<li>
+												<button type="submit" class="button_type_2 black state_2 tr_all second_font fs_medium tt_uppercase d_inline_b"><span class="m_left_10 m_right_10 d_inline_b">Enviar Pedido</span></button>
+											</li>
+										</ul>
+									</form>
+								</section>
+							</div>
 				</div>
 			</div>
 @endsection

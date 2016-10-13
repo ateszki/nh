@@ -20,7 +20,6 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 m_xs_bottom_30 second_font t_align_c">
                 <mark class="fs_large bg_transparent scheme_color d_block m_bottom_5">Su Pedido ha sido enviado con éxito!</mark>
-                                <mark class="fs_large bg_transparent scheme_color d_block m_bottom_20">Código de su Pedido: #{{$pedido->id}}</mark>
                 <p class="m_bottom_35">Nos pondremos en contacto con usted a la brevedad <br/> Muchas Gracias. Nube Hilados</p> 
                                 <a href="{{URL::to('/hilados')}}" class="button_type_3 t_align_c grey state_2 tr_all second_font fs_medium tt_uppercase m_top_15">Realizar otro pedido</a>              
               </div>

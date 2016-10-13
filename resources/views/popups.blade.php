@@ -37,7 +37,7 @@
 						<div class="product_options">
 
 							<footer class="bg_grey_light_2">
-								<div class="fs_big second_font m_bottom_17"><s class="color_light" id="qv_precio_antes"></s> <b class="scheme_color" id="qv_precio"></b> <em>LOS PRECIOS NO INCLUYEN IVA</em></div>
+								<!--<div class="fs_big second_font m_bottom_17"><s class="color_light" id="qv_precio_antes"></s> <b class="scheme_color" id="qv_precio"></b> <em>LOS PRECIOS NO INCLUYEN IVA</em></div>-->
 								<div class="clearfix">
 									<div class="quantity clearfix t_align_c f_left f_md_none m_right_10 m_md_bottom_3">
 										<button class="f_left d_block minus black_hover tr_all bg_white">-</button>

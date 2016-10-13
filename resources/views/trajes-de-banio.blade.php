@@ -14,9 +14,8 @@
 				<div class="container">
 					<div class="row">
                     
-                    @include('mallas-col-izq')
                         
-						<main class="col-lg-9 col-md-9 col-sm-9 m_bottom_30 m_xs_bottom_10">
+						<main class="col-lg-12 col-md-12 col-sm-9 m_bottom_30 m_xs_bottom_10">
 							
                             <h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">Trajes de baño</h4>  
 							<!-- isotope -->
