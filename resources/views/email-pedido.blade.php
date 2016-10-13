@@ -3,7 +3,9 @@
 <h1>Nuevo pedido desde web nube</h1>
 
 @foreach($request as $k => $r)
+@if($k != "_token")
 <div><b>{{$k}}</b> {{$r}}</div>
+@endif
 @endforeach
 
 <table border=1 cellpadding="2" cellspacing="0">

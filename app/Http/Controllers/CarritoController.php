@@ -85,9 +85,9 @@ class CarritoController extends Controller
 
             $envio = Mail::send('email-pedido', ['rows' => $rows,'request' => $request->all()], function ($m) {
                 $m->from('info@nubehilados.com');
+                $m->replyTo($request->get('email'), $request->get('nombre'));
 
-                //$m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Nuevo pedido desde la web');
-                $m->to('ateszki@gmail.com')->subject('Nuevo pedido desde la web');
+                $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Nuevo pedido desde la web');
             });
 
             if($envio){
