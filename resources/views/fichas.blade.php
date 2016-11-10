@@ -45,8 +45,12 @@
                         </div>
                         
                         <hr class="m_bottom_5 divider_white">
-							{!! $fichas->render() !!}
-                        
+                        <div class="d_table w_full m_bottom_5">
+								<div class="col-lg-6 col-md-6 col-sm-6 d_xs_block v_align_m d_table_cell f_none t_align_r t_xs_align_l p_xs_left_0">
+								@include('paginador', ['paginator' => $fichas,"orderby"=>"numero"])
+							
+                        	</div>
+						</div>
                         
                         
 					
