@@ -62,7 +62,7 @@
 											</div>
 											@if(!Auth::check())
 											<!--<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" class="button_type_2 m_bottom_5 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Opciones</button>-->
-											<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" data-url='{{ URL::to("/carrito/add") }}' data-color='{"codigo":"{{substr($color["codigo"],0,4)}}","color":"{{substr($color["codigo"],5,4)}}","precio":"{{$color["precio"]}}","descripcion":"{{$color["descripcion"]}}","img":"{{URL::to('prodimag/'.$color["codigo"].'-G.jpg')}}"}' class="button_type_1 m_bottom_5 d_block w_full t_align_c black state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar</button>
+											<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" data-url='{{ URL::to("/carrito/add") }}' data-color='{"codigo":"{{substr($color["codigo"],0,4)}}","color":"{{substr($color["codigo"],5,4)}}","precio":"{{$color["precio"]}}","descripcion":"{{preg_replace("/\*[a-zA-Z0-9 ]*/","",$color["descripcion"])}} ","img":"{{URL::to('prodimag/'.$color["codigo"].'-G.jpg')}}"}' class="button_type_1 m_bottom_5 d_block w_full t_align_c black state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar</button>
 											@endif
                                         </figcaption>
 									</figure>
