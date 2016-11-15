@@ -165,8 +165,8 @@ class ItemsImport extends Command
                 if(count($p)<2){
                     return '';
                 }
-                if(strpos($p[1],'D. ')){
-                    $p[1] = substr($p[1],0,strpos($p[1],'D. '));
+                if(strpos($p[1],'*')){
+                    $p[1] = substr($p[1],0,strpos($p[1],'*'));
                 }
                 switch(substr($p[6],0,3)){
                     case 'OTO':

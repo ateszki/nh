@@ -20,6 +20,9 @@ class Item extends Model
     }
 
     
+    public function getDescripcionLimpiaAttribute(){
+        return preg_replace('/\*[a-zA-Z0-9 ]*/','',$this->descripcion);
+    }
 
-    protected $appends = ['precio'];
+    protected $appends = ['precio','descripcion_limpia'];
 }
