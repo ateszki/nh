@@ -120,7 +120,7 @@
                             <ul class="vr_list_type_2">
 									<li class="fw_light m_bottom_14"><i class="fa fa-check fs_ex_small"></i>Formar parte de una cadena comercial con una importante trayectoria en el mercado.</li>
 									<li class="fw_light m_bottom_14"><i class="fa fa-check fs_ex_small"></i>Tener el respaldo de una empresa sólida y sumamente confiable.</li>
-									<li class="fw_light m_bottom_14"><i class="fa fa-check fs_ex_small"></i>Sumarse a una maca con excelente posicionamiento en el mercado.</li>                                    
+									<li class="fw_light m_bottom_14"><i class="fa fa-check fs_ex_small"></i>Sumarse a una marca con excelente posicionamiento en el mercado.</li>                                    
                                     <li class="fw_light m_bottom_14"><i class="fa fa-check fs_ex_small"></i>Acceder a importantes beneficios comerciales.</li>
                                     <li class="fw_light m_bottom_14"><i class="fa fa-check fs_ex_small"></i>Tener la posibilidad de desarrollar un negocio rentable.</li>                                    
 								</ul>

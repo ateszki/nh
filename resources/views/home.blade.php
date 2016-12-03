@@ -10,8 +10,7 @@
 							<div class="flexslider">
 								<ul class="slides">
 									<li><a href="{{URL::to('hilados/5012')}}"><img src="images/slider-01.jpg" alt=""></a></li>
-									<li><img src="images/slider-02.jpg" alt=""></li>
-									<li><img src="images/slider-03.jpg" alt=""></li>
+									<li><a href="{{URL::to('trajes-de-banio')}}"><img src="images/slider-02.jpg" alt=""></a></li>
 								</ul>
 							</div>
 						</div>
