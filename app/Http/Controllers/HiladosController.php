@@ -90,7 +90,7 @@ class HiladosController extends Controller
     {
         $hilado = Item::where('codigo','=',$codigo)->firstOrFail();
 
-
+        
         $itemStats = ItemStats::firstOrCreate(['codigo' => trim($hilado->codigo)]);
         $itemStats->codigo = trim($hilado->codigo);
         $itemStats->visitado();
@@ -145,7 +145,7 @@ class HiladosController extends Controller
                     default:
                         $temporada='OTOÑO / INVIERNO';
                 }
-
+        
         return view('colores', ['hilado' => $hilado,'colores' => $colores,"temporada"=>$temporada, "tipo"=>$hilado->subtipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
 

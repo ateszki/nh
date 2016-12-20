@@ -17,7 +17,7 @@
                     @include('hilados-col-izq')
                         
 						<main class="col-lg-9 col-md-9 col-sm-9 m_bottom_30 m_xs_bottom_10">
-							<h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">Producto: {{preg_replace('/\*[a-zA-Z0-9 ]*/','',$hilado->descripcion)}} </h4>  
+							<h4 class="second_font color_dark tt_uppercase fw_default m_bottom_10">{{preg_replace('/\*[a-zA-Z0-9 ]*/','',$hilado->descripcion)}} </h4>  
                             <a href="{{URL::previous()}}" class="cursor f_right_button button_type_1 m_bottom_5 d_block t_align_r lbrown state_2 tr_all second_font fs_small tt_uppercase"><i class="fa fa-arrow-left d_inline_m m_right_9"></i>Volver a Productos</a>                    
                             <hr class="divider_bg m_bottom_23">	 
                             
