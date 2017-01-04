@@ -46,7 +46,8 @@
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block">
-												<img src="{{URL::to('prodimag/'.$color['codigo'].'-G.jpg')}}" alt="" class="c_image_1 tr_all imagezoom" data-zoom-image="{{URL::to('prodimag/'.$color['codigo'].'-G.jpg')}}">
+												<img src="{{URL::to('prodimag/'.$color['codigo'].'-G.jpg')}}" alt="" class="c_image_1 tr_all imagezoom" data-zoom-image="@if(file_exists('prodimag/'.$color['codigo'].'-Z.jpg')){{URL::to('prodimag/'.$color['codigo'].'-Z.jpg')}}
+												@else{{URL::to('prodimag/'.$color['codigo'].'-G.jpg')}} @endif">
 											</div>											
 										</div>
 										<figcaption class="bg_white relative p_bottom_15">
