@@ -822,7 +822,13 @@
 
 		//zoom
 
-		$("img.imagezoom").elevateZoom();
+		$("img.imagezoom").elevateZoom({
+			borderSize: 1,
+			borderColour: '#ccc',
+			responsive: true,
+			zoomWindowOffetx: -250,
+			zoomWindowOffety: 50,
+		});
 
 		//agregar un paq de cada uno
 		$("a[data-cargar-todos]").click(function(event){
