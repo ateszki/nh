@@ -25,7 +25,7 @@ class HiladosController extends Controller
      */
     public function index(Request $request)
     {
-        //DB::enableQueryLog();
+        DB::enableQueryLog();
         $qs = \Input::all();
 
         $temporada = (isset($qs["temporada"]) && $qs["temporada"] != '')?$qs["temporada"]:config('app.temporada');
@@ -42,9 +42,9 @@ class HiladosController extends Controller
         $tipo = (isset($qs["tipo"]) && $qs["tipo"] != '')?$qs["tipo"]:'';
         
         $hilados_query = DB::table('items')
-        ->select('items.codigo','items.descripcion','items.imagen','items.imagenes','stats.ventas','stats.visitas','precios.precio')
+        ->select('items.codigo','items.descripcion','items.imagen','items.imagenes','stats.ventas','stats.visitas')//,'precios.precio')
         ->where('items.temporada','=',$temp)
-        ->where('precios.lista','=',config('app.lista_precio_publico'))
+        //->where('precios.lista','=',config('app.lista_precio_publico'))
         ->where('items.tipo','like','HILADOS%')
         ->where('items.subtipo','like','%'.$tipo.'%')
         ->where('items.imagenes','=',true)
@@ -56,7 +56,7 @@ class HiladosController extends Controller
             });
         })
         ->join('item_stats as stats', DB::raw('trim(items.codigo)'), '=', 'stats.codigo', 'left outer')
-        ->join('item_precios as precios', DB::raw('trim(items.codigo)'), '=', DB::raw('trim(precios.codigo)'), 'left outer');
+        //->join('item_precios as precios', DB::raw('trim(items.codigo)'), '=', DB::raw('trim(precios.codigo)'), 'left outer');
         $orderBy = $request->input('orderby');
         if ($orderBy == ''){
             $hilados_query->orderBy('items.descripcion');
@@ -68,8 +68,8 @@ class HiladosController extends Controller
 
         $hilados = $hilados_query->paginate('25');
         $hilados->setPath(url("hilados"));
-        //print_r(DB::getQueryLog());
-        //die();
+        print_r(DB::getQueryLog());
+        die();
 
         $mas_visitados = ItemStats::orderBy('visitas','desc')->take(5)->get();
 
