@@ -49,10 +49,6 @@
                             Sarmiento 866
                             <br>  
                             <br>                              
-                            CORRIENTES<br>  
-                            9 de Julio 1247
-                            <br>  
-                            <br>                              
                             ROSARIO<br>  
                             Rioja 1319
                             <br>  
@@ -92,10 +88,6 @@
                             <br>                             
                             MENDOZA<br> 
                             Lavalle 72
-                            <br> 
-                            <br>                             
-                            MONTE GRANDE<br> 
-                            Anacleto Rojas 64
                             <br> 
                             <br>                             
                             SALTA<br> 

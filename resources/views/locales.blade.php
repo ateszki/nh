@@ -44,12 +44,12 @@
 	<div class="marker" id="4" link="" otros="no" nombre="ESCOBAR" direccion="E Tapia de Cruz 998" lat="-34.3501471" lng="-58.79753049999999"></div>
     <div class="marker" id="5" link="" otros="no" nombre="BARILOCHE" direccion="Perito Moreno 818" lat="-41.1357701" lng="-71.29843519999997"></div>
 	<div class="marker" id="6" link="" otros="no" nombre="CORDOBA" direccion="Rosario de Sta Fé 163" lat="-31.4165934" lng="-64.18207389999998"></div>
-	<div class="marker" id="7" link="" otros="no" nombre="CORRIENTES" direccion="9 de Julio 1247" lat="-27.4665347" lng="-58.83616129999996"></div>
+	<!--<div class="marker" id="7" link="" otros="no" nombre="CORRIENTES" direccion="9 de Julio 1247" lat="-27.4665347" lng="-58.83616129999996"></div>-->
 	<div class="marker" id="8" link="" otros="no" nombre="MENDOZA" direccion="Lavalle 72" lat="-32.888527" lng="-68.843170"></div>
     <div class="marker" id="9" link="" otros="no" nombre="NEUQUÉN" direccion="Lainez 141" lat="-38.9566355" lng="-68.837507"></div>
 	<div class="marker" id="10" link="" otros="no" nombre="RIO CUARTO" direccion="Sobremonte 1000" lat="-33.1266093" lng="-64.34928330000002"></div>
 	<div class="marker" id="11" link="" otros="no" nombre="ROSARIO" direccion="Rioja 1319" lat="-32.9470831" lng="-60.641536599999995"></div>
-	<div class="marker" id="12" link="" otros="no" nombre="MONTE GRANDE" direccion="Anacleto Rojas 64" lat="-34.8271786" lng="-58.46201239999999"></div>
+	<!--<div class="marker" id="12" link="" otros="no" nombre="MONTE GRANDE" direccion="Anacleto Rojas 64" lat="-34.8271786" lng="-58.46201239999999"></div>-->
     <!--<div class="marker" id="13" link="" otros="no"  nombre="LINIERS" direccion="Cuzco 306" lat="-34.6362244" lng="-58.528069200000004"></div>-->
 	<div class="marker" id="14" link="" otros="no" nombre="ONCE" direccion="Larrea 374" lat="-34.6051333" lng="-58.40213589999996"></div>
 	<div class="marker" id="15" link="" otros="no" nombre="SALTA" direccion="Balcarce 164" lat="-24.7878541" lng="-65.41220859999999"></div>
@@ -63,7 +63,7 @@
 	<div class="marker" id="24" link="" otros="si" nombre="SAN JUSTO JAQUELINE HILADOS" direccion="Perú 2369" lat="-34.6783349" lng="-58.5587865"></div>
 	<div class="marker" id="25" link="" otros="si" nombre="SAN NICOLAS - R Y M" direccion="España 291" lat="-33.336297" lng="-60.2147243"></div>
 	<div class="marker" id="26" link="" otros="si" nombre="CRUZ DEL EJE - EL REGALO" direccion="San Martín 23" lat="-30.7211227" lng="-64.80989840000001"></div>
-	<div class="marker" id="28" link="" otros="si" nombre="PARANA - LA MADEJA" direccion="Gral. San Martín 1278" lat="-31.7213684" lng="-60.52581709999998"></div>
+	<!--<div class="marker" id="28" link="" otros="si" nombre="PARANA - LA MADEJA" direccion="Gral. San Martín 1278" lat="-31.7213684" lng="-60.52581709999998"></div>-->
 	<div class="marker" id="29" link="" otros="si" nombre="VILLA VILLAGUAY - ARCO IRIS" direccion="Moreno 232" lat="-31.849369" lng="-59.01580809999996"></div>
 	<div class="marker" id="31" link="" otros="si" nombre="OBERÁ - LA MODERNA" direccion="Sarmiento 944" lat="-27.4815311" lng="-55.123493199999984"></div>
 	<!--<div class="marker" id="32" link="" otros="si"  nombre="SAN LUIS - MERCERIAS DINKY" direccion="Pedernera 984" lat="-33.3003504" lng="-66.33789439999998"></div>-->
