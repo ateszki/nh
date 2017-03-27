@@ -21,7 +21,8 @@
                             <a href="{{URL::previous()}}" class="cursor f_right_button button_type_1 m_bottom_5 d_block t_align_r lbrown state_2 tr_all second_font fs_small tt_uppercase"><i class="fa fa-arrow-left d_inline_m m_right_9"></i>Volver a Productos</a>                    
                             <hr class="divider_bg m_bottom_23">	 
                             
-                            <div class="bg_grey_light_2">
+                            @if(count($colores) > 1)
+						  	<div class="bg_grey_light_2">
                               <div class="container">
                                   <div class="row">
                                       <div class="col-lg-8 col-md-8 col-sm-8">
@@ -33,12 +34,24 @@
                                   </div>
                               </div>
                           </div>
-                            
+                          @else
+                          <div class="bg_grey_light_2">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-lg-8 col-md-8 col-sm-8">
+                                      <span class="f_left button_type_1 m_bottom_5 d_block t_align_r lbrown state_2 tr_all second_font fs_small tt_uppercase"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+ Carta de colores en desarrollo</span>
+                                 </div>
+                                  </div>
+                              </div>
+                          </div>
+                          @endif
 							<!-- isotope -->
 							<div id="can_change_layout" class="category_isotope_container five_columns wrapper m_bottom_10 m_xs_bottom_0" data-isotope-options='{
 								"itemSelector": ".category_isotope_item",
 					  			"layoutMode": "fitRows"
 							     }'>
+							     
 								@foreach($colores as $color)
                                 <!-- producto single -->
 								<div class="category_isotope_item">
