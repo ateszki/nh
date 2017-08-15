@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
-		<title>{{ isset($titulo) ? $titulo : '' }}Nube Hilados - Tejer con imaginación</title>
+		<title>{{ isset($titulo) ? $titulo : '' }}Nube Hilados</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         
