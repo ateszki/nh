@@ -31,7 +31,7 @@
 				</li>
         </ul>
 	</section>	
-    
+    <?php /*
     <!-- 
 	<section class="m_bottom_40 m_xs_bottom_30">
 		<h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">Más Vendidos</h5>
@@ -69,5 +69,7 @@
 		</ul>
 	</section> 
 	 -->
+	 */
+	 ?>
 	 
 </aside>
