@@ -55,6 +55,9 @@
 									<li class="m_right_3 m_bottom_3">
 										<a href="https://twitter.com/nubehilados" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fa fa-twitter fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Twitter</span></a>
 									</li>
+									<li class="m_right_3 m_bottom_3">
+										<a href="https://www.instagram.com/nubehilados/" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fa fa-instagram fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Instagram</span></a>
+									</li>
 								</ul>
 							</div>
 						</div>

@@ -9,7 +9,8 @@
                             <!-- home slider -->
 							<div class="flexslider">
 								<ul class="slides">
-									<li><a href="{{URL::to('hilados/5012')}}"><img src="images/slider-01.jpg" alt=""></a></li>
+									<li><a href="https://www.instagram.com/nubehilados/" target="_blank"><img src="images/slider-04.jpg" alt=""></a></li>
+                  <li><a href="{{URL::to('hilados/5012')}}"><img src="images/slider-01.jpg" alt=""></a></li>
 									<li><a href="{{URL::to('trajes-de-banio')}}"><img src="images/slider-02.jpg" alt=""></a></li>
 								</ul>
 							</div>
