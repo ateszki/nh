@@ -64,6 +64,9 @@ Route::get('/acerca-de-nube', function () {
 Route::get('/locales', function () {
     return view('locales');
 });
+Route::get('/donde-encontrarnos', function () {
+    return view('dondeencontrarnos');
+});
 Route::get('/representantes', function () {
     return view('representantes');
 });

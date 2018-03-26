@@ -50,7 +50,7 @@
         <!-- javascripts -->
 		<script src="{{URL::to('js/jquery-2.1.1.min.js')}}"></script>
 		<script src="{{URL::to('js/modernizr.js')}}"></script>
-		@if(Request::is('locales'))
+		@if(Request::is('locales') || Request::is('donde-encontrarnos') )
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         
         <!-- google maps app -->
@@ -61,15 +61,15 @@
 			var markers=[];				
 			var contentStrings = [];
 			function initialize() {
-		    var myOptions = {
-			    	backgroundColor: "#FFFFFF",
-			      scrollwheel: true,
-			      streetViewControl:false,
-			      mapTypeControl: true,
-			      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
-			      navigationControl: true,
-			      navigationControlOptions: {style: google.maps.NavigationControlStyle.ZOOM_PAN},
-			      mapTypeId: google.maps.MapTypeId.TERRAIN,
+			    var myOptions = {
+			    	  backgroundColor: "#FFFFFF",
+				      scrollwheel: true,
+				      streetViewControl:false,
+				      mapTypeControl: true,
+				      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+				      navigationControl: true,
+				      navigationControlOptions: {style: google.maps.NavigationControlStyle.ZOOM_PAN},
+				      mapTypeId: google.maps.MapTypeId.TERRAIN,
 			    }
 			    //latLongBounds = new LatLngBounds();
 			    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -78,32 +78,12 @@
 			    //map.fitBounds(latLongBounds);
 			    	
 			    $("#markers").find('div.marker').each(function(){
-				            var latLng = new google.maps.LatLng($(this).attr('lat'),$(this).attr('lng'));
+			    	        var latLng = new google.maps.LatLng($(this).attr('lat'),$(this).attr('lng'));
+
 				        	var marker = createMarker(latLng,$(this));
 				        	latLongBounds.extend(latLng);
 			            });					
-			    function createMarker(latLng,markerxml){
-					if ($(markerxml).attr("otros") == "si"){
-						var markerImage = 'http://labs.google.com/ridefinder/images/mm_20_red.png';
-					} else {
-						var markerImage = 'http://labs.google.com/ridefinder/images/mm_20_green.png';
-					}
-			    	var marker = new google.maps.Marker({position: latLng, map: map, title: $(markerxml).attr('nombre'), icon:markerImage});
-
-			    	var contentString = '<div style="width:180px; height:100px;font-family:arial,verdana;font-size:10px;">' +
-			        '<p style="width:160px; padding-bottom:10px;">'+ $(markerxml).attr('nombre')+'<br>'+
-			        ' '+ $(markerxml).attr('direccion')+'</p></div>';
-			        
-			    	contentStrings.push(contentString);
-			    	google.maps.event.addListener(marker, "click", function() {
-				    	if (infowindow) infowindow.close();
-				    	infowindow = new google.maps.InfoWindow({content: contentString});
-				    	infowindow.open(map, marker);				    	
-			    	});
-			    	map.fitBounds(latLongBounds);
-			    	markers.push(marker);			    	
-			    	return marker; 
-			    }			    
+			    		    
 			    mapInitialized = 1;			    
 			}
 			function markerClick(m){
@@ -112,7 +92,44 @@
 				if (infowindow) infowindow.close();
 		    	infowindow = new google.maps.InfoWindow({content: contentString});
 		    	infowindow.open(map, marker);		    	
-			}			
+			}
+			function createMarker(latLng,markerxml){
+				var markerImage = 'http://labs.google.com/ridefinder/images/mm_20_green.png';
+				
+				var marker = new google.maps.Marker({position: latLng, map: map, title: $(markerxml).attr('direccion'), icon:markerImage});
+
+		    	var contentString = '<div style="width:180px; height:100px;font-family:arial,verdana;font-size:10px;">' +
+		        '<p style="width:160px; padding-bottom:10px;">'+ $(markerxml).attr('direccion')+'</p></div>';
+		        contentStrings.push(contentString);
+		    	
+		    	google.maps.event.addListener(marker, "click", function() {
+			    	if (infowindow) infowindow.close();
+			    	infowindow = new google.maps.InfoWindow({content: contentString});
+			    	infowindow.open(map, marker);				    	
+		    	});
+		    	map.fitBounds(latLongBounds);
+		    	markers.push(marker);			    	
+		    	return marker; 
+		    }		
+			function cambiarProvincia(prov){
+				while(markers.length){
+		            markers.pop().setMap(null);
+		        }
+		        latLongBounds = new google.maps.LatLngBounds();
+
+		        $("#markers").find('div.marker').each(function(){
+
+		        			if($(this).attr('provincia') == prov.value){
+		        				var latLng = new google.maps.LatLng($(this).attr('lat'),$(this).attr('lng'));
+
+					        	var marker = createMarker(latLng,$(this));
+					        	latLongBounds.extend(latLng);
+		        			}
+
+			    	        
+			            });	
+		        map.fitBounds(latLongBounds);
+			} 		
 			</script>
 			@endif
 
@@ -137,7 +154,7 @@
 			</script>
 	
 </head>
-<body @if(Request::is('locales'))onload="initialize()"@endif class="sticky_menu">
+<body @if(Request::is('locales') || Request::is('donde-encontrarnos'))onload="initialize()"@endif class="sticky_menu">
 
 	@if(Request::is('/') || Request::is('hilados') || Request::is('hilados/*'))
 	<div id="preloader"></div>   
@@ -171,6 +188,8 @@
 		@include('popups')
 
 		@include('jslibs')
+
+		
 	
 </body>
 </html>
