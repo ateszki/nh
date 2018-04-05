@@ -62,12 +62,15 @@ Route::get('/acerca-de-nube', function () {
     return view('acerca-de-nube');
 });
 Route::get('/locales', function () {
-    return view('locales');
+    return Redirect::to('/donde-encontrarnos', 301); 
 });
 Route::get('/donde-encontrarnos', function () {
     return view('dondeencontrarnos');
 });
 Route::get('/representantes', function () {
+    return Redirect::to('/ser-representante', 301); 
+});
+Route::get('/ser-representante', function () {
     return view('representantes');
 });
 

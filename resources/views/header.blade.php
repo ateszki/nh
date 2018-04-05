@@ -9,8 +9,8 @@
 								<nav class="d_xs_inline_b m_bottom_20 m_left_20">
 									<ul class="hr_list second_font si_list fs_small">
 										<li @if(Request::is('acerca-de-nube')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('acerca-de-nube')}}">Acerca de Nube</a></li>                                        
-                                        <li @if(Request::is('locales')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('locales')}}">Locales</a></li>
-                                        <li @if(Request::is('representantes')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('representantes')}}">Representantes</a></li>                                        
+                                        <li @if(Request::is('donde-encontrarnos')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('locales')}}">Dónde encontrarnos</a></li>
+                                        <li @if(Request::is('ser-representante')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('ser-representante')}}">Ser Representante</a></li>                                        
 										<li @if(Request::is('contacto')) class='current' @endif><a class="sc_hover tr_delay" href="{{URL::to('contacto')}}">Contacto</a></li>
 									</ul>
 								</nav>
