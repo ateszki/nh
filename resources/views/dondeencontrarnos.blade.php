@@ -7,7 +7,7 @@ $marcadores = [
   ["BAHIA BLANCA","Buenos Aires","ESTOMBA 420, BAHIA BLANCA, Buenos Aires","-38.714802","-62.271032"  ],
   ["BANFIELD","Buenos Aires","MARSELLA 949, BANFIELD, Buenos Aires","-34.7284658","-58.4321464"  ],
   ["BERAZATEGUI","Buenos Aires","AV. 14 Nº 4818, BERAZATEGUI, Buenos Aires","-34.7616078","-58.2091187"  ],
-  ["BIGAND","Santa fe","AV SAN MARTIN 1443, BIGAND, Santa fe","-33.3747238","-61.1801795"  ],
+  ["BIGAND","Santa Fé","AV SAN MARTIN 1443, BIGAND, Santa Fé","-33.3747238","-61.1801795"  ],
   ["CHIVILCOY","Buenos Aires","CEBALLOS 115, CHIVILCOY, Buenos Aires","-34.8946399","-60.0217174"  ],
   ["CIUDADELA","Buenos Aires","AV. GRAL PAZ 99 _CIUDADELA (ESQUINA BINGO), CIUDADELA, Buenos Aires","-34.6400337","-58.5300832"  ],
   ["ESCOBAR","Buenos Aires","E. TAPIA DE CRUZ 998, ESCOBAR, Buenos Aires","-34.3500421","-58.7975747"  ],
@@ -40,7 +40,7 @@ $marcadores = [
   ["WILDE","Buenos Aires","CRISOLOGO LARRALDE 6118, WILDE, Buenos Aires","-34.7113998","-58.3281884"  ],
   ["25 DE MAYO","Buenos Aires","CALLE 10 ENTRE 27 Y 28 N° 830, 25 DE MAYO, Buenos Aires","-35.4318818","-60.1721576"  ],
   ["Capital Federal","Capital Federal","SCALABRINI ORTIZ 995, Capital Federal, Capital Federal","-34.5952876","-58.4312054"  ],
-  ["CORDOBA","Córdoba","ROSARIO DE SANTA FE 163, CORDOBA, Córdoba","-31.4165934","-64.1818379"  ],
+  ["CORDOBA","Córdoba","ROSARIO DE SANTA FÉ 163, CORDOBA, Córdoba","-31.4165934","-64.1818379"  ],
   ["RIO CUARTO","Córdoba","SOBREMONTE 1000, RIO CUARTO, Córdoba","-33.1267548","-64.3494546"  ],
   ["RESISTENCIA","Chaco","AMEGHINO 2247, RESISTENCIA, Chaco","-27.4721347","-58.9696175"  ],
   ["RESISTENCIA","Chaco","AV. PARAGUAY 443, RESISTENCIA, Chaco","-27.4508786","-58.9781666"  ],
@@ -80,20 +80,21 @@ $marcadores = [
   ["ORAN","Salta","URIBURU 297, ORAN, Salta","-23.1319685","-64.3284245"  ],
   ["SAN JUAN","San Juan","TUCUMAN 22 SUR, SAN JUAN, San Juan","-31.5385507","-68.5686645"  ],
   ["SAN LUIS","San Luis","RIOBAMBA 1780, SAN LUIS, San Luis","-33.2871886","-66.3157259"  ],
-  ["LAS HERAS","Santa Cruz","HIPOLITO YRIGOYEN 133, LAS HERAS, Santa Cruz","-32.865301","-68.8183253"  ],
+  ["LAS HERAS","Santa Cruz","HIPOLITO YRIGOYEN 133, LAS HERAS, Santa Cruz","-46.544039216760126","-68.93075345"  ],
   ["PUERTO DESEADO","Santa Cruz","12 de OCTUBRE 714, PUERTO DESEADO, Santa Cruz","-47.7517614","-65.8915139"  ],
   ["RIO GALLEGOS","Santa Cruz","ZAPIOLA 783, RIO GALLEGOS, Santa Cruz","-51.6171554","-69.2273685"  ],
   ["RECONQUISTA","Santa Fé","HABEGGER 974, RECONQUISTA, Santa Fé","-29.146052","-59.6485253"  ],
   ["ROSARIO","Santa Fé","RIOJA 1319, ROSARIO, Santa Fé","-32.947109","-60.641565"  ],
   ["ROSARIO NORTE","Santa Fé","ZELAYA 3360, ROSARIO NORTE, Santa Fé","-32.9307322","-60.6574203"  ],
-  ["SANTA FE","Santa Fé","AV. ARISTOBULO DEL VALLE 7022, SANTA FE, Santa Fé","-31.603841","-60.692028"  ],
+  ["SANTA FE","Santa Fé","AV. ARISTOBULO DEL VALLE 7022, SANTA FÉ, Santa Fé","-31.603841","-60.692028"  ],
   ["VENADO TUERTO","Santa Fé","San Martin 280, VENADO TUERTO, Santa Fé","-33.7496678","-61.9625748"  ],
   ["SANTIAGO DEL ESTERO","Santiago del Estero","PELLEGRINI 107 , SANTIAGO DEL ESTERO, Santiago del Estero","-27.7867093","-64.2611694"  ],
   ["USHUAIA","Tierra del Fuego","GIACHINO 2284, USHUAIA, Tierra del Fuego","-54.8095843","-68.3331615"  ],
   ["USHUAIA","Tierra del Fuego","JUAN D. PERON 174, USHUAIA, Tierra del Fuego","-54.8182571","-68.3366328"  ],
   ["Tafi Viejo","Tucumán","25 De Mayo N 26, Tafi Viejo, Tucumán","-26.7306003","-65.2567024"  ],
   ["Tafi Viejo","Tucumán","UTTINGER 110, Tafi Viejo, Tucumán","-26.7323299","-65.2558332"  ],
-  ["S.M. DE TUCUMAN","Tucumán","JUNIN 155 LOC. 1, S.M. DE TUCUMAN, Tucumán","-26.8279624","-65.2087132"  ]
+  ["S.M. DE TUCUMAN","Tucumán","JUNIN 155 LOC. 1, S.M. DE TUCUMAN, Tucumán","-26.8279624","-65.2087132"  ],
+  ["CALAFATE","Santa Cruz","9 de Julio 57 Galería Paseo de los Pájaros LOCAL 9, CALAFATE, Santa Cruz","-50.337407669153315", "-72.26499469999999"],
 ];
 
 $provincias = [];
@@ -126,7 +127,7 @@ sort($provincias)
                    <div class="col-lg-12 col-md-12 col-sm-12 m_bottom_30">
                    	<p>Provincia: 
                    	<select name="provincias" id="provincias" onchange="cambiarProvincia(this)">
-                   		<option value="todas" selected="selected">todas</option>
+                   		<option value="todas" selected="selected">Todas</option>
                    		@foreach($provincias as $provincia)
                    		<option value="{!! $provincia !!}">{{$provincia}}</option>
                    		@endforeach
