@@ -94,8 +94,8 @@
 		    	infowindow.open(map, marker);		    	
 			}
 			function createMarker(latLng,markerxml){
-				var markerImage = 'http://labs.google.com/ridefinder/images/mm_20_green.png';
-				
+				//var markerImage = 'http://labs.google.com/ridefinder/images/mm_20_green.png';
+				var markerImage = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|fa9428';
 				var marker = new google.maps.Marker({position: latLng, map: map, title: $(markerxml).attr('direccion'), icon:markerImage});
 
 		    	var contentString = '<div style="width:180px; height:100px;font-family:arial,verdana;font-size:10px;">' +

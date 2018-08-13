@@ -95,6 +95,8 @@ $marcadores = [
   ["Tafi Viejo","Tucumán","UTTINGER 110, Tafi Viejo, Tucumán","-26.7323299","-65.2558332"  ],
   ["S.M. DE TUCUMAN","Tucumán","JUNIN 155 LOC. 1, S.M. DE TUCUMAN, Tucumán","-26.8279624","-65.2087132"  ],
   ["CALAFATE","Santa Cruz","9 de Julio 57 Galería Paseo de los Pájaros LOCAL 9, CALAFATE, Santa Cruz","-50.337407669153315", "-72.26499469999999"],
+  ["S.M. DE TUCUMAN","Tucumán","Av. Juan B. Justo 1182, S.M. DE TUCUMAN, Tucumán","-26.816307","-65.193367"  ],
+  
 ];
 
 $provincias = [];
