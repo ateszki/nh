@@ -52,7 +52,7 @@
 		<script src="{{URL::to('js/modernizr.js')}}"></script>
 		@if(Request::is('locales') || Request::is('donde-encontrarnos') )
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        
+          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4f74jg6SKPUJWcdb0y60AjX3xYcvq19A&callback=initMap" type="text/javascript"></script>
         <!-- google maps app -->
         <script>
 			var map;
