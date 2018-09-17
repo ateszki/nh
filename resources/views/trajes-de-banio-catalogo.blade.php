@@ -17,7 +17,7 @@
                        
 						<main class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2  m_bottom_30 m_xs_bottom_10">
 							
-                            <div><img src="{{URL::to('/images/slider-05.jpg')}}"/></div>
+                            <div><a href="{{URL::to('/contacto')}}"><img src="{{URL::to('/images/slider-05.jpg')}}"/></a></div>
 							
 							
 						</main>
