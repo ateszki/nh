@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use SleepingOwl\Models\SleepingOwlModel;
+
 use \Auth;
 
 
-class Accesorio extends SleepingOwlModel
+class Accesorio extends Model
 {
     protected $table = "accesorios";
 

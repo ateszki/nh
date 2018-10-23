@@ -3,9 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use SleepingOwl\Models\SleepingOwlModel;
 
-class ColorOrden extends SleepingOwlModel
+
+class ColorOrden extends Model
 {
     protected $table = "ordenes_colores";
 

@@ -3,9 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use SleepingOwl\Models\SleepingOwlModel;
 
-class Ficha extends SleepingOwlModel
+
+class Ficha extends Model
 {
     protected $fillable = [
 		'numero',
