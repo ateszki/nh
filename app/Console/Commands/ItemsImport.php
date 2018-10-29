@@ -130,7 +130,7 @@ class ItemsImport extends Command
                     return '';
                 }
                 if(strpos($p[1],'D. ')){
-                    $p[1] = substr($p[1],0,strpos($p[1],'D. '))." - ".substr($p[1],strpos($p[1],"-"+1));
+                    $p[1] = substr($p[1],0,strpos($p[1],'D. '))." - ".substr($p[1],strpos($p[1],"-")+1);
                 }
                 
                 return $p;
