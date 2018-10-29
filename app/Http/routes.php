@@ -117,11 +117,11 @@ Route::match(['get', 'post'],'/contacto', function () {
             $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Contacto web nube');
         });
 
-        if($envio){
+        //if($envio){
             Request::session()->flash('alert-success', 'Su mensaje fue enviado. ¡Muchas gracias!');
-        } else {
-            Request::session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
-        }
+        //} else {
+        //    Request::session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
+        //}
 
     }
     
