@@ -37,7 +37,7 @@
 							<hr class="divider_white m_bottom_5">
                             
 							<!-- isotope -->
-							<div id="can_change_layout" class="category_isotope_container one_columns wrapper m_bottom_10 m_xs_bottom_0" data-isotope-options='{
+							<div id="can_change_layout" class="category_isotope_container two_columns wrapper m_bottom_10 m_xs_bottom_0" data-isotope-options='{
 								"itemSelector": ".category_isotope_item",
 					  			"layoutMode": "fitRows"
 							     }'>
