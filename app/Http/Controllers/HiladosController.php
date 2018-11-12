@@ -198,6 +198,60 @@ class HiladosController extends Controller
         return view('colores', ['hilado' => $hilado,'colores' => $colores,"temporada"=>$temporada, "tipo"=>$hilado->subtipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
 
+    public function showWide($codigo)
+    {
+        $hilado = Item::where('codigo','=',$codigo)->firstOrFail();
+
+        
+        $itemStats = ItemStats::firstOrCreate(['codigo' => trim($hilado->codigo)]);
+        $itemStats->codigo = trim($hilado->codigo);
+        $itemStats->visitado();
+        
+        $imagenes = glob(storage_path().'/app/prodimag/'.$codigo."-*");
+        
+        $hay_imagen = function($color) {
+            return file_exists(storage_path()."/app/prodimag/".$color["codigo"]."-C.jpg");
+        };
+        $colores_desordenado = array_filter(ItemColor::where('codigo','like',$codigo."-%")->get()->toArray(),$hay_imagen);
+        
+        $oc = ColorOrden::where('codigo','=',$codigo)->first();
+        if($oc != false){
+        $lista = $oc->ordenes;
+        $ayLista = explode("\r\n",$lista);
+        $colores = [];
+
+        foreach($ayLista as $key){
+            foreach ($colores_desordenado as $k => $color) {
+                if(substr($color["codigo"],-4)==$key){
+                    array_push($colores,$color);
+                    unset($colores_desordenado[$k]);
+                    break;
+                }
+            }
+        }
+
+        $colores = array_merge($colores,$colores_desordenado);
+        
+        } else {
+            $colores = $colores_desordenado;
+        }
+        
+       $mas_visitados = ItemStats::orderBy('visitas','desc')->take(5)->get();
+
+        $mas_vendidos = [];
+        $query = DB::table('pedido_lineas')->select(DB::raw("left(codigo,4) as codigo,sum(cantidad) as ventas"))->groupBy(DB::raw('left(codigo,4)'))->orderBy(DB::raw("count(*) "),'desc')->take(5)->get();
+        foreach ($query as $pl) {
+            $it = Item::where("codigo","=",$pl->codigo)->first();
+            if(!empty($it)){
+                $mas_vendidos[] = $it;
+            }   
+            
+        }
+        
+        
+        return view('colores-wide', ['hilado' => $hilado,'colores' => $colores,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+    }
+
     public function imagen($codigo,$tamanio){
         if(!in_array($tamanio, ["C","D","G"])){
             abort(404);

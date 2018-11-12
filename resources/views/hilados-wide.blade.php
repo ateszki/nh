@@ -48,7 +48,7 @@
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block">
-												<a href="{{URL::to('hilados/'.$hilado->codigo)}}"><img src="{{URL::to('prodimag/'.$hilado->imagen.'-Z.jpg')}}" alt="" class="c_image_1 tr_all" border="0"></a>
+												<a href="{{URL::to('hilados/wide/'.$hilado->codigo)}}"><img src="{{URL::to('prodimag/'.$hilado->imagen.'-Z.jpg')}}" alt="" class="c_image_1 tr_all" border="0"></a>
 											</div>
 											<!--oferta <div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>	-->
 										</div>
@@ -63,7 +63,7 @@
 													@endif
 												</div>
 											</div>
-											<a href="{{URL::to('hilados/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
+											<a href="{{URL::to('hilados/wide/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto</a>
 										</figcaption>
 									</figure>
 								</div>
