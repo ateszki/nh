@@ -34,6 +34,7 @@ Route::get('/home', function () {
 //Route::group(['middleware' => 'invitado'], function () {    
     //para acceder a los hilados hay que estar logeado o invitado
     Route::get('/hilados', 'HiladosController@index');
+    Route::get('/hilados/wide', 'HiladosController@indexWide');
     Route::get('/hilados/{codigo}', 'HiladosController@show');
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
     Route::get('/accesorios', 'HiladosController@accesorios');

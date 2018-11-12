@@ -2637,6 +2637,11 @@ input[type="checkbox"] + label::after,
 	border-color:transparent;
 
 }
+[class*="isotope_container"].one_columns [class*="isotope_item"]{
+
+	width:100%;
+
+}
 
 [class*="isotope_container"].two_columns [class*="isotope_item"]{
 
