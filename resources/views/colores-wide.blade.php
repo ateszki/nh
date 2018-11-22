@@ -35,8 +35,8 @@
                               </div>
                               <div class="container">
                                   <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12">
-                                      	<div style="margin:10px auto"><img align="center" src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" /></div>
+                                      <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+                                      	<img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" />
                                       </div>
                                   </div>
                               </div>
