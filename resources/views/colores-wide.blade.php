@@ -33,8 +33,10 @@
                                   </div>
                               </div>
                               <div class="container">
-                              	<div class="col-lg-8 col-md-8 col-sm-8">
-                              		<img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" />
+                              	<div class="row">
+                              		<div class="col-lg-8 col-md-8 col-sm-8">
+                              			<img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" />
+                              		</div>
                               	</div>
                               </div>
                           </div>
