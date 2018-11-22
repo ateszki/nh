@@ -8,8 +8,9 @@
 							<div class="col-lg-5 col-md-5 col-sm-5 m_bottom_15 m_xs_bottom_30 color_light_3">
 								<h5 class="color_white tt_uppercase second_font m_bottom_13">Contáctenos</h5>
 								<hr class="divider_bg m_bottom_25">
-								<h1 class="second_font m_bottom_15">0800-555-1000</h1>
-                                <h4 class="second_font m_bottom_15">(011) 4302-4000</h4>                                
+								<h1 class="second_font m_bottom_15"><i class="fas fa-phone"></i> 0800-555-1000</h1>
+                                <h4 class="second_font m_bottom_15"><i class="fas fa-phone"></i> (011) 4302-4000</h4>
+                                <h4 class="second_font m_bottom_15"><a href="https://api.whatsapp.com/send?phone=01128080280" style="color:white"><i class="fab fa-whatsapp"></i> (011) 2808-0280</a></h4>
 							</div>
                             
                             <div class="col-lg-4 col-md-4 col-sm-4 m_bottom_15 m_xs_bottom_30 color_light_3">
@@ -50,13 +51,16 @@
 								<!-- social buttons -->
 								<ul class="hr_list">
 									<li class="m_right_3 m_bottom_3 m_left_80">
-										<a href="https://www.facebook.com/hiladosnube" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fa fa-facebook fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Facebook</span></a>
+										<a href="https://www.facebook.com/hiladosnube" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fab fa-facebook-f fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Facebook</span></a>
 									</li>
 									<li class="m_right_3 m_bottom_3">
-										<a href="https://twitter.com/nubehilados" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fa fa-twitter fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Twitter</span></a>
+										<a href="https://twitter.com/nubehilados" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fab fa-twitter fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Twitter</span></a>
 									</li>
 									<li class="m_right_3 m_bottom_3">
-										<a href="https://www.instagram.com/nubehilados/" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fa fa-instagram fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Instagram</span></a>
+										<a href="https://www.instagram.com/nubehilados/" target="_blank" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fab fa-instagram fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Instagram</span></a>
+									</li>
+									<li class="m_right_3 m_bottom_3">
+										<a href="https://api.whatsapp.com/send?phone=01128080280" class="button_type_6 d_block grey state_2 tr_delay color_dark t_align_c vc_child tooltip_container relative"><i class="fab fa-whatsapp fs_large d_inline_m"></i><span class="tooltip top fs_small color_white hidden animated" data-show="fadeInDown" data-hide="fadeOutUp">Whatsapp</span></a>
 									</li>
 								</ul>
 							</div>

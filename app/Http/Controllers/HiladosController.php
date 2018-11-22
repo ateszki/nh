@@ -92,7 +92,7 @@ class HiladosController extends Controller
         
         
         $hilados_query = DB::table('items')
-        ->select('items.codigo','items.descripcion','items.imagen','items.imagenes','stats.ventas','stats.visitas')//,'precios.precio')
+        ->selectRaw("items.codigo,items.descripcion,items.imagen,items.imagenes,stats.ventas,stats.visitas,case when items.presentacion like '%OVILLO%' then 'OVILLO' else 'MADEJA' end as presentacion, items.temporada")//,'precios.precio')
         //->where('items.temporada','=',$temp)
         //->where('precios.lista','=',config('app.lista_precio_publico'))
         ->where('items.tipo','like','HILADOS%')
@@ -105,19 +105,38 @@ class HiladosController extends Controller
                 });
             });
         })
+        ->where(function($query){
+            $query->where('items.presentacion','like','%OVILLO%')->orwhere('items.presentacion','like','%MADEJA%');
+        })
         ->join('item_stats as stats', DB::raw('trim(items.codigo)'), '=', 'stats.codigo', 'left outer');
         //->join('item_precios as precios', DB::raw('trim(items.codigo)'), '=', DB::raw('trim(precios.codigo)'), 'left outer');
-        $orderBy = $request->input('orderby');
-        if ($orderBy == ''){
-            $hilados_query->orderBy('items.descripcion');
-        } elseif($orderBy == 'descripcion'){
-            $hilados_query->orderBy('items.descripcion');
-        } else {
-            $hilados_query->orderBy("stats.".$orderBy,'DESC');
-        }
+        $hilados_query->orderBy('items.temporada')->orderBy('items.presentacion','desc');
+        
+        $hilados = $hilados_query->get();
 
-        $hilados = $hilados_query->paginate('25');
-        $hilados->setPath(url("hilados/wide"));
+        $grupos = [
+            "INVIERNO - OVILLOS" => [],
+            "INVIERNO - MADEJAS" => [],
+            "PRIMAVERA - OVILLOS" => [],
+            "PRIMAVERA - MADEJAS" => [],
+        ];
+
+        $grupos["INVIERNO - OVILLOS"] = $hilados->filter(function ($value, $key) {
+                return $value->presentacion == 'OVILLO' && $value->temporada == 'OI';
+            })->all();
+
+        $grupos["INVIERNO - MADEJAS"] = $hilados->filter(function ($value, $key) {
+                return $value->presentacion == 'MADEJA' && $value->temporada == 'OI';
+            })->all();
+
+        $grupos["PRIMAVERA - OVILLOS"] = $hilados->filter(function ($value, $key) {
+                return $value->presentacion == 'OVILLO' && $value->temporada == 'PV';
+            })->all();
+
+        $grupos["PRIMAVERA - MADEJAS"] = $hilados->filter(function ($value, $key) {
+                return $value->presentacion == 'MADEJA' && $value->temporada == 'PV';
+            })->all();
+                    
         //print_r(DB::getQueryLog());
         //die();
 
@@ -132,7 +151,7 @@ class HiladosController extends Controller
             }
         }
         
-        return view('hilados-wide', ['hilados' => $hilados,'orderby'=>$orderBy,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+        return view('hilados-wide', ['grupos' => $grupos,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
     
     public function show($codigo)
