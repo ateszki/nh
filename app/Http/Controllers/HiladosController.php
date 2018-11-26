@@ -13,6 +13,7 @@ use App\ColorOrden;
 use App\Accesorio;
 use Storage;
 use DB;
+use PDF;
 
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 
@@ -217,7 +218,7 @@ class HiladosController extends Controller
         return view('colores', ['hilado' => $hilado,'colores' => $colores,"temporada"=>$temporada, "tipo"=>$hilado->subtipo,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
 
-    public function showWide($codigo)
+    public function showWide($codigo,$pdf = null)
     {
         $hilado = Item::where('codigo','=',$codigo)->firstOrFail();
 
@@ -267,9 +268,17 @@ class HiladosController extends Controller
             
         }
         
+        if($pdf == 'pdf') {
+            $pdf = PDF::loadView('colores-pdf', ['hilado' => $hilado,'colores' => $colores,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+            return $pdf->download(trim($hilado->codigo)." - ".trim(preg_replace('/\*[a-zA-Z0-9 ]*/','',$hilado->descripcion)).".pdf");
+            //return view('colores-pdf', ['hilado' => $hilado,'colores' => $colores,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+        } else {
+            return view('colores-wide', ['hilado' => $hilado,'colores' => $colores,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
+        }
         
-        return view('colores-wide', ['hilado' => $hilado,'colores' => $colores,"mas_visitados"=>$mas_visitados,'mas_vendidos'=>$mas_vendidos]);
     }
+
+
 
     public function imagen($codigo,$tamanio){
         if(!in_array($tamanio, ["C","D","G"])){
