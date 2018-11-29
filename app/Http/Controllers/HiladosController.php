@@ -278,7 +278,7 @@ class HiladosController extends Controller
         
     }
 
-    public function catalogoPdf($temporada)
+    public function catalogoPdf($temporada, $presentacion = null)
     {
         $temporadas = ['INVIERNO'=> 'OI', 'VERANO'=>'PV'];
 
@@ -297,19 +297,27 @@ class HiladosController extends Controller
                 });
             });
         })
-        ->where(function($query){
-            $query->where('items.presentacion','like','%OVILLO%')->orwhere('items.presentacion','like','%MADEJA%');
-        })
+        
         ->join('item_stats as stats', DB::raw('trim(items.codigo)'), '=', 'stats.codigo', 'left outer');
         //->join('item_precios as precios', DB::raw('trim(items.codigo)'), '=', DB::raw('trim(precios.codigo)'), 'left outer');
         $hilados_query->orderBy('items.temporada')->orderBy('items.presentacion','desc');
         
+        if(!empty($presentacion)){
+            $hilados_query->where('items.presentacion','like','%'.$presentacion.'%');
+        } else {
+            $hilados_query->where(function($query){
+                $query->where('items.presentacion','like','%OVILLO%')->orwhere('items.presentacion','like','%MADEJA%');
+            });
+        }
+
         $hilados = $hilados_query->get();
 
         
         
         $pdf = PDF::loadView('catalogo-pdf', ['hilados' => $hilados]);
-        return $pdf->download("catalogo-".$temporada.".pdf");
+        $filename = (empty($temporada)) ? "catalogo-".$temporada.".pdf" : "catalogo-".$temporada."-".$presentacion.".pdf";
+
+        return $pdf->download($filename);
 
     }
 
