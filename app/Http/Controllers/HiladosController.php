@@ -315,12 +315,22 @@ class HiladosController extends Controller
         $detalle = substr($formato,1,1) == 'D';
 
         $pdfconfig = (substr($formato, 0,1) == 'P') ? ['format' => 'A4'] : ['format' => 'A4-L'];
+
+        $hilados = collect($hilados);
+        $hilados->transform(function($hilado){
+            $h = \App\Item::where('codigo','=',$hilado->codigo)->first();
+            $hilado->colores = $h->colores();
+            return $hilado;
+        });
         
-        $pdf = PDF::loadView('catalogo-pdf', ['hilados' => $hilados, 'detalle' => $detalle],[],$pdfconfig);
+        $hilados = $hilados->all();
+        //dd($hilados);
+        
+        $pdf = PDF::loadView('catalogo-pdf', ['hilados' => $hilados, 'detalle' => $detalle, 'presentacion' => $presentacion],[],$pdfconfig);
         $filename = (empty($temporada)) ? "catalogo-".$temporada.".pdf" : "catalogo-".$temporada."-".$presentacion.".pdf";
 
         return $pdf->download($filename);
-
+        //return view('catalogo-pdf', ['hilados' => $hilados, 'detalle' => $detalle, 'presentacion' => $presentacion]);
     }
 
 
