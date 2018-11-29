@@ -278,7 +278,7 @@ class HiladosController extends Controller
         
     }
 
-    public function catalogoPdf($temporada, $presentacion = null)
+    public function catalogoPdf($temporada, $formato = 'PD',$presentacion = null )
     {
         $temporadas = ['INVIERNO'=> 'OI', 'VERANO'=>'PV'];
 
@@ -312,9 +312,11 @@ class HiladosController extends Controller
 
         $hilados = $hilados_query->get();
 
+        $detalle = substr($formato,1,1) == 'D';
+
+        $pdfconfig = (substr($formato, 0,1) == 'P') ? ['format' => 'A4'] : ['format' => 'A4-L'];
         
-        
-        $pdf = PDF::loadView('catalogo-pdf', ['hilados' => $hilados]);
+        $pdf = PDF::loadView('catalogo-pdf', ['hilados' => $hilados, 'detalle' => $detalle],[],$pdfconfig);
         $filename = (empty($temporada)) ? "catalogo-".$temporada.".pdf" : "catalogo-".$temporada."-".$presentacion.".pdf";
 
         return $pdf->download($filename);
