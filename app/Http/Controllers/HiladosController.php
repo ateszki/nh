@@ -278,6 +278,42 @@ class HiladosController extends Controller
         
     }
 
+    public function catalogoPdf($temporada)
+    {
+        $temporadas = ['INVIERNO'=> 'OI', 'VERANO'=>'PV'];
+
+        $hilados_query = DB::table('items')
+        ->selectRaw("items.codigo,items.descripcion,items.imagen,items.imagenes,stats.ventas,stats.visitas,case when items.presentacion like '%OVILLO%' then 'OVILLO' else 'MADEJA' end as presentacion, items.temporada")//,'precios.precio')
+        //->where('items.temporada','=',$temp)
+        //->where('precios.lista','=',config('app.lista_precio_publico'))
+        ->where('items.tipo','like','HILADOS%')
+        ->where('items.temporada','=',$temporadas[$temporada])
+        //->where('items.subtipo','like','%'.$tipo.'%')
+        ->where('items.imagenes','=',true)
+        ->where(function($query){
+            $query->where('items.stockcero','=',true)->orWhere(function($query1){
+                $query1->where('items.stockcero','=',false)->whereIn('items.codigo',function($query2){
+                    $query2->select(DB::raw('left(item_stocks.codigo,4)'))->from('item_stocks')->where('item_stocks.stock','>',0);
+                });
+            });
+        })
+        ->where(function($query){
+            $query->where('items.presentacion','like','%OVILLO%')->orwhere('items.presentacion','like','%MADEJA%');
+        })
+        ->join('item_stats as stats', DB::raw('trim(items.codigo)'), '=', 'stats.codigo', 'left outer');
+        //->join('item_precios as precios', DB::raw('trim(items.codigo)'), '=', DB::raw('trim(precios.codigo)'), 'left outer');
+        $hilados_query->orderBy('items.temporada')->orderBy('items.presentacion','desc');
+        
+        $hilados = $hilados_query->get();
+
+        
+        
+        $pdf = PDF::loadView('catalogo-pdf', ['hilados' => $hilados]);
+        return $pdf->download("catalogo-".$temporada.".pdf");
+
+    }
+
+
 
 
     public function imagen($codigo,$tamanio){

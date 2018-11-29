@@ -33,6 +33,7 @@ Route::get('/home', function () {
 //habiltar esto para compra con usuarios invitados
 //Route::group(['middleware' => 'invitado'], function () {    
     //para acceder a los hilados hay que estar logeado o invitado
+    Route::get('/catalogo/pdf/{temporada}', 'HiladosController@catalogoPdf');
     Route::get('/hilados', 'HiladosController@index');
     Route::get('/hilados/wide', 'HiladosController@indexWide');
     Route::get('/hilados/wide/{codigo}/{pdf?}', 'HiladosController@showWide');
