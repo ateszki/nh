@@ -111,16 +111,16 @@ class HiladosController extends Controller
         })
         ->join('item_stats as stats', DB::raw('trim(items.codigo)'), '=', 'stats.codigo', 'left outer');
         //->join('item_precios as precios', DB::raw('trim(items.codigo)'), '=', DB::raw('trim(precios.codigo)'), 'left outer');
-        $hilados_query->orderBy('items.temporada')->orderBy('items.presentacion','desc');
+        $hilados_query->orderBy('items.temporada')->orderBy('items.presentacion','desc')->orderBy('items.descripcion');
         
         $hilados = $hilados_query->get();
 
         $grupos = [
-            "INVIERNO - OVILLOS" => [],
             "INVIERNO - MADEJAS" => [],
-            "PRIMAVERA - OVILLOS" => [],
-            "PRIMAVERA - MADEJAS" => [],
-        ];
+            "INVIERNO - OVILLOS" => [],
+            "VERANO - MADEJAS" => [],
+            "VERANO - OVILLOS" => [],
+            ];
 
         $grupos["INVIERNO - OVILLOS"] = $hilados->filter(function ($value, $key) {
                 return $value->presentacion == 'OVILLO' && $value->temporada == 'OI';
@@ -130,11 +130,11 @@ class HiladosController extends Controller
                 return $value->presentacion == 'MADEJA' && $value->temporada == 'OI';
             })->all();
 
-        $grupos["PRIMAVERA - OVILLOS"] = $hilados->filter(function ($value, $key) {
+        $grupos["VERANO - OVILLOS"] = $hilados->filter(function ($value, $key) {
                 return $value->presentacion == 'OVILLO' && $value->temporada == 'PV';
             })->all();
 
-        $grupos["PRIMAVERA - MADEJAS"] = $hilados->filter(function ($value, $key) {
+        $grupos["VERANO - MADEJAS"] = $hilados->filter(function ($value, $key) {
                 return $value->presentacion == 'MADEJA' && $value->temporada == 'PV';
             })->all();
                     
@@ -300,7 +300,7 @@ class HiladosController extends Controller
         
         ->join('item_stats as stats', DB::raw('trim(items.codigo)'), '=', 'stats.codigo', 'left outer');
         //->join('item_precios as precios', DB::raw('trim(items.codigo)'), '=', DB::raw('trim(precios.codigo)'), 'left outer');
-        $hilados_query->orderBy('items.temporada')->orderBy('items.presentacion','desc');
+        $hilados_query->orderBy('items.temporada')->orderBy('items.presentacion','desc')->orderBy('items.descripcion');
         
         if(!empty($presentacion)){
             $hilados_query->where('items.presentacion','like','%'.$presentacion.'%');
@@ -315,6 +315,9 @@ class HiladosController extends Controller
         $detalle = substr($formato,1,1) == 'D';
 
         $pdfconfig = (substr($formato, 0,1) == 'P') ? ['format' => 'A4'] : ['format' => 'A4-L'];
+        $pdfconfig["margin_top"] = 5;
+
+        $pdfconfig["margin_bottom"] = 5;
 
         $hilados = collect($hilados);
         $hilados->transform(function($hilado){

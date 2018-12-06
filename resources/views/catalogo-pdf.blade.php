@@ -5,14 +5,11 @@
 			
 			<!-- main content -->
 			<div class="page_section" @if(!$loop->first) style="page-break-before:always" @endif>
-				<p>&nbsp;</p>
-
-				
 				<div class="container">
 					<div class="row">
                     
                         
-						<main class="col-lg-12 col-md-12 col-sm-12 m_bottom_30 m_xs_bottom_10">
+						<main class="col-lg-12 col-md-12 col-sm-12">
 							
                             @if(count($hilado->colores) > 1 && $detalle)
 						  	<div>
@@ -21,10 +18,10 @@
 							     	<tr>
 							     		<td style="border:none;" width="50%" valign="middle" align="center">
                                   		<h1 class="m_bottom_10" style="font-size: 48px;">{{preg_replace('/\*[a-zA-Z0-9 ]*/','',$hilado->descripcion)}} </h1>
-                                  		<h4 style="width:200px;font-size: 36px;" class="m_bottom_10">CÓDIGO: {{$hilado->codigo}}</h4>
+                                  		<h4 style="font-size: 36px;" class="m_bottom_10">CÓDIGO: {{$hilado->codigo}}</h4>
                                   		</td>
                                       <td style="border:none;" width="50%" valign="middle">
-                                      	<img src="{{URL::to('prodimag/'.$hilado->imagen.'-Z.jpg')}}" width="{{($presentacion == 'MADEJA') ? '300px' : '150px'}}" />
+                                      	<img src="{{URL::to('prodimag/'.$hilado->imagen.'-Z.jpg')}}" width="{{($presentacion == 'MADEJA') ? '350px' : '150px'}}" />
                                       </td>
                                   	</tr>
                               	</table>
@@ -32,7 +29,7 @@
                           </div>
                           @endif
 							<!-- isotope -->
-							<div class=" m_bottom_10 m_xs_bottom_0" >
+							<div class="" >
 							     <table width="100%" border="0" cellpadding="4" cellspacing="4">
 							     	<tr>
 							     		<?php $i = 0;?>
@@ -44,7 +41,7 @@
 														
 															<div>
 															
-															<h2 class="m_bottom_10">{{substr($color["descripcion"],strpos($color["descripcion"],"-")+2)}}<br>({{substr($color["codigo"],-3)}})</h4>
+															<h2 class="m_bottom_10">{{substr($color["descripcion"],strpos($color["descripcion"],"-")+2)}}<br>({{substr($color["codigo"],-3)}})</h2>
 															</div>
 															
 			                                <!-- /producto single --> 
@@ -58,13 +55,16 @@
 							     		}
 							     		?>
 							     	@endforeach
+							     	<?php 
+							     		if($i > 0){
+							     			?>
+							     			<td style="border:none;" colspan="{{5-$i}}">&nbsp;</td>
+							     			<?php
+							     		}
+							     	?>
 							     	</tr>
 							     </table>
-
-								                           
-                                
 							</div>
-                            
 						</main>
 					</div>
 				</div>
