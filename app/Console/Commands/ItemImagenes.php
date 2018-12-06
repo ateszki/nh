@@ -43,7 +43,15 @@ class ItemImagenes extends Command
         foreach ($items as $item) {
             $imgs = glob(storage_path('app')."/prodimag/".trim($item->codigo)."*-G*");
             $item->imagenes = count($imgs)>0?true:false;
-            $item->imagen = count($imgs)>0?substr($imgs[rand(0,count($imgs)-1)],-15,9):NULL;
+            
+            $imagenes = array_filter($imgs,function($i)  {
+                return !in_array(substr($i,-9,3), ['800','804','805','290']);
+            });
+            if(count($imagenes)>0){
+                $imagenes = array_values($imagenes);
+            }
+
+            $item->imagen = count($imagenes)>0?substr($imagenes[rand(0,count($imagenes)-1)],-15,9):NULL;
             $item->save();
         }
     } 
