@@ -5,23 +5,23 @@
 						<div class="row">
                             
 							<!-- contact info -->
-							<div class="col-lg-5 col-md-5 col-sm-5 m_bottom_15 m_xs_bottom_30 color_light_3">
-								<h5 class="color_white tt_uppercase second_font m_bottom_13">Contáctenos</h5>
-								<hr class="divider_bg m_bottom_25">
-								<h1 class="second_font m_bottom_15"><i class="fas fa-phone"></i> 0800-555-1000</h1>
-                                <h4 class="second_font m_bottom_15"><i class="fas fa-phone"></i> (011) 4302-4000</h4>
-                                <h4 class="second_font m_bottom_15"><a href="https://api.whatsapp.com/send?phone=5491128080280" style="color:white"><i class="fab fa-whatsapp"></i> (011) 2808-0280</a></h4>
+							<div class="col-lg-5 col-md-5 col-sm-5 m_bottom_15 m_xs_bottom_30 ">
+								<h5 class="color_black tt_uppercase second_font m_bottom_13">Contáctenos</h5>
+								<hr class="divider_bg m_bottom_25" style="border-color:#595959 !important">
+								<h1 class="second_font m_bottom_15" style="color:#595959 !important"><i class="fas fa-phone"></i> 0800-555-1000</h1>
+                                <h4 class="second_font m_bottom_15" style="color:#595959 !important"><i class="fas fa-phone"></i> (011) 4302-4000</h4>
+                                <h4 class="second_font m_bottom_15"><a href="https://api.whatsapp.com/send?phone=5491128080280" style="color:#595959 !important"><i class="fab fa-whatsapp"></i> (011) 2808-0280</a></h4>
 							</div>
                             
                             <div class="col-lg-4 col-md-4 col-sm-4 m_bottom_15 m_xs_bottom_30 color_light_3">
                             
                             <!-- subscribe widget -->
 							<section>
-								<h5 class="color_white tt_uppercase second_font m_bottom_13">Novedades</h5>
-								<hr class="divider_bg m_bottom_25">
+								<h5 class="color_black tt_uppercase second_font m_bottom_13" style="color:#595959 !important">Novedades</h5>
+								<hr class="divider_bg m_bottom_25" style="border-color:#595959 !important">
 								@if (count($errors) > 0)
 									    <div class="alert_box error relative m_bottom_10 fw_light">
-									        <ul>
+									        <ul >
 									            @foreach ($errors->all() as $error)
 									                <li>{{ $error }}</li>
 									            @endforeach
@@ -35,7 +35,7 @@
 								      </div>
 								      @endif
 								    @endforeach
-								<p class="second_font m_bottom_15">Reciba todas las novedades Nube en su E-Mail!</p>
+								<p class="second_font m_bottom_15" style="color:#595959 !important">Reciba todas las novedades Nube en su E-Mail!</p>
 								<form method='post' action="{{URL::to('lista-email')}}">
 								{{ csrf_field() }}
 									<input placeholder="Ingrese su E-Mail" name="email" class="tr_all fw_light w_full fs_medium m_bottom_10" type="email">
@@ -46,8 +46,8 @@
                             
 							<!-- social widget -->
 							<div class="col-lg-3 col-md-3 col-sm-3 m_bottom_15 m_xs_bottom_0">
-								<h5 class="color_white tt_uppercase second_font m_bottom_13">Nube en Redes Sociales</h5>
-								<hr class="divider_bg m_bottom_30">
+								<h5 class="color_black tt_uppercase second_font m_bottom_13">Nube en Redes Sociales</h5>
+								<hr class="divider_bg m_bottom_30" style="border-color:#595959 !important">
 								<!-- social buttons -->
 								<ul class="hr_list">
 									<li class="m_right_3 m_bottom_3 m_left_80">
