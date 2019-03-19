@@ -82,27 +82,25 @@ class CarritoController extends Controller
             /*foreach ($rows as $row){
                 PedidoLinea::create(['pedido_id'=>$pedido->id,'codigo'=>$row->id,'descripcion'=>$row->name,'precio'=>$row->price,'cantidad'=>$row->qty,'subtotal'=>$row->subtotal]);
             }*/
+                $envio = Mail::send('email-pedido', ['rows' => $rows,'request' => $request->all()], function ($m) use ($request){
+                    $m->from('info@nubehilados.com');
+                    $m->replyTo($request->get('email'), $request->get('nombre'));
 
-            $envio = Mail::send('email-pedido', ['rows' => $rows,'request' => $request->all()], function ($m) use ($request){
-                $m->from('info@nubehilados.com');
-                $m->replyTo($request->get('email'), $request->get('nombre'));
+                    $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Nuevo pedido desde la web');
+                });
 
-                $m->to('valeria@nubehilados.com', 'Valeria')->cc('jonathan@nubehilados.com','Jonathan')->subject('Nuevo pedido desde la web');
-            });
-
-            if($envio){
                 $request->session()->flash('alert-success', 'Su mensaje fue enviado. ¡Muchas gracias!');
                 \Cart::destroy();
-                return view('confirmar-pedido');
-            } else {
-                $request->session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
-                return view('revisar-pedido');
-            }
 
+                return view('confirmar-pedido');
+            
+            
             
             
         } catch(\Exception $e){
-            return $e->getMessage();
+            $request->session()->flash('alert-danger', 'Ocurrió un error. Por favor intente nuevamente.');
+            return view('revisar-pedido');
+        
         }
     }
 
