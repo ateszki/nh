@@ -8,7 +8,7 @@
 			</div>
             
 			<!-- main content -->
-			<div class="page_section_offset bg-body">
+			<div class="page_section_offset ">
 				<div class="container">
 					<div class="row">
 						
