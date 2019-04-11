@@ -10,7 +10,7 @@
 			</div>
             
 			<!-- main content -->
-			<div class="page_section_offset bg-body">
+			<div class="page_section_offset">
 				<div class="container">
 					<div class="row">
                     
@@ -21,7 +21,7 @@
                             <hr class="divider_bg m_bottom_23">	 
                             
                             @if(count($colores) > 1)
-						  	<div class="bg_grey_light_2">
+						  	<div class="">
                               <div class="container">
                                   <div class="row">
                                       <div class="col-lg-8 col-lg-offset-2 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
