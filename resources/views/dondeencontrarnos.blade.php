@@ -9,12 +9,10 @@ $marcadores = [
   ["BERAZATEGUI","Buenos Aires","AV. 14 Nº 4818, BERAZATEGUI, Buenos Aires","-34.7616078","-58.2091187"  ],
   ["BIGAND","Santa Fé","AV SAN MARTIN 1443, BIGAND, Santa Fé","-33.3747238","-61.1801795"  ],
   ["CHIVILCOY","Buenos Aires","CEBALLOS 115, CHIVILCOY, Buenos Aires","-34.8946399","-60.0217174"  ],
-  ["CIUDADELA","Buenos Aires","AV. GRAL PAZ 99 _CIUDADELA (ESQUINA BINGO), CIUDADELA, Buenos Aires","-34.6400337","-58.5300832"  ],
   ["ESCOBAR","Buenos Aires","E. TAPIA DE CRUZ 998, ESCOBAR, Buenos Aires","-34.3500421","-58.7975747"  ],
   ["EZEIZA","Buenos Aires","PASO DE LA PATRIA 346, EZEIZA, Buenos Aires","-34.8557461","-58.5223053"  ],
   ["EZEIZA","Buenos Aires","9 DE JULIO 173, EZEIZA, Buenos Aires","-34.8539543","-58.5206978"  ],
   ["LA PLATA","Buenos Aires","DIAGONAL 74 2271, LA PLATA, Buenos Aires","-34.9297771","-57.954255"  ],
-  ["LOMAS DE ZAMORA","Buenos Aires","CARLOS PELLEGRINI 78, LOMAS DE ZAMORA, Buenos Aires","-34.7600994","-58.3982096"  ],
   ["MAR DE LAS PAMPAS","Buenos Aires","LIMAY Y LOS ANDES, MAR DE LAS PAMPAS, Buenos Aires","-37.3285998","-57.0224341"  ],
   ["MAR DEL PLATA","Buenos Aires","ALVARADO 1232, MAR DEL PLATA , Buenos Aires","-38.0168381","-57.5417854"  ],
   ["MAR DEL TUYU","Buenos Aires","CALLE 2 N° 6998, MAR DEL TUYU, Buenos Aires","-36.5720127","-56.6905374"  ],
@@ -60,7 +58,6 @@ $marcadores = [
   ["VILLA ELISA","Entre Ríos","EMILIO FRANCOU 1592, VILLA ELISA, Entre Ríos","-32.1607727","-58.4013905"  ],
   ["VILLAGUAY","Entre Ríos","MORENO 232, VILLAGUAY , Entre Ríos","-31.8677996","-59.0296774"  ],
   ["FORMOSA","Formosa","MORENO 621 , FORMOSA, Formosa","-26.1811536","-58.1683277"  ],
-  ["SAN SALVADOR DE JUJUY","Jujuy","PASAJE TEMPERLEY Nº42 LOS PERELES, SAN SALVADOR DE JUJUY, Jujuy","-24.1725446","-65.3096928"  ],
   ["REALICO","La Pampa","AVENIDA MULLALLY Nº 2024 LOCAL: 2, REALICO, La Pampa","-35.0435331","-64.2446327"  ],
   ["SANTA ROSA","La Pampa","LISANDRO DE LA TORRE 113, SANTA ROSA, La Pampa","-36.6219443","-64.2897516"  ],
   ["CHAMICAL","La Rioja","NICOLAS MAJUL AYAN 53, CHAMICAL, La Rioja","-30.3588593","-66.3131443"  ],
@@ -96,6 +93,8 @@ $marcadores = [
   ["S.M. DE TUCUMAN","Tucumán","JUNIN 155 LOC. 1, S.M. DE TUCUMAN, Tucumán","-26.8279624","-65.2087132"  ],
   ["CALAFATE","Santa Cruz","9 de Julio 57 Galería Paseo de los Pájaros LOCAL 9, CALAFATE, Santa Cruz","-50.337407669153315", "-72.26499469999999"],
   ["S.M. DE TUCUMAN","Tucumán","Av. Juan B. Justo 1182, S.M. DE TUCUMAN, Tucumán","-26.816307","-65.193367"  ],
+  ["LA PLATA","Buenos Aires","CALLE 12 ENTRE 54 Y 55, LA PLATA, Buenos Aires","-34.921248","-57.952584"  ],
+  ["LOMAS DE ZAMORA","Buenos Aires","GORRITI 136, LOMAS DE ZAMORA, Buenos Aires","-34.762098","-58.400069"  ],
   
 ];
 
