@@ -30,6 +30,10 @@ Route::get('/home', function () {
     return redirect()->to('/');
 });
 
+Route::get('/tester','TesterController@testerForm');
+Route::post('/tester','TesterController@tester');
+
+
 //habiltar esto para compra con usuarios invitados
 //Route::group(['middleware' => 'invitado'], function () {    
     //para acceder a los hilados hay que estar logeado o invitado
