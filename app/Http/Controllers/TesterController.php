@@ -31,11 +31,11 @@ class TesterController extends Controller
     	$errores = [];
 
     	if(empty($item)){
-    		$errores[] = "El item no está cargado en la base de datos";
+    		$errores[] = "El item ".$codigo." no está cargado en la base de datos";
     		$item = new Item();
     		$item->codigo = $codigo;
     	} else {
-    		$mensajes[] = "El item está cargado en la base de datos"; 
+    		$mensajes[] = "El item ".$codigo." ".$item->descripcion_limpia."está cargado en la base de datos"; 
     	}
 
     	$stockcero = $item->stockcero ? "SI":"NO";
