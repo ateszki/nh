@@ -10,5 +10,5 @@
 		@endif
 	</div>
 	<hr class="divider_white m_top_15 m_bottom_0">
-	<span class="close fs_small color_light tr_all color_dark_hover fw_light cart_remove header_cart_remove" data-itemid="{{$row->rowid}}" data-url="{{URL::to('carrito/remove')}}/{{$row->rowid}}">x</span>
+	<span class="close fs_small color_light tr_all color_dark_hover fw_light cart_remove header_cart_remove" data-itemid="{{$row->id}}" data-url="{{URL::to('carrito/remove')}}/{{$row->rowId}}">x</span>
 </li>
