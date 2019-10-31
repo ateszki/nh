@@ -19,7 +19,7 @@ $marcadores = [
   ["MATHEU","Buenos Aires","SAN MARTIN 84, MATHEU, Buenos Aires","-34.3844913","-58.8287329"  ],
   ["MERCEDES","Buenos Aires","CALLE 20 N: 285, MERCEDES, Buenos Aires","-34.6539868","-59.4246163"  ],
   ["MONTE HERMOSO","Buenos Aires","AV. ARGENTINA 30, MONTE HERMOSO, Buenos Aires","-38.9884876","-61.2873051"  ],
-  ["MORON","Buenos Aires","SARMIENTO 866, MORON, Buenos Aires","-34.6483877","-58.6206987"  ],
+  ["MORON","Buenos Aires","MACHADO 880, MORON, Buenos Aires","-34.64648198044845","-58.62290968518857"  ],
   ["MUÑIZ","Buenos Aires","PASO 1602 - ESQUINA: FARIAS, MUÑIZ, Buenos Aires","-34.5525138","-58.7063051"  ],
   //["ONCE","Capital Federal","LARREA 374, ONCE, Capital Federal","-34.605449","-58.402222"  ],
   ["PEHUAJO","Buenos Aires","ALSINA 334, PEHUAJO, Buenos Aires","-35.8121627","-61.8965073"  ],
