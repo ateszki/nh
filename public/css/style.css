@@ -2860,7 +2860,9 @@ input[type="checkbox"] + label::after,
 	z-index:1;
 
 }
-
+.c_image_container .c_image_ovillos{
+	margin-top: 30px !important;
+}
 .c_image_container .c_image_2{
 
 	position:absolute;
