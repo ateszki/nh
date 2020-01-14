@@ -27,7 +27,7 @@
                                 <!-- producto single -->
 								<div class="category_isotope_item">
 									<figure class="product_item type_2 c_image_container relative frame_container bg_white t_sm_align_c r_image_container qv_container" >
-										<!-- producto content -->
+										<!-- producto content {{$descri}}-->
 										<div class="relative">
 											<div class="d_block" @if($descri == 'INVIERNO - OVILLOS') style="min-height: 202px;" @endif>
 												<a href="{{URL::to('hilados/'.$hilado->codigo)}}"><img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" alt="" class="c_image_1 tr_all" border="0" @if($descri == 'INVIERNO - OVILLOS') style="margin-top: 30px !important;" @endif></a>
