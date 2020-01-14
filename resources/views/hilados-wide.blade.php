@@ -30,7 +30,7 @@
 										<!-- producto content -->
 										<div class="relative">
 											<div class="d_block" @if($descri == 'INVIERNO - OVILLOS') style="min-height: 202px;" @endif>
-												<a href="{{URL::to('hilados/'.$hilado->codigo)}}"><img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" alt="" class="c_image_1 tr_all" border="0" @if($descri == 'INVIERNO - OVILLOS') style=" padding-top: 30px;" @endif></a>
+												<a href="{{URL::to('hilados/'.$hilado->codigo)}}"><img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" alt="" class="c_image_1 tr_all" border="0" @if($descri == 'INVIERNO - OVILLOS') style="padding-top: 30px;" @endif></a>
 											</div>
 											<!--oferta <div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>	-->
 										</div>
