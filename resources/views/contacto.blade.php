@@ -66,6 +66,8 @@
 									{{ csrf_field() }}
 										<ul>
 											<li class="row">
+												<label for="first_name" class="juira"></label>
+												<input type="text" name="first_name" class="juira">
 												<div class="col-lg-6 col-md-6 col-sm-6 m_bottom_15">
 													<label class="second_font required d_inline_b m_bottom_5 clickable" for="cf_name">Su Nombre </label><br>
 													<input type="text" name="nombre" id="cf_name" class="tr_all w_full fw_light">
