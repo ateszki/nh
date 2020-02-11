@@ -82,6 +82,8 @@
 								      @endif
 								    @endforeach
 								  	<form id="pedidoform" method="post" action="{{URL::to('confirmar-pedido')}}" class="b_default_layout">
+								  		<label for="first_name" class="juira"></label>
+												<input type="text" name="first_name" class="juira">
 									{{ csrf_field() }}
 										<ul>
 											<li class="row">

@@ -123,6 +123,11 @@ Route::match(['get', 'post'],'/contacto', function () {
                         ->withErrors($validator)
                         ->withInput();
         }
+        $first_name = Request::get('first_name');
+
+        if(!empty($first_name)){
+            abort(404);
+        }
         $envio = Mail::send('email-contacto', ['request' => Request::all()], function ($m) {
            // $m->from(Request::get('email'), Request::get('nombre'));
              //$m->from('medesconecto@gmail.com', 'Nube');

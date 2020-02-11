@@ -82,6 +82,11 @@ class CarritoController extends Controller
             /*foreach ($rows as $row){
                 PedidoLinea::create(['pedido_id'=>$pedido->id,'codigo'=>$row->id,'descripcion'=>$row->name,'precio'=>$row->price,'cantidad'=>$row->qty,'subtotal'=>$row->subtotal]);
             }*/
+            $first_name = $request->get('first_name');
+
+                if(!empty($first_name)){
+                    abort(404);
+                }
                 $envio = Mail::send('email-pedido', ['rows' => $rows,'request' => $request->all()], function ($m) use ($request){
                     $m->from('info@nubehilados.com');
                     $m->replyTo($request->get('email'), $request->get('nombre'));
