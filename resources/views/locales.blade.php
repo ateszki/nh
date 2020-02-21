@@ -60,7 +60,7 @@
 	<div class="marker" id="20" link="" otros="si" nombre="MONTE GRANDE LANERA" direccion="Leandro N. Alem 161" lat="-34.8159339" lng="-58.468605300000036"></div>
 	<div class="marker" id="21" link="" otros="si" nombre="CONCEPCIÓN DEL URUGUAY - LANERÍA ANA BELÉN" direccion="Malvinas 72" lat="-32.48247" lng="-58.233032"></div>
     <!--<div class="marker" id="23" link="" otros="si"  nombre="LANAS PERGAMINO" direccion="Av Julio A. Roca 591" lat="-33.8929671" lng="-60.57227499999999"></div>-->
-	<div class="marker" id="24" link="" otros="si" nombre="SAN JUSTO JAQUELINE HILADOS" direccion="Perú 2369" lat="-34.6783349" lng="-58.5587865"></div>
+	<!--div class="marker" id="24" link="" otros="si" nombre="SAN JUSTO JAQUELINE HILADOS" direccion="Perú 2369" lat="-34.6783349" lng="-58.5587865"></div-->
 	<div class="marker" id="25" link="" otros="si" nombre="SAN NICOLAS - R Y M" direccion="España 291" lat="-33.336297" lng="-60.2147243"></div>
 	<div class="marker" id="26" link="" otros="si" nombre="CRUZ DEL EJE - EL REGALO" direccion="San Martín 23" lat="-30.7211227" lng="-64.80989840000001"></div>
 	<!--<div class="marker" id="28" link="" otros="si" nombre="PARANA - LA MADEJA" direccion="Gral. San Martín 1278" lat="-31.7213684" lng="-60.52581709999998"></div>-->
@@ -76,10 +76,25 @@
 	<div class="marker" id="39" link="" otros="si" nombre="SAN LUIS - DISTRIBUIDORA DEL INTERIOR" direccion="Riobamba 1780" lat="-33.2875085" lng="-66.3157729"></div>
 	<div class="marker" id="40" link="" otros="si" nombre="WILDE - ESTILO PROPIO" direccion="Crisologo Larralde 6118" lat="-34.711563" lng="-58.328184"></div>
 	<div class="marker" id="41" link="" otros="si" nombre="TANDIL - TEJIENDO AMOR" direccion="Belgrano 731" lat="-37.328252" lng="-59.133443"></div>
-	<div class="marker" id="42" link="" otros="si" nombre="TAFI VIEJO - MERCERIA COLORES" direccion="25 de Mayo nro 26" lat="-26.730806" lng="-65.256459"></div>
+	<!--div class="marker" id="42" link="" otros="si" nombre="TAFI VIEJO - MERCERIA COLORES" direccion="25 de Mayo nro 26" lat="-26.730806" lng="-65.256459"></div-->
 	<div class="marker" id="43" link="" otros="si" nombre="BERAZATEGUI - LANTEX" direccion="AV. 14 Nº 4818" lat="-34.761632" lng="-58.209072"></div>
 	<div class="marker" id="44" link="" otros="si" nombre="PUERTO MADRYN - LA CASA DE LAS LANAS" direccion="BELGRANO 126" lat="-42.767205" lng="-65.034714"></div>
 	<div class="marker" id="45" link="" otros="si"  nombre="EL CALAFATE - MANOS DEL SUR" direccion="Paseo de los Pájaros, local 9" lat="-50.337969" lng="-72.264798"></div>
+
+    <div class="marker" id="46" link="" otros="si"  nombre="TEMPERLEY - BENAROYA AGUSTIN " direccion="SALTA 64" lat="-34.761930" lng="-58.360900"></div>
+
+    <div class="marker" id="47" link="" otros="si"  nombre="CABALLITO - CRISCUOLO MARIA GABRIELA" direccion="ROSARIO 558" lat="-34.619609" lng="-58.436837"></div>
+
+    <div class="marker" id="48" link="" otros="si"  nombre="BAHIA BLANCA - DR. WATSON" direccion="BROWN 85" lat="-38.714840" lng="-62.400180"></div>
+    
+    <div class="marker" id="49" link="" otros="si"  nombre="ALEJANDRO KORN - LEONARD VALERIA KARINA" direccion="AVDA PTE PERON 5067" lat="-34.984753" lng="-58.376326"></div>
+
+    <div class="marker" id="50" link="" otros="si"  nombre="LUGANO - MAYTA HUAÑAPACO IRENE HILDA" direccion="AV. RIESTRA 5684" lat="-34.677184" lng="-58.475140"></div>
+    
+    <div class="marker" id="51" link="" otros="si"  nombre="SAN MIGUEL - SCANIO CARLOS ALBERTO" direccion="LEANDRO N. ALEM 1558" lat="34.543868" lng="-58.713146"></div>
+    <div class="marker" id="52" link="" otros="si"  nombre="MONTE CASEROS - BALDOVINO CARLOS RUBEN" direccion="SALTA 331" lat="-30.250950" lng="-57.642231"></div>
+    <div class="marker" id="53" link="" otros="si"  nombre="SANTA FE - SCARDINO PAOLA NOEMI" direccion="AV. FREYRE 1913" lat="-31.651386" lng="-60.720385"></div>
+
 
 </div>      
    

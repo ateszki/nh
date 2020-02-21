@@ -3,7 +3,7 @@
 <?php
 $marcadores = [
   ["ADROGUE","Buenos Aires","ESTEBAN ADROGUE 1187, ADROGUE, Buenos Aires","-34.7983719","-58.3906793"  ],
-  ["BAHIA BLANCA","Buenos Aires","O´HIGGINS 191, BAHIA BLANCA, Buenos Aires","-38.7214449","-62.2682575"  ],
+  //["BAHIA BLANCA","Buenos Aires","O´HIGGINS 191, BAHIA BLANCA, Buenos Aires","-38.7214449","-62.2682575"  ],
   ["BAHIA BLANCA","Buenos Aires","ESTOMBA 420, BAHIA BLANCA, Buenos Aires","-38.714802","-62.271032"  ],
   ["BANFIELD","Buenos Aires","MARSELLA 949, BANFIELD, Buenos Aires","-34.7284658","-58.4321464"  ],
   ["BERAZATEGUI","Buenos Aires","AV. 14 Nº 4818, BERAZATEGUI, Buenos Aires","-34.7616078","-58.2091187"  ],
@@ -31,7 +31,7 @@ $marcadores = [
   ["SAN ANTONIO DE ARECO","Buenos Aires","ZAPIOLA 390, SAN ANTONIO DE ARECO, Buenos Aires","-34.2486071","-59.4702148"  ],
   ["SAN CLEMENTE","Buenos Aires","CALLE 3 Nº 2017, SAN CLEMENTE, Buenos Aires","-36.3578","-56.7199174"  ],
   ["SAN FERNANDO","Buenos Aires","SIMON DE IRIONDO 1138, SAN FERNANDO, Buenos Aires","-34.4531334","-58.5397615"  ],
-  ["SAN JUSTO","Buenos Aires","PERU 2369, SAN JUSTO, Buenos Aires","-34.6781419","-58.5588332"  ],
+  //["SAN JUSTO","Buenos Aires","PERU 2369, SAN JUSTO, Buenos Aires","-34.6781419","-58.5588332"  ],
   ["SAN NICOLAS","Buenos Aires","ESPAÑA 291, SAN NICOLAS, Buenos Aires","-33.3362388","-60.2147137"  ],
   ["SUIPACHA","Buenos Aires","MENDOZA 409, SUIPACHA, Buenos Aires","-34.7752638","-59.6883432"  ],
   ["TANDIL","Buenos Aires","BELGRANO 731, TANDIL, Buenos Aires","-37.3282421","-59.1332392"  ],
@@ -88,13 +88,23 @@ $marcadores = [
   ["SANTIAGO DEL ESTERO","Santiago del Estero","PELLEGRINI 107 , SANTIAGO DEL ESTERO, Santiago del Estero","-27.7867093","-64.2611694"  ],
   ["USHUAIA","Tierra del Fuego","GIACHINO 2284, USHUAIA, Tierra del Fuego","-54.8095843","-68.3331615"  ],
   ["USHUAIA","Tierra del Fuego","JUAN D. PERON 174, USHUAIA, Tierra del Fuego","-54.8182571","-68.3366328"  ],
-  ["Tafi Viejo","Tucumán","25 De Mayo N 26, Tafi Viejo, Tucumán","-26.7306003","-65.2567024"  ],
+  //["Tafi Viejo","Tucumán","25 De Mayo N 26, Tafi Viejo, Tucumán","-26.7306003","-65.2567024"  ],
   ["Tafi Viejo","Tucumán","UTTINGER 110, Tafi Viejo, Tucumán","-26.7323299","-65.2558332"  ],
   ["S.M. DE TUCUMAN","Tucumán","JUNIN 155 LOC. 1, S.M. DE TUCUMAN, Tucumán","-26.8279624","-65.2087132"  ],
   ["CALAFATE","Santa Cruz","9 de Julio 57 Galería Paseo de los Pájaros LOCAL 9, CALAFATE, Santa Cruz","-50.337407669153315", "-72.26499469999999"],
   ["S.M. DE TUCUMAN","Tucumán","Av. Juan B. Justo 1182, S.M. DE TUCUMAN, Tucumán","-26.816307","-65.193367"  ],
   ["LA PLATA","Buenos Aires","CALLE 12 ENTRE 54 Y 55, LA PLATA, Buenos Aires","-34.921248","-57.952584"  ],
   ["LOMAS DE ZAMORA","Buenos Aires","GORRITI 136, LOMAS DE ZAMORA, Buenos Aires","-34.762098","-58.400069"  ],
+
+["TEMPERLEY","Buenos Aires","SALTA 64","-34.76193","-58.3609"  ],
+["Capital Federal","Capital Federal","ROSARIO 558","-34.619609","-58.436837"  ],
+["BAHIA BLANCA","Buenos Aires","BROWN 85","-38.71484","-62.40018"  ],
+["ALEJANDRO KORN","Buenos Aires","AVDA PTE PERON 5067","-34.984753","-58.376326"  ],
+["Capital Federal","Capital Federal","RIESTRA N. DE LA AV. 5684","-34.677184","-58.47514"  ],
+["SAN MIGUEL","Buenos Aires","LEANDRO N. ALEM 1558","34.543868","-58.713146"  ],
+["MONTE CASEROS","Corrientes","SALTA 331","-30.25095","-57.642231"  ],
+["SANTA FE","Santa Fé","AV. FREYRE 1913","-31.651386","-60.720385"  ],
+
   
 ];
 
