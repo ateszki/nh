@@ -9,9 +9,10 @@
                             <!-- home slider -->
 							<div class="flexslider">
 								<ul class="slides">
-									<li><a href="https://www.instagram.com/nubehilados/" target="_blank"><img src="images/slider-04.jpg" alt=""></a></li>
+									<!--<li><a href="https://www.instagram.com/nubehilados/" target="_blank"><img src="images/slider-04.jpg" alt=""></a></li>
                   <li><img src="images/slider-06.jpg" alt=""></li>
-									</li>
+									</li>-->
+                  <li><img src="images/banner-prevencion-covid19.jpg"></li>
 								</ul>
 							</div>
 						</div>
