@@ -12,7 +12,7 @@
 									<!--<li><a href="https://www.instagram.com/nubehilados/" target="_blank"><img src="images/slider-04.jpg" alt=""></a></li>
                   <li><img src="images/slider-06.jpg" alt=""></li>
 									</li>-->
-                  <li><img src="images/banner-prevencion-covid19.jpg"></li>
+                  <li><a href="https://tienda.nubehilados.com/"><img src="images/banner-venta-online.jpg"></a></li>
 								</ul>
 							</div>
 						</div>

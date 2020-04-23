@@ -87,6 +87,9 @@ class HiladosController extends Controller
     }
     public function indexWide(Request $request)
     {
+        //redirect 
+        return redirect('https://tienda.nubehilados.com/', 302, []);
+
         //DB::enableQueryLog();
         $qs = \Input::all();
 
@@ -220,6 +223,9 @@ class HiladosController extends Controller
 
     public function showWide($codigo,$pdf = null)
     {
+        //redirect 
+        return redirect('https://tienda.nubehilados.com/', 302, []);
+        
         $hilado = Item::where('codigo','=',$codigo)->firstOrFail();
 
         
