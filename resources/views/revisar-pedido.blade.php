@@ -18,10 +18,10 @@
 						<thead class="d_xs_none">
 							<tr class="bg_grey_light_2 second_font">
 								<th><b>Imagen</b></th>
-								<th><b>Nombre del Producto</b></th>
-								<th><b>Código</b></th>
+								<th><b>Producto - Color</b></th>
+								<!--th><b>Color</b></th-->
 								<!--<th><b>Precio</b></th>-->
-								<th><b>Paqs.</b></th>
+								<th><b>Paquetes</b></th>
 								<!--<th><b>Importe</b></th>-->
 								<th></th>
 							</tr>
@@ -109,7 +109,7 @@
 												<input type="text" name="telefono" id="cf_telephone" class="tr_all w_full fw_light">
 											</li>
 											<li class="m_bottom_5">
-												<label class="second_font d_inline_b m_bottom_5 clickable" for="cf_message">Consulta</label><br>
+												<label class="second_font d_inline_b m_bottom_5 clickable" for="cf_message">Comentarios</label><br>
 												<textarea id="cf_message" name="mensaje" rows="6" class="tr_all w_full fw_light"></textarea>
 											</li>
 											<li>
@@ -121,4 +121,10 @@
 							</div>
 				</div>
 			</div>
+			<style>
+				#pedidoform label {
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+			</style>
 @endsection

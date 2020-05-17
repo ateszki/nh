@@ -3,7 +3,7 @@
 	<td data-cell-title="Product Name">
 		<span class="second_font fs_large d_inline_b m_bottom_4">{{$row->name}} </span>
 	</td>
-	<td data-cell-title="SKU" class="second_font">{{$row->id}}</td>
+	<!--td data-cell-title="SKU" class="second_font">{{$row->id}}</td-->
 	<!--<td data-cell-title="Price" class="second_font"><span class="color_dark">${{$row->price}}</span></td>-->
 	<td data-cell-title="Quantity">
 		<div class="quantity clearfix t_align_c">

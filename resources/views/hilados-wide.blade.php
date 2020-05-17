@@ -3,7 +3,7 @@
 <!-- breadcrumbs -->
 			<div class="breadcrumbs bg_grey_light_2 fs_medium fw_light">
 				<div class="container">
-					<a href="{{URL::to('/')}}" class="sc_hover">Home</a> / <span class="color_light">Hilados</span>
+					<a href="{{URL::to('/')}}" class="sc_hover">Home</a> / <span class="color_light">Mayorista</span>
 				</div>
 			</div>
             
@@ -30,7 +30,7 @@
 										<!-- producto content {{$descri}}-->
 										<div class="relative">
 											<div class="d_block" @if($descri == 'INVIERNO - OVILLOS') style="min-height: 202px;" @endif>
-												<a href="{{URL::to('hilados/'.$hilado->codigo)}}"><img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" alt="" class="c_image_1 tr_all @if($descri == 'INVIERNO - OVILLOS')  c_image_ovillos @endif" border="0" ></a>
+												<a href="{{URL::to('mayorista/'.$hilado->codigo)}}"><img src="{{URL::to('prodimag/'.$hilado->imagen.'-G.jpg')}}" alt="" class="c_image_1 tr_all @if($descri == 'INVIERNO - OVILLOS')  c_image_ovillos @endif" border="0" ></a>
 											</div>
 											<!--oferta <div class="product_label fs_ex_small circle color_white bg_lbrown t_align_c vc_child tt_uppercase"><i class="d_inline_m">Oferta!</i></div>	-->
 										</div>
@@ -45,7 +45,7 @@
 													@endif
 												</div>
 											</div>
-											<a href="{{URL::to('hilados/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto </a>
+											<a href="{{URL::to('mayorista/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto </a>
 										</figcaption>
 									</figure>
 								</div>

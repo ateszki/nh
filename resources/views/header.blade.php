@@ -93,7 +93,7 @@
 								<nav role="navigation" class="m_left_35 d_xs_none d_sm_inline_b">
 									<ul class="main_menu relative type_2 hr_list second_font fs_medium">
 										<li><a href="https://tienda.nubehilados.com/" class="tt_uppercase tr_delay">Tienda</a></li>
-										<!--li @if(Request::is('hilados')) class='current' @endif><a href="{{URL::to('hilados')}}" class="tt_uppercase tr_delay">Hilados </i></a></li-->
+										<li @if(Request::is('mayorista')) class='current' @endif><a href="{{URL::to('mayorista')}}" class="tt_uppercase tr_delay">Mayorista </i></a></li>
                                         <li @if(Request::is('trajes-de-banio')) class='current' @endif><a href="{{URL::to('trajes-de-banio')}}" class="tt_uppercase tr_delay">Trajes de Baño </a></li>
 										<li @if(Request::is('accesorios')) class='current' @endif><a href="{{URL::to('accesorios')}}" class="tt_uppercase tr_delay">Accesorios </a></li>                                        
 										<li @if(Request::is('fichas-de-tejido')) class='current' @endif><a href="{{URL::to('fichas-de-tejido')}}" class="tt_uppercase tr_delay">Fichas de Tejido </a></li>

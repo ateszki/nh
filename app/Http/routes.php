@@ -49,7 +49,10 @@ Route::post('/tester','TesterController@tester');
     Route::get('/hilados', 'HiladosController@indexWide');
     Route::get('/hilados/{codigo}/{pdf?}', 'HiladosController@showWide');
 //fin hilados wide 25/03/2019
-    
+// mayorista 17/05/2020
+    Route::get('/mayorista', 'HiladosController@indexWideMayorista');
+    Route::get('/mayorista/{codigo}/{pdf?}', 'HiladosController@showWideMayorista');
+// fin mayorista    
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
     Route::get('/accesorios', 'HiladosController@accesorios');
     Route::get('/trajes-de-banio','MallasController@catalogo');
