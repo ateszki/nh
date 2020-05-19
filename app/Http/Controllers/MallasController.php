@@ -87,6 +87,7 @@ class MallasController extends Controller
     }
 
     public function catalogo(){
+       return redirect('https://www.nubehilados.com/', 302, []);
        
         $joven = glob(public_path().'/images/trajes-de-banio/joven/*.jpg');
         $seniora = glob(public_path().'/images/trajes-de-banio/seniora/*.jpg');
