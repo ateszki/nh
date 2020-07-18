@@ -50,8 +50,8 @@ Route::post('/tester','TesterController@tester');
     Route::get('/hilados/{codigo}/{pdf?}', 'HiladosController@showWide');
 //fin hilados wide 25/03/2019
 // mayorista 17/05/2020
-    Route::get('/mayorista', 'HiladosController@indexWideMayorista');
-    Route::get('/mayorista/{codigo}/{pdf?}', 'HiladosController@showWideMayorista');
+    Route::get('/mayorista', 'HiladosController@indexWideMayorista')->name('mayorista');
+    Route::get('/mayorista/{codigo}/{pdf?}', 'HiladosController@showWideMayorista')->name('mayorista-hilados');
 // fin mayorista    
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
     Route::get('/accesorios', 'HiladosController@accesorios');
@@ -71,7 +71,7 @@ Route::post('/tester','TesterController@tester');
     Route::get('revisar-pedido', function(){
         $viewname = (\Cart::count() == 0)?'revisar-pedido-vacio':'revisar-pedido';
         return view($viewname);
-    });
+    })->name('revisar-pedido');
     Route::post('confirmar-pedido', 'CarritoController@ConfirmarPedido');
 //});
 //cierra el comment de compra con usuarios

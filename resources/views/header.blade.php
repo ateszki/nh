@@ -114,7 +114,9 @@
 											</form>
 										</div>
 									</li>-->
-                                    @include('header-cart')
+                                    @if(in_array(Route::currentRouteName(),['revisar-pedido','mayorista','mayorista-hilados']))
+                                    	@include('header-cart')
+                                    @endif
 								</ul>                                
 							</div>
                             <!-- end shopping cart -->
