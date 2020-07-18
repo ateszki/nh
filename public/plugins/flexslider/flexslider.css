@@ -67,7 +67,7 @@ html[xmlns] .slides {display: block;}
 	display:block;
 	z-index: 21;
 	cursor: pointer;
-	color:#fff;
+	color:#ddd;
 	text-align: center;
 	border-width:1px !important;
 	border-style:solid !important;
