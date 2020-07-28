@@ -52,7 +52,12 @@ Route::post('/tester','TesterController@tester');
 // mayorista 17/05/2020
     Route::get('/mayorista', 'HiladosController@indexWideMayorista')->name('mayorista');
     Route::get('/mayorista/{codigo}/{pdf?}', 'HiladosController@showWideMayorista')->name('mayorista-hilados');
-// fin mayorista    
+// fin mayorista 
+// catalogo 28/07/2020
+    Route::get('/catalogo', 'HiladosController@indexWideCatalogo')->name('catalogo');
+    Route::get('/catalogo/{codigo}/{pdf?}', 'HiladosController@showWideCatalogo')->name('catalogo-hilados');
+
+// fin catalogo   
     Route::get('/color/{codigo}/imagen/{tamanio}', 'HiladosController@imagen');
     Route::get('/accesorios', 'HiladosController@accesorios');
     Route::get('/trajes-de-banio','MallasController@catalogo');

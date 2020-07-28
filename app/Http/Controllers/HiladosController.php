@@ -90,8 +90,12 @@ class HiladosController extends Controller
         //redirect 
         return redirect('https://tienda.nubehilados.com/', 302, []);
     }
-
     public function indexWideMayorista(Request $request)
+    {
+        return redirect()->route('catalogo');
+    }
+
+    public function indexWideCatalogo(Request $request)
     {
         //DB::enableQueryLog();
         $qs = \Input::all();
@@ -230,6 +234,11 @@ class HiladosController extends Controller
         return redirect('https://tienda.nubehilados.com/', 302, []);
     }        
     public function showWideMayorista($codigo,$pdf = null)
+    {
+        //redirect 
+        return redirect()->route('catalogo');
+    }        
+    public function showWideCatalogo($codigo,$pdf = null)
     {
         $hilado = Item::where('codigo','=',$codigo)->firstOrFail();
 

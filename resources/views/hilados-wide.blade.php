@@ -3,7 +3,7 @@
 <!-- breadcrumbs -->
 			<div class="breadcrumbs bg_grey_light_2 fs_medium fw_light">
 				<div class="container">
-					<a href="{{URL::to('/')}}" class="sc_hover">Home</a> / <span class="color_light">Mayorista</span>
+					<a href="{{URL::to('/')}}" class="sc_hover">Home</a> / <span class="color_light">Catálogo</span>
 				</div>
 			</div>
             
@@ -45,7 +45,7 @@
 													@endif
 												</div>
 											</div>
-											<a href="{{URL::to('mayorista/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto </a>
+											<a href="{{URL::to('catalogo/'.$hilado->codigo)}}" class="button_type_2 m_bottom_9 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Producto </a>
 										</figcaption>
 									</figure>
 								</div>
