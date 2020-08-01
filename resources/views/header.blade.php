@@ -114,7 +114,7 @@
 											</form>
 										</div>
 									</li>-->
-                                    @if(in_array(Route::currentRouteName(),['revisar-pedido','catalogo','catalogo-hilados']))
+                                    @if(in_array(Route::currentRouteName(),[/*'revisar-pedido','catalogo','catalogo-hilados'*/]))
                                     	@include('header-cart')
                                     @endif
 								</ul>                                

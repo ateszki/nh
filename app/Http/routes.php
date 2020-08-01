@@ -74,6 +74,9 @@ Route::post('/tester','TesterController@tester');
     Route::get('carrito/header-cart','CarritoController@HeaderCart');
     //pedido
     Route::get('revisar-pedido', function(){
+        //01/08/2020 sacamos carrito mayorista
+        return redirect('https://tienda.nubehilados.com/', 302, []);
+        
         $viewname = (\Cart::count() == 0)?'revisar-pedido-vacio':'revisar-pedido';
         return view($viewname);
     })->name('revisar-pedido');
