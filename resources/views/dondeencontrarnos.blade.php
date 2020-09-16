@@ -101,7 +101,7 @@ $marcadores = [
 ["BAHIA BLANCA","Buenos Aires","BROWN 85","-38.71484","-62.40018"  ],
 ["ALEJANDRO KORN","Buenos Aires","AVDA PTE PERON 5067","-34.984753","-58.376326"  ],
 ["Capital Federal","Capital Federal","RIESTRA N. DE LA AV. 5684","-34.677184","-58.47514"  ],
-["SAN MIGUEL","Buenos Aires","LEANDRO N. ALEM 1558","34.543868","-58.713146"  ],
+["SAN MIGUEL","Buenos Aires","LEANDRO N. ALEM 1558","-34.543868","-58.713146"  ],
 ["MONTE CASEROS","Corrientes","SALTA 331","-30.25095","-57.642231"  ],
 ["SANTA FE","Santa Fé","AV. FREYRE 1913","-31.651386","-60.720385"  ],
 
