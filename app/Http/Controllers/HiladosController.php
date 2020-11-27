@@ -380,6 +380,7 @@ class HiladosController extends Controller
 
     public function accesorios(Request $request)
     {
+        return Redirect::to('/', 301);
         //DB::enableQueryLog();
         $qs = \Input::all();
 
