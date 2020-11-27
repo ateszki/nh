@@ -13,10 +13,13 @@
                   <li><img src="images/slider-06.jpg" alt=""></li>
 									</li>-->
                   
-                  <li><a href="https://tienda.nubehilados.com/"><img src="images/banner-slider-8.png"></a></li>
-                  <li><a href="https://tienda.nubehilados.com/"><img src="images/banner-slider-7.png"></a></li>
-                  <li><a href="https://tienda.nubehilados.com/"><img src="images/banner-slider-5.png"></a></li>
-                  <li><a href="https://tienda.nubehilados.com/"><img src="images/banner-slider-6.png"></a></li>
+                  
+                  <li><a href="https://tienda.nubehilados.com/"><img src="images/banner-slider-4.png"></a></li>
+                  <li><a href="https://www.instagram.com/p/CGSUplUgOB0/"><img src="images/banner-slider-5.png"></a></li>
+                  <li><a href="https://tienda.nubehilados.com/"><img src="images/banner-slider-1.png"></a></li>
+                  <li><a href="https://www.instagram.com/p/CFzh-WjF70y/"><img src="images/banner-slider-3.png"></a></li>
+                  
+                  
 								</ul>
 							</div>
 						</div>
