@@ -32,7 +32,7 @@
 						<tfoot>
 							<tr class="bg_grey_light_2">
 								<td colspan="7">
-									<a href="{{URL::to('/catalogo')}}" class="button_type_2 d_block tt_uppercase fs_medium second_font f_left tr_all f_xs_none t_align_c m_xs_bottom_5 lbrown state_2"><span class="d_inline_b m_left_10 m_right_10">Continuar Comprando</span></a>
+									<a href="{{URL::to('/mayorista')}}" class="button_type_2 d_block tt_uppercase fs_medium second_font f_left tr_all f_xs_none t_align_c m_xs_bottom_5 lbrown state_2"><span class="d_inline_b m_left_10 m_right_10">Continuar Comprando</span></a>
 								
                             <!--<section class="col-lg-4 col-md-4 col-sm-4 m_bottom_10 m_xs_bottom_10 f_right">
 							<table class="w_full total_sc_table second_font type_2 t_xs_align_c">

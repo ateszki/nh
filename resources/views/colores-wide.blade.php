@@ -4,7 +4,7 @@
 			<div class="breadcrumbs bg_grey_light_2 fs_medium fw_light">
 				<div class="breadcrumbs bg_grey_light_2 fs_medium fw_light">
 				<div class="container">
-					<a href="{{URL::to('/')}}" class="sc_hover">Home</a> / <a href="{{URL::to('/hilados/wide')}}" class="sc_hover">Hilados </a> / <span class="color_ligth">{{preg_replace('/\*[a-zA-Z0-9 ]*/','',$hilado->descripcion)}}</span>
+					<a href="{{URL::to('/')}}" class="sc_hover">Home</a> / <a href="{{URL::to('/mayorista')}}" class="sc_hover">Mayorista </a> / <span class="color_ligth">{{preg_replace('/\*[a-zA-Z0-9 ]*/','',$hilado->descripcion)}}</span>
 				</div>
 			</div>
 			</div>
@@ -26,7 +26,9 @@
                                   <div class="row">
                                       <div class="col-lg-8 col-lg-offset-2 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
                                       	<img src="{{URL::to('prodimag/'.$hilado->imagen.'-Z.jpg')}}" />
-                                      	
+                                      @if(!Auth::check())
+                                          <a href="#" data-cargar-todos='{{URL::to("/carrito/add/all/".$hilado->codigo)}}' class="cursor f_left button_type_1 m_bottom_5 d_block t_align_r lbrown state_2 tr_all second_font fs_small tt_uppercase"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar 1 paq de cada color</a>
+                                          @endif	
                                       </div>
                                   </div>
                               </div>
@@ -70,7 +72,10 @@
 													@ENDIF
 												</div>
 											</div>
-											
+										@if(!Auth::check())
+											<!--<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" class="button_type_2 m_bottom_5 d_block w_full t_align_c lbrown state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-eye d_inline_m m_right_9"></i>Ver Opciones</button>-->
+											<button data-popup="#quick_view" data-popup-transition-in="bounceInUp" data-popup-transition-out="bounceOutUp" data-url='{{ URL::to("/carrito/add") }}' data-color='{"codigo":"{{substr($color["codigo"],0,4)}}","color":"{{substr($color["codigo"],5,4)}}","precio":"{{$color["precio"]}}","descripcion":"{{preg_replace("/\*[a-zA-Z0-9 ]*/","",$color["descripcion"])}} ","img":"{{URL::to('prodimag/'.$color["codigo"].'-G.jpg')}}"}' class="button_type_1 m_bottom_5 d_block w_full t_align_c black state_2 tr_all second_font fs_small tt_uppercase m_top_10"><i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Agregar</button>
+											@endif	
                                         </figcaption>
 									</figure>
 								</div>

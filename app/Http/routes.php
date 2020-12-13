@@ -50,8 +50,8 @@ Route::post('/tester','TesterController@tester');
     Route::get('/hilados/{codigo}/{pdf?}', 'HiladosController@showWide');
 //fin hilados wide 25/03/2019
 // mayorista 17/05/2020
-    Route::get('/mayorista', 'HiladosController@indexWideMayorista')->name('mayorista');
-    Route::get('/mayorista/{codigo}/{pdf?}', 'HiladosController@showWideMayorista')->name('mayorista-hilados');
+    Route::get('/mayorista', 'HiladosController@indexWideCatalogo')->name('mayorista');
+    Route::get('/mayorista/{codigo}/{pdf?}', 'HiladosController@showWideCatalogo')->name('mayorista-hilados');
 // fin mayorista 
 // catalogo 28/07/2020
     Route::get('/catalogo', 'HiladosController@indexWideCatalogo')->name('catalogo');
@@ -74,9 +74,6 @@ Route::post('/tester','TesterController@tester');
     Route::get('carrito/header-cart','CarritoController@HeaderCart');
     //pedido
     Route::get('revisar-pedido', function(){
-        //01/08/2020 sacamos carrito mayorista
-        return redirect('https://tienda.nubehilados.com/', 302, []);
-        
         $viewname = (\Cart::count() == 0)?'revisar-pedido-vacio':'revisar-pedido';
         return view($viewname);
     })->name('revisar-pedido');

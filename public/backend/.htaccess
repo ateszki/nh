@@ -1,0 +1,6 @@
+AuthGroupFile /dev/null
+AuthType Basic
+AuthUserFile /home/admin/domains/nubehilados.com/.htpasswd/public_html/backend/.htpasswd
+AuthName "Backend Nube"
+require valid-user
+ErrorDocument 401 "Unauthorized Access"
