@@ -14,9 +14,9 @@
 									</li>-->
                   
                   
-                  <li><a href="https://tienda.nubehilados.com/" target="_blank"><img src="images/Banner-Nube-12-2020-1.jpg"></a></li>
+                  <li><a href="https://tienda.nubehilados.com/" target="_blank"><img src="images/banner-web-02-2021-2.jpg"></a></li>
                   <li><img src="images/Banner-Nube-12-2020-2.jpg"></li>
-                  <li><a href="https://www.tienda.nubehilados.com/ropa/" target="_blank"><img src="images/Banner-Nube-12-2020-3.jpg"></a></li>
+                  <li><a href="https://www.tienda.nubehilados.com/ropa/" target="_blank"><img src="images/banner-web-02-2021.jpg"></a></li>
                   
                   
 								</ul>
