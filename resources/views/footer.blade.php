@@ -86,8 +86,7 @@
 									<h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">INFORMACIÓN ÚTIL</h5>
 									<hr class="divider_bg m_bottom_25">
 									<ul class="second_font vr_list_type_1 with_links">    
-										<li class="m_bottom_14"><a href="{{URL::to('locales')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Locales</a></li>
-                                        <li class="m_bottom_14"><a href="{{URL::to('representantes')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Representantes</a></li>
+										<li class="m_bottom_14"><a href="{{URL::to('representantes')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Representantes</a></li>
 									<!--                                
 	                                    <li class="m_bottom_14"><a href="{{URL::to('preguntas-frecuentes')}}" class="sc_hover d_inline_b"><i class="fa fa-caret-right"></i>Preguntas Frecuentes</a></li>
 
