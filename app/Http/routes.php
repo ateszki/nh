@@ -24,7 +24,9 @@ Route::get('auth/logout-as-guest','InvitadoController@logoutAsGuest');
 
 
 Route::get('/', function () {
-    return view('home');
+    $string = file_get_contents(public_path()."/images/home-page-banners/banners.json");
+    $banners = json_decode($string);
+    return view('home', ['banners' => $banners]);
 });
 Route::get('/home', function () {
     return redirect()->to('/');

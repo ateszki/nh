@@ -13,11 +13,21 @@
                   <li><img src="images/slider-06.jpg" alt=""></li>
 									</li>-->
                   
-                  
-                                    <li><a href="https://tienda.nubehilados.com/" target="_blank"><img src="images/Banner-Nube-12-2020-1.jpg"></a></li>
+@foreach ($banners as $banner)
+    <li>
+	@if ($banner->url != '') 
+	<a href="{{ $banner->url }}" target="_blank">
+	@endif
+	<img src="images/home-page-banners/{{$banner->filename}}" />
+	@if ($banner->url != '') 
+	</a>
+	@endif
+	</li>
+@endforeach
+                                   <!-- <li><a href="https://tienda.nubehilados.com/" target="_blank"><img src="images/Banner-Nube-12-2020-1.jpg"></a></li>
                   <li><img src="images/banner-web-02-2021-2.jpg"></li>
                   <li><img src="images/banner-web-02-2021.jpg"></li>
-                  
+                  -->
                   
 								</ul>
 							</div>
