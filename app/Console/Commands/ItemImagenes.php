@@ -45,7 +45,7 @@ class ItemImagenes extends Command
             $item->imagenes = count($imgs)>0?true:false;
             
             $imagenes = array_filter($imgs,function($i)  {
-                return !in_array(substr($i,-9,3), ['800','804','805','290']);
+                return !in_array(substr($i,-9,3), ['800','805','290']);
             });
             if(count($imagenes)>0){
                 $imagenes = array_values($imagenes);
