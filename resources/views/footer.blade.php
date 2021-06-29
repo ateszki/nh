@@ -1,6 +1,6 @@
 <!-- footer -->
 			<footer role="contentinfo" class="p_top_0 bg-texture">
-				<div class="section_offset bg-sub-footer m_bottom_35 m_xs_bottom_30">
+				<div class="section_offset m_bottom_35 m_xs_bottom_30">
 					<div class="container m_top_10">
 						<div class="row">
                             
