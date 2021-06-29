@@ -23,19 +23,19 @@ table td[data-cell-title]::before,
 	font-family: 'Roboto Slab', serif;
 }
 ::selection{
-	background:#fa9428;
+	background:#ff2900;
 	color:#fff;
 }
 ::-moz-selection{
-	background:#fa9428;
+	background:#ff2900;
 	color:#fff;
 }
 ::-webkit-scrollbar{
 	width:10px;
-	background:#fa9428;
+	background:#ff2900;
 }
 ::-webkit-scrollbar-thumb{
-	background: #fa9428;
+	background: #ff2900;
 }
 ::-webkit-input-placeholder{
 	-webkit-transition:text-indent .5s ease,color .5s ease;
@@ -320,7 +320,7 @@ h5,h6,.fs_large{
 /* Colors */
 
 .color_default{
-	color:#fa9428;
+	color:#ff2900;
 }
 .bg_grey_light,
 .ui-slider-handle,
@@ -370,10 +370,10 @@ table th,table td{
 [class*="button_type"].green.state_2,
 [class*="button_type"].green:not(.state_2):hover,
 .banner_type_2:not(.not_link).scheme_color:hover [class*="button_type_"]{
-	color:#fa9428;
+	color:#ff2900;
 }
 .sc_h:hover{
-	color:#fa9428 !important;
+	color:#ff2900 !important;
 }
 .bg_scheme_color,
 .range_slider::after,
@@ -409,7 +409,7 @@ table th,table td{
 }
 
 .main_menu > .current > a {
-	background:#fa9428;
+	background:#ff2900;
 }
 .border_lbrown,
 .divider_lbrown,
