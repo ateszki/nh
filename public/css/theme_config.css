@@ -172,7 +172,7 @@ blockquote.type_2::after{
 }
 .first_letter_type_2 span{
 	color: #fff;
-	background: #fd9226;
+	background: #ff2900;
 	width: 35px;
 	font-size: 1.3em;
 	text-align: center;
@@ -391,10 +391,10 @@ table th,table td{
 .color_lbrown_hover:hover,
 [class*="button_type"].lbrown.state_2,
 [class*="button_type"].lbrown:not(.state_2):hover{
-	color:#fd9226;
+	color:#ff2900;
 }
 .color_lbrown_h:hover{
-	color:#fd9226 !important;	
+	color:#ff2900 !important;	
 }
 .bg_lbrown,
 .bg_lbrown_hover:hover,
@@ -405,7 +405,7 @@ table th,table td{
 [class*="button_type"].lbrown:not(.state_2),
 [class*="button_type"].lbrown.state_2:hover,
 [data-open-dropdown].active_lbrown.active{
-	background:#fd9226;
+	background:#ff2900;
 }
 
 .main_menu > .current > a {
@@ -416,7 +416,7 @@ table th,table td{
 #mobile_menu_button,
 [class*="button_type"].lbrown,
 [data-open-dropdown].active_lbrown.active{
-	border-color:#fd9226;
+	border-color:#ff2900;
 }
 
 /* black */
